@@ -11,6 +11,53 @@
 	padding: 0;
 }
 
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.67);
+	z-index: 10000;
+}
+#overlay h1 {
+	margin-top: 16px;
+	font-weight: 500;
+}
+#overlay p {
+	font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+}
+#overlay label {
+	color: #999;
+    font-size: 16px;
+    font-weight: 100;
+}
+#overlay span.required {
+	display: none;
+}
+#overlay div.span-8 {
+	background: white;
+}
+@media screen and (min-width: 800px) {
+	#overlay div.span-8 {
+		width: 600px;
+		position: absolute;
+		left: 50%;
+		margin-left: -300px;
+	}
+	#overlay #overlay-form {
+		top: 192px;
+	}
+}
+#overlay #close {
+	position: absolute;
+    right: 20px;
+    top: 0px;
+    cursor: pointer;
+}
+
 .collection-type-page #content {
 	box-shadow: 1px 2px 2px #aaa;
 	margin-bottom: 10px;
