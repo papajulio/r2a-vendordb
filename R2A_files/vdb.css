@@ -133,8 +133,17 @@
 	float: left !important;
 }
 .bggrey .vtile .vlogo {
-	background: #ccc;
+	background: #fff;
 	height: 100%;
+}
+.bggrey .vtile .vlogo .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.bggrey .vtile .vlogo img {
+	width: 100%;
+    vertical-align: middle;
 }
 .bggrey .vtile .vcontent {
 	background: white;
