@@ -250,3 +250,14 @@ p.link {
 p.link:hover {
 	text-decoration: underline;
 }
+
+.tags {
+	margin-top: 4px;
+	color: #888;
+	font-weight: normal;
+	padding-left: 16px;
+}
+.tags li {
+	list-style: none;
+	font-size: 14px;
+}

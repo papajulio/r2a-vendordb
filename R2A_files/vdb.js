@@ -51,8 +51,8 @@ $(document).ready(function() {
 
 		// Transition the tiles
 		var $tiles_section = $('#' + $head_section.attr('data-partner'));
-		$tiles_section.animate({height: '0px'}, 400, function() {$tiles_section.hide()});
-		$tiles_section.prev('.dynamic-tiles').show().animate({height: $tiles_section.prev('.dynamic-tiles').get(0).scrollHeight}, 400, function() {$(this).height('auto')});
+		$tiles_section.animate({height: '0px'}, 10, function() {$tiles_section.hide()});
+		$tiles_section.prev('.dynamic-tiles').show().animate({height: $tiles_section.prev('.dynamic-tiles').get(0).scrollHeight}, 700, function() {$(this).height('auto')});
 
 		// Reset all tiles to unselected, and continue button to inactive
 		resetTilesAndButtons();
@@ -69,8 +69,8 @@ $(document).ready(function() {
 
 		// Transition the tiles
 		var $tiles_section = $('#' + $head_section.attr('data-partner'));
-		$tiles_section.animate({height: '0px'}, 400, function() {$tiles_section.hide()});
-		$tiles_section.siblings('.dynamic-tiles').first().show().animate({height: $tiles_section.siblings('.dynamic-tiles').first().get(0).scrollHeight}, 400, function() {$(this).height('auto')});
+		$tiles_section.animate({height: '0px'}, 10, function() {$tiles_section.hide()});
+		$tiles_section.siblings('.dynamic-tiles').first().show().animate({height: $tiles_section.siblings('.dynamic-tiles').first().get(0).scrollHeight}, 700, function() {$(this).height('auto')});
 
 		// Reset all tiles to unselected, and continue button to inactive
 		resetTilesAndButtons();
