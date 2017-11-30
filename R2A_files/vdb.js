@@ -75,6 +75,17 @@ $(document).ready(function() {
 		// Reset all tiles to unselected, and continue button to inactive
 		resetTilesAndButtons();
 	});
+
+	$('#chatbot').click(function() {
+		$current = $('img:visible');
+		$current.hide();
+
+		if ($current.next('img').length > 0) {
+			$current.next('img').show();
+		} else {
+			$('#chatbot img:first').show();
+		}
+	});
 });
 
 function resetTilesAndButtons() {
