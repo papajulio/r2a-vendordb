@@ -77,7 +77,7 @@ $(document).ready(function() {
 	});
 
 	$('#chatbot').click(function() {
-		$current = $('img:visible');
+		$current = $('#chatbot img:visible');
 		$current.hide();
 
 		if ($current.next('img').length > 0) {
