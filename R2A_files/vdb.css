@@ -1,14 +1,76 @@
+.sqs-layout > .sqs-row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 #siteWrapper {
-	background-color: rgb(208, 240, 236);
+	background-color: rgb(255, 255, 255);
 }
 
 #preFooter {
 	background-color: rgb(208, 240, 236);
 }
 
+#postHeader {
+	width: auto;
+    margin: auto;
+    max-width: 1020px;
+    margin-top: 20px;
+}
+#postHeader .sqs-layout {
+	padding-bottom: 20px;
+}
+#postHeader .sqs-block {
+	padding-bottom: 0;
+	padding-left: 0;
+}
+
 #page {
 	background-color: rgb(255, 255, 255);
 	padding: 0;
+	max-width: none;
+}
+
+#intro {
+	padding-top: 30px;
+	background-color: #F7F7FA;
+	box-shadow: 1px 2px 2px #aaa;
+	margin-bottom: 20px;
+	width: auto;
+    margin: auto;
+    max-width: 1020px;
+}
+
+#intro div.row {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#intro p {
+	color: #666;
+}
+#intro p.button {
+	color: white;
+}
+
+#prehead3 {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 40px;
+}
+
+.prehead {
+    border-top: 1px solid #ddd;
+    padding-top: 30px;
+    padding-bottom: 24px;
+    width: auto;
+    margin: auto;
+    max-width: 1020px;
+}
+
+.prehead h2 {
+	color: #999;
+	font-size: 32px;
+	font-weight: 400;
 }
 
 #chatbot {
@@ -69,22 +131,35 @@
 .dynamic-head, .dynamic-tiles {
 	overflow: hidden;
 }
-#head2, #head3 {
+.dynamic-head a {
+	color: #1f1f1f;
+	text-decoration: underline;
+}
+#head1, #head2, #head3 {
 	display: none;
 	opacity: 0;
+	width: auto;
+    margin: auto;
+    max-width: 1020px;
 }
-#tiles2, #tiles3 {
+#head2, #head3 {
+	padding-top: 30px;
+}
+#head1 a, #head2 a, #head3 a {
+	color: #023b48;
+}
+#tiles1, #tiles2, #tiles3 {
 	display:none;
 	height: 0px;
+	background: #f9f9fb;
 }
 
 .collection-type-page #content {
-	box-shadow: 1px 2px 2px #aaa;
 	margin-bottom: 10px;
-	padding-top: 20px;
+	padding-top: 0px;
 }
 .bggrey {
-	background: #eee;
+	background: #f9f9fb;
 	padding-top: 8px;
 	padding-bottom: 16px;
 }
@@ -93,15 +168,66 @@
 }
 .bggrey .row {
 	padding: 0;
+	padding-bottom: 2px;
 	margin: 0;
 }
 .bggrey .tile {
 	background: white;
 	box-shadow: 1px 2px 2px #aaa;
-	height: 160px;
-	margin-top: 8px;
-	margin-right: 6px;
+	margin-left: auto;
+	margin-right: auto;
 	cursor: pointer;
+	width: auto;
+    max-width: 1020px;
+    float: none;
+    min-height: 48px;
+}
+.bggrey .cats {
+	background-color: #ffffff00;
+	margin-bottom: 6px;
+	box-shadow: none;
+	padding-top: 16px;
+    padding-bottom: 16px;
+    margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	width: auto;
+    max-width: 1020px;
+    float: none;
+}
+.bggrey .cats .cat {
+	border: 2px solid #1f1f1f;
+	border-radius: 16px;
+	width: 14%;
+	margin-left: 4px;
+	padding: 8px;
+	text-align: center;
+	height: 78px;
+}
+.bggrey .cats .cat.selected {
+	border-color: #00a69c;
+	background-color: #00a69c;
+	color: white;
+}
+.bggrey .cats .cat i {
+	font-size: 2em;
+	padding-bottom: 8px;
+}
+.bggrey .cats .cat .catlabel {
+	font-weight: bold;
+	padding-bottom: 8px;
+	line-height: 1.1em;
+    display: block;
+}
+.bggrey .tile h3 {
+	width: 75%;
+	float: left;
+    color: #00a69c;
+    font-weight: 500;
+}
+.bggrey .tile ul {
+	width: 20%;
+	float: right;
 }
 .bggrey .tile.selected {
 	background: #00a69c;
@@ -123,6 +249,12 @@
 	height: 100px;
 	margin-top: 8px;
 	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+    max-width: 1020px;
+    float: none;
+    min-height: 48px;
 }
 .sqs-layout .sqs-col-1-5, .span-1-5 {
 	width: 15% !important;
@@ -154,6 +286,9 @@
 	padding: 0 0 0 16px;
 	margin: 6px;
 }
+.oldtitle {
+	color: #888;
+}
 
 h1 {
 	font-size: 36px;
@@ -170,8 +305,7 @@ h3 {
 
 h1.page-title {
 	margin-top: 30px;
-	text-align: center;
-	text-transform: uppercase;
+	text-align: left;
 	font-weight: normal;
 }
 
@@ -202,13 +336,10 @@ h2.left {
 p.button {
 	text-align: center;
 	text-transform: uppercase;
-	margin-left: auto;
-	margin-right: auto;
 	background: rgb(7, 45, 55);
 	color: white;
 	border-radius: 40px;
-    padding: 20px; 
-    width: 300px;
+    padding: 20px 50px; 
     height: 30px;
     font-weight: normal;
     font-size: 20px;
@@ -224,12 +355,21 @@ p.button:active {
 	alpha: 0.8;
 }
 p.button.bsmall {
-	width: 200px;
+	width: 100px;
 	height: 20px;
 	padding: 15px;
 	border-radius: 30px;
 	font-size: 16px;
 	margin: 0;
+}
+p.button.bempty {
+	background: #ffffff00;
+	border: 2px solid rgb(7, 45, 55);
+	color: rgb(7, 45, 55) !important;
+	font-weight: bold;
+}
+p.button.bempty a {
+	color: rgb(7, 45, 55) !important;
 }
 p.button.binactive {
 	background: #fff;
