@@ -1,0 +1,148 @@
+{
+	"personas":[
+		{
+			"name": "licensing",
+			"icon": "fa-file-text-o"
+		},
+		{
+			"name": "reporting",
+			"icon": "fa-list-alt"
+		},
+		{
+			"name": "consumer protection + KYC",
+			"icon": "fa-user"
+		},
+		{
+			"name": "fraud detection + AML",
+			"icon": "fa-shield"
+		},
+		{
+			"name": "ecosystem monitoring",
+			"icon": "fa-search"
+		},
+		{
+			"name": "other",
+			"icon": "fa-institution"
+		}
+	],
+	"objectives":[
+		{
+			"name": "manage licensing process",
+			"personas": [0]
+		},
+		{
+			"name": "help providers to navigate regulatory regimes",
+			"personas": [0, 1]
+		},
+		{
+			"name": "verify compliance",
+			"personas": [1]
+		},
+		{
+			"name": "complaints handling",
+			"personas": [2]
+		},
+		{
+			"name": "identify ponzi schemes and product/agent/network problems and frauds",
+			"personas": [2,3]
+		},
+		{
+			"name": "audit providers' compliance with AML regimes",
+			"personas": [3]
+		},
+		{
+			"name": "investigate suspicious transaction reports",
+			"personas": [3]
+		},
+		{
+			"name": "real-time monitoring of payment flows",
+			"personas": [3,4]
+		},
+		{
+			"name": "map financial access",
+			"personas": [4]
+		},
+		{
+			"name": "understand competition dynamics and identify abuses",
+			"personas": [4]
+		}
+	],
+	"use_cases":[
+		{
+			"name": "manage queries on new regulations with a chatbot",
+			"objectives": [0]
+		},
+		{
+			"name": "issue regulations in digital format OCR and make them searchable",
+			"objectives": [1]
+		},
+		{
+			"name": "receive and analyze data from providers",
+			"objectives": [2]
+		},
+		{
+			"name": "analyze complaints handled by providers",
+			"objectives": [3]
+		},
+		{
+			"name": "housing users and agents complaints",
+			"objectives": [3]
+		},
+		{
+			"name": "scraping big data from social media",
+			"objectives": [4]
+		},
+		{
+			"name": "offsite auditing",
+			"objectives": [5]
+		},
+		{
+			"name": "onsite auditing",
+			"objectives": [5]
+		},
+		{
+			"name": "analyze financial transaction patterns",
+			"objectives": [6]
+		},
+		{
+			"name": "analyse financial transaction patterns in real time",
+			"objectives": [7]
+		},
+		{
+			"name": "monitor network resilience",
+			"objectives": [7]
+		},
+		{
+			"name": "understand geolocalization of access points",
+			"objectives": [8]
+		},
+		{
+			"name": "analyse transactional data by provider and products (non real time)",
+			"objectives": [9]
+		}
+		
+	],
+	"vendors":[
+		{
+			"name": "Chatastiq Solutions, LLC",
+			"location": "New Celland",
+			"technologies": ["Facebook Chatbot, High-Level Analytics"],
+			"logo_url": "./R2A_files/vendor-chatastiq.png",
+			"use_cases": [4]
+		},
+		{
+			"name": "ACRONYM Ltd.",
+			"location": "Global",
+			"technologies": ["Database Software", "Infrastructure", "Natural Language Processing"],
+			"logo_url": "./R2A_files/vendor-acronym.png",
+			"use_cases": [4]
+		},
+		{
+			"name": "Synertechmatic Global",
+			"location": "London, UK",
+			"technologies": ["Chatbot Platform", "Interactive Dashboard", "Detailed Reporting"],
+			"logo_url": "./R2A_files/vendor-synertechmatic.png",
+			"use_cases": [4]
+		}
+	]
+}
