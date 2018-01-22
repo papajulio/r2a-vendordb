@@ -130,46 +130,55 @@ $(document).ready(function() {
 	$(document).on('click', '.tile', function(e) {
 		e.preventDefault();
 
-		// Transition the tiles
+		// Get the relevant elements
 		var $tiles_section = $(this).parents('.dynamic-tiles');
-		$tiles_section.animate({height: '0px'}, 400, function() {$tiles_section.hide()});
-		$nexttilesection = $tiles_section.nextAll('.dynamic-tiles').first();
-		$nexttilesection.show().animate({height: $nexttilesection.scrollHeight}, 400, function() {$(this).height('auto')});
-
-		// Hide the tiles that don't fall under the selected category
-		$nexttilesection.find('.use-case').show(); // show all
-		if($(this).parents('.objective')[0]) {
-			var objectiveId = $(this).parents('.objective').first().attr('data-objective-id');
-			$nexttilesection.find('.use-case').each(function(){
-				var objectiveIds = $(this).attr('data-objective-ids');
-				if (!objectiveIds.split(',').contains(objectiveId)) {
-					$(this).hide();
-				}
-			});
-		} else if  ($(this).parents('.use-case')[0]) {
-			var useCaseId = $(this).parents('.use-case').first().attr('data-use-case-id');
-			$nexttilesection.find('.vendor').each(function(){
-				var useCaseIds = $(this).attr('data-use-case-ids');
-				if (!useCaseIds.split(',').contains(useCaseId)) {
-					$(this).hide();
-				}
-			});
-		}
-
-		// Hide the preheading
-		var $prehead_section = $('#pre' + $tiles_section.attr('data-partner'));
-		$nextpreheadsection = $prehead_section.nextAll('.prehead').first();
-		$nextpreheadsection.animate({opacity: 0}, 100, function() {$nextpreheadsection.hide()} );
-
-		// Transition the heading
 		var $head_section = $('#' + $tiles_section.attr('data-partner'));
-		$head_section.nextAll('.dynamic-head').first().show().animate({opacity: '1'}, 100);
-		$head_section.animate({opacity: 0}, 100, function() {$head_section.hide()} );
 
-		$('h3[data-filler="' + $tiles_section.attr('data-partner') + '"]').html($(this).children('h3').html());
+		// Hide the current heading
+		$head_section.animate({opacity: 0}, 400, function() {
+			$head_section.hide()
+		});
 
-		// Reset all tiles to unselected, and continue button to inactive
-		resetTilesAndButtons();
+		// Collapse and hide the current tiles
+		$tiles_section.animate({height: '0px'}, 400, function() {
+			$tiles_section.hide();
+
+			// Update the heading, and hide tiles that don't fall under the selected category
+			$('h3[data-filler="' + $tiles_section.attr('data-partner') + '"]').html($(this).children('h3').html());
+			$nexttilesection = $tiles_section.nextAll('.dynamic-tiles').first();
+			$nexttilesection.find('.use-case').show(); // show all
+			if($(this).parents('.objective')[0]) {
+				var objectiveId = $(this).parents('.objective').first().attr('data-objective-id');
+				$nexttilesection.find('.use-case').each(function(){
+					var objectiveIds = $(this).attr('data-objective-ids');
+					if (!objectiveIds.split(',').contains(objectiveId)) {
+						$(this).hide();
+					}
+				});
+			} else if  ($(this).parents('.use-case')[0]) {
+				var useCaseId = $(this).parents('.use-case').first().attr('data-use-case-id');
+				$nexttilesection.find('.vendor').each(function(){
+					var useCaseIds = $(this).attr('data-use-case-ids');
+					if (!useCaseIds.split(',').contains(useCaseId)) {
+						$(this).hide();
+					}
+				});
+			}
+
+			// Hide the preheading
+			var $prehead_section = $('#pre' + $tiles_section.attr('data-partner'));
+			$nextpreheadsection = $prehead_section.nextAll('.prehead').first();
+			$nextpreheadsection.animate({opacity: 0}, 100, function() {
+				$nextpreheadsection.hide()} 
+			);
+
+			// Show the next heading
+			$head_section.nextAll('.dynamic-head').first().show().animate({opacity: '1'}, 100, function() {
+				// show the next section's tiles
+				//$nexttilesection.show().animate({height: $nexttilesection.scrollHeight}, 800, function() {$(this).height('auto')});
+				$nexttilesection.height('auto').slideToggle(600, function() {});
+			});
+		});
 	});
 
 	$('.boff').click(function(e) {
@@ -203,9 +212,6 @@ $(document).ready(function() {
 		var $tiles_section = $('#' + $prev_head_section.attr('data-partner'));
 		$tiles_section.nextAll('.dynamic-tiles').animate({height: '0px'}, 10, function() {$tiles_section.nextAll('.dynamic-tiles').hide()});
 		$tiles_section.show().animate({height: $tiles_section.scrollHeight}, 700, function() {$(this).height('auto')});
-
-		// Reset all tiles to unselected, and continue button to inactive
-		resetTilesAndButtons();
 	});
 
 	$('.reset').click(function(e) {
@@ -221,9 +227,6 @@ $(document).ready(function() {
 		var $tiles_section = $('#' + $head_section.attr('data-partner'));
 		$tiles_section.animate({height: '0px'}, 10, function() {$tiles_section.hide()});
 		$tiles_section.siblings('.dynamic-tiles').first().show().animate({height: $tiles_section.siblings('.dynamic-tiles').first().get(0).scrollHeight}, 700, function() {$(this).height('auto')});
-
-		// Reset all tiles to unselected, and continue button to inactive
-		resetTilesAndButtons();
 	});
 
 	$('#chatbot').click(function() {
@@ -237,11 +240,3 @@ $(document).ready(function() {
 		}
 	});
 });
-
-function resetTilesAndButtons() {
-	$('.tile').removeClass('selected');
-	$('.continue').addClass('boff').addClass('binactive').removeClass('active').unbind('click');
-	$('.boff').click(function(e) {
-		e.preventDefault();
-	});
-}
