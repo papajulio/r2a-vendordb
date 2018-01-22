@@ -1,6 +1,3 @@
-h2 {
-	font-size: 35px;
-}
 .sqs-layout > .sqs-row {
 	margin-left: 0;
 	margin-right: 0;
@@ -83,7 +80,7 @@ h2 {
 }
 
 #overlay {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -321,7 +318,7 @@ h1 {
 }
 
 h2 {
-    font-size: 38px;
+    font-size: 35px;
 }
 h3 {
 	font-size: 20px;
@@ -353,6 +350,7 @@ h2.left {
 
 .sqs-block {
 	padding-top: 0;
+	padding-bottom: 18px;
 }
 .underline {
 	text-decoration: underline !important;

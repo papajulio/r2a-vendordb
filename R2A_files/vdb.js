@@ -131,7 +131,8 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		// Get the relevant elements
-		var $tiles_section = $(this).parents('.dynamic-tiles');
+		var $tile = $(this);
+		var $tiles_section = $tile.parents('.dynamic-tiles');
 		var $head_section = $('#' + $tiles_section.attr('data-partner'));
 
 		// Hide the current heading
@@ -143,20 +144,23 @@ $(document).ready(function() {
 		$tiles_section.animate({height: '0px'}, 400, function() {
 			$tiles_section.hide();
 
-			// Update the heading, and hide tiles that don't fall under the selected category
+			// Update the new heading before showing it
 			$('h3[data-filler="' + $tiles_section.attr('data-partner') + '"]').html($(this).children('h3').html());
+
+			// Before showing them, hide new tiles that don't fall under the selected category
 			$nexttilesection = $tiles_section.nextAll('.dynamic-tiles').first();
 			$nexttilesection.find('.use-case').show(); // show all
-			if($(this).parents('.objective')[0]) {
-				var objectiveId = $(this).parents('.objective').first().attr('data-objective-id');
+			$nexttilesection.find('.vendor').show(); // show all
+			if($tile.parents('.objective')[0]) {
+				var objectiveId = $tile.parents('.objective').first().attr('data-objective-id');
 				$nexttilesection.find('.use-case').each(function(){
 					var objectiveIds = $(this).attr('data-objective-ids');
 					if (!objectiveIds.split(',').contains(objectiveId)) {
 						$(this).hide();
 					}
 				});
-			} else if  ($(this).parents('.use-case')[0]) {
-				var useCaseId = $(this).parents('.use-case').first().attr('data-use-case-id');
+			} else if  ($tile.parents('.use-case')[0]) {
+				var useCaseId = $tile.parents('.use-case').first().attr('data-use-case-id');
 				$nexttilesection.find('.vendor').each(function(){
 					var useCaseIds = $(this).attr('data-use-case-ids');
 					if (!useCaseIds.split(',').contains(useCaseId)) {
@@ -186,7 +190,6 @@ $(document).ready(function() {
 	});
 
 	$(document).on('click', '.vtile', function() {
-		$('html, body').animate({scrollTop:0}, "fast");
 		$('#overlay').show(2);
 	});
 
