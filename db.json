@@ -130,7 +130,7 @@
             "technologies": [""],
             "description": "ABACUS/Regulator is BearingPoint’s standard software solution for regulators that supports regulatory data collection, data validation, data storage, data visualization as well as data remittance for example to pan-European authorities.",
             "contact": "",
-            "logo_url": "http://vendors.r2accelerator.org/R2A_files/vendor-logos/bearingpoint.png"
+            "logo_url": "http://vendors.r2accelerator.org/R2A_files/vendor-logos/bearing-point.png"
         },
         {
             "name": "SQL Power",
@@ -1027,7 +1027,7 @@
             "technologies": [""],
             "description": "Neurensic is the culmination of thousands of hours of collaborative research between data technologists and seasoned experts in the banking, compliance, and trading industries. We show financial institutions the true power of artificial intelligence by delivering clearly prioritized calls to action. This empowers decision makers to solve challenging business problems.",
             "contact": "sales@neurensic.com",
-            "logo_url": "http://vendors.r2accelerator.org/R2A_files/vendor-logos/"
+            "logo_url": "http://vendors.r2accelerator.org/R2A_files/vendor-logos/neurensic.jpg"
         },
         {
             "name": "New Banking",

@@ -286,7 +286,7 @@
 	float: left !important;
 }
 .bggrey .vtile .vlogo {
-	background: #fff;
+	background-color: #00a69c11;
 	height: 100%;
 	display: flex;
 }
@@ -296,7 +296,8 @@
     vertical-align: middle;
 }
 .bggrey .vtile .vlogo img {
-	width: 100%;
+	width: 80%;
+    margin: 0 10%;
 	object-fit: contain;
 	object-position: center;
 }
