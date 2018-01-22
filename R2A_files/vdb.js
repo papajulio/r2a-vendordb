@@ -122,6 +122,10 @@ $(document).ready(function() {
 		$("#tiles1 .tile").parents('.main-row').not('[data-categories~="'+category+'"]').hide();
 		$("#tiles1 .tile").parents('.main-row[data-categories~="'+category+'"]').show();
 	});
+	$(document).on('click', '.cat.selected', function() {
+		$('.cat').removeClass('selected');
+		$('#tiles1 .tile').parents('.main-row').show();
+	});
 
 	$(document).on('click', '.tile', function(e) {
 		e.preventDefault();

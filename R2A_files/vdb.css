@@ -222,8 +222,11 @@
 }
 .bggrey .cats .cat.selected {
 	border-color: #00a69c;
-	background-color: #00a69c;
+	background-color: #00a69e;
 	color: white;
+}
+.bggrey .cats .cat.selected:hover {
+	background-color: rgba(0, 166, 158, 0.8);
 }
 .bggrey .cats .cat i {
 	font-size: 2em;
