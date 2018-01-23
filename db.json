@@ -121,16 +121,16 @@
     ],
     "vendors": [{
             "name": "BearingPoint",
-            "url": "http://www.bessgmbh.com/en/products/abacus-regulator/ and partners: http://www.bessgmbh.com/en/about-us/partners/",
+            "url": "http://www.bessgmbh.com/en/products/abacus-regulator/",
             "geographies": [""],
             "location": "",
             "tagline": "",
-            "use_cases": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            "use_cases": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
             "use_cases_text": ["Regulatory Reporting"],
             "technologies": [""],
             "description": "ABACUS/Regulator is BearingPoint’s standard software solution for regulators that supports regulatory data collection, data validation, data storage, data visualization as well as data remittance for example to pan-European authorities.",
             "contact": "",
-            "logo_url": "http://vendors.r2accelerator.org/R2A_files/vendor-logos/bearing-point.png"
+            "logo_url": "http://vendors.r2accelerator.org/R2A_files/vendor-logos/bearingpoint.png"
         },
         {
             "name": "SQL Power",

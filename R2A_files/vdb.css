@@ -184,6 +184,7 @@
 .bggrey .tile:hover {
 	background-color: #d8f2f0;
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
+    transition: .35s;
 }
 .bggrey .tile:active {
 	background-color: #00a69e;
@@ -192,6 +193,7 @@
 .bggrey .tile:active:hover {
 	background-color: rgba(0, 166, 158, 0.8);
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
+    transition: .35s;
 }
 .bggrey .tile:active h3,
 .bggrey .tile:active ul li {
@@ -226,6 +228,7 @@
 }
 .bggrey .cats .cat.selected:hover {
 	background-color: rgba(0, 166, 158, 0.8);
+	transition: .35s;
 }
 .bggrey .cats .cat i {
 	font-size: 2em;
@@ -276,6 +279,7 @@
 }
 .bggrey .vtile:hover {
 	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
+	transition: .35s;
 }
 .sqs-layout .sqs-col-1-5, .span-1-5 {
 	width: 15% !important;
@@ -376,6 +380,7 @@ p.button a {
 p.button:hover {
 	cursor: pointer;
 	box-shadow: 0 8px 16px 0 rgba(2, 59, 72, 0.75);
+	transition: .35s;
 }
 p.button:active {
 	background-color: rgba(2, 59, 72, 0.9);
@@ -411,6 +416,14 @@ p.button.bempty:hover,
 .cat:hover {
 	box-shadow: none;
 	background-color: rgba(136, 136, 136, 0.1);
+	transition: .35s;
+}
+p.button.edit {
+	width: 116px;
+}
+p.button.vendorlist:hover {
+	background-color: rgba(2, 59, 72, 0.1);
+	transition: .35s;
 }
 p.button.binactive:active,
 p.button.bempty:active,
@@ -435,6 +448,7 @@ p.button.boff {
 }
 p.button.boff:hover {
 	box-shadow: none;
+	transition: .35s;
 }
 
 p.link {
@@ -445,6 +459,7 @@ p.link {
 }
 p.link:hover {
 	text-decoration: underline;
+	transition: .35s;
 }
 
 .tags {
