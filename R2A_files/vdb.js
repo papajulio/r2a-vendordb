@@ -88,9 +88,10 @@ $(document).ready(function() {
 			       							<span class="helper"></span><img src="' + v.logo_url + '" />\
 			        					</div>\
 			        					<div class="vcontent col sqs-col-8-5 span-8-5">\
-			       							<h4>' + v.name + '</h4>\
+			       							<h4 id="vname">' + v.name + '</h4>\
 			       							<p>' + v.location + '</p>\
 			       							<p>' + technologiesString + '</p>\
+			       							<p style="display:none" id="vdesc">' + v.description + '</p>\
 			        					</div>\
 			        				</div>\
 		        					<div class="col sqs-col-1 span-1">\
@@ -190,6 +191,10 @@ $(document).ready(function() {
 	});
 
 	$(document).on('click', '.vtile', function() {
+		var vname = $(this).find('#vname').html();
+		var vdesc = $(this).find('#vdesc').html();
+		$('#overlay #vendor-name').html(vname);
+		$('#overlay #vendor-desc').html(vdesc);
 		$('#overlay').show(2);
 	});
 
