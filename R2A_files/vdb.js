@@ -14,6 +14,24 @@ function capitalizeFirstLetter(str) {
 function hyphenize(str) {
 	return str.replace(/\s+/g, '-').toLowerCase();
 }
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 $(document).ready(function() {
 	/* Read in db */
@@ -69,7 +87,7 @@ $(document).ready(function() {
 		}
 
 		// Populate vendors
-		var vendors = json.vendors;
+		var vendors = shuffle(json.vendors);
 		for (var i = 0; i < vendors.length; i++) {
 			var v = vendors[i];
 			var technologiesString = "";
@@ -146,7 +164,7 @@ $(document).ready(function() {
 			$tiles_section.hide();
 
 			// Update the new heading before showing it
-			$('h3[data-filler="' + $tiles_section.attr('data-partner') + '"]').html($(this).children('h3').html());
+			$('h3[data-filler="' + $tiles_section.attr('data-partner') + '"]').html($tile.children('h3').html());
 
 			// Before showing them, hide new tiles that don't fall under the selected category
 			$nexttilesection = $tiles_section.nextAll('.dynamic-tiles').first();
@@ -156,7 +174,7 @@ $(document).ready(function() {
 				var objectiveId = $tile.parents('.objective').first().attr('data-objective-id');
 				$nexttilesection.find('.use-case').each(function(){
 					var objectiveIds = $(this).attr('data-objective-ids');
-					if (!objectiveIds.split(',').contains(objectiveId)) {
+					if (!objectiveIds.split(',').includes(objectiveId)) {
 						$(this).hide();
 					}
 				});
@@ -164,7 +182,7 @@ $(document).ready(function() {
 				var useCaseId = $tile.parents('.use-case').first().attr('data-use-case-id');
 				$nexttilesection.find('.vendor').each(function(){
 					var useCaseIds = $(this).attr('data-use-case-ids');
-					if (!useCaseIds.split(',').contains(useCaseId)) {
+					if (!useCaseIds.split(',').includes(useCaseId)) {
 						$(this).hide();
 					}
 				});
@@ -194,12 +212,23 @@ $(document).ready(function() {
 		var vname = $(this).find('#vname').html();
 		var vdesc = $(this).find('#vdesc').html();
 		$('#overlay #vendor-name').html(vname);
+		$('#overlay input[name="vendor"]').val(vname);
 		$('#overlay #vendor-desc').html(vdesc);
 		$('#overlay').show(2);
+
+		// Lock scrolling
+		$('body').css({'overflow':'hidden'});
+		$(document).bind('scroll',function () { 
+		     window.scrollTo(0,0); 
+		});
 	});
 
 	$("#overlay #close").click(function() {
 		$('#overlay').hide();
+
+		// unlock scrolling
+		$(document).unbind('scroll'); 
+  		$('body').css({'overflow':'visible'});
 	});
 
 	$('.edit').click(function(e) {

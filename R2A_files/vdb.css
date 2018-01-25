@@ -87,6 +87,7 @@
 	height: 100%;
 	background: rgba(0, 0, 0, 0.67);
 	z-index: 10000;
+	overflow: scroll;
 }
 #overlay h1 {
 	margin-top: 16px;
@@ -105,16 +106,10 @@
 #overlay span.required {
 	display: none;
 }
-#overlay div.span-8 {
+#overlay div.span-4.white {
 	background: white;
 }
 @media screen and (min-width: 800px) {
-	#overlay div.span-8 {
-		width: 600px;
-		position: absolute;
-		left: 50%;
-		margin-left: -300px;
-	}
 	#overlay #overlay-form {
 		top: 192px;
 	}

@@ -4,6 +4,24 @@ function hyphenize(str) {
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 $(document).ready(function() {
 	/* Read in db */
@@ -34,7 +52,7 @@ $(document).ready(function() {
 		}
 
 		// Populate vendors
-		var vendors = json.vendors;
+		var vendors = shuffle(json.vendors);
 		for (var i = 0; i < vendors.length; i++) {
 			var v = vendors[i];
 			var technologiesString = "";
@@ -53,9 +71,10 @@ $(document).ready(function() {
 			       							<span class="helper"></span><img src="' + v.logo_url + '" />\
 			        					</div>\
 			        					<div class="vcontent col sqs-col-8-5 span-8-5">\
-			       							<h4>' + v.name + '</h4>\
+			       							<h4 id="vname">' + v.name + '</h4>\
 			       							<p>' + v.location + '</p>\
 			       							<p>' + technologiesString + '</p>\
+			       							<p style="display:none" id="vdesc">' + v.description + '</p>\
 			        					</div>\
 			        				</div>\
 		        					<div class="col sqs-col-1 span-1">\
@@ -72,10 +91,33 @@ $(document).ready(function() {
 		if (useCaseId) {
 			$('.vendor').each(function(){
 				var useCaseIds = $(this).attr('data-use-case-ids');
-				if (!useCaseIds.split(',').contains(useCaseId)) {
+				if (!useCaseIds.split(',').includes(useCaseId)) {
 					$(this).hide();
 				}
 			});
 		}
+	});
+
+	$(document).on('click', '.vtile', function() {
+		var vname = $(this).find('#vname').html();
+		var vdesc = $(this).find('#vdesc').html();
+		$('#overlay #vendor-name').html(vname);
+		$('#overlay input[name="vendor"]').val(vname);
+		$('#overlay #vendor-desc').html(vdesc);
+		$('#overlay').show(2);
+
+		// Lock scrolling
+		$('body').css({'overflow':'hidden'});
+		$(document).bind('scroll',function () { 
+		     window.scrollTo(0,0); 
+		});
+	});
+
+	$("#overlay #close").click(function() {
+		$('#overlay').hide();
+
+		// unlock scrolling
+		$(document).unbind('scroll'); 
+  		$('body').css({'overflow':'visible'});
 	});
 });
