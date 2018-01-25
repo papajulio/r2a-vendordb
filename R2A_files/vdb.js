@@ -110,6 +110,7 @@ $(document).ready(function() {
 			       							<p>' + v.location + '</p>\
 			       							<p>' + technologiesString + '</p>\
 			       							<p style="display:none" id="vdesc">' + v.description + '</p>\
+			       							<p style="display:none" id="vurl">' + v.url + '</p>\
 			        					</div>\
 			        				</div>\
 		        					<div class="col sqs-col-1 span-1">\
@@ -211,6 +212,8 @@ $(document).ready(function() {
 	$(document).on('click', '.vtile', function() {
 		var vname = $(this).find('#vname').html();
 		var vdesc = $(this).find('#vdesc').html();
+		var vurl = $(this).find('#vurl').html();
+		if (vurl) { vdesc += ' (<a target="_blank" href="' + vurl + '">website</a>)'; }
 		$('#overlay #vendor-name').html(vname);
 		$('#overlay input[name="vendor"]').val(vname);
 		$('#overlay #vendor-desc').html(vdesc);
