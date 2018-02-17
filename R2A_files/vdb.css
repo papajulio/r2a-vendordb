@@ -256,6 +256,10 @@
 	margin: 0;
 	padding: 12px 12px 0px 12px;
 }
+.use_case {
+	width: 75%;
+	padding-bottom: 12px !important;
+}
 .bggrey .span-1 {
 	height: 0.03px;
 }
@@ -308,6 +312,44 @@
 .bggrey .vtile .vcontent p {
 	padding: 0 0 0 16px;
 	margin: 6px;
+}
+.bggrey .vtile .vcontent h4 {
+  height: 24px;
+  font-family: Europa;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: #444444;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+.bggrey .vtile .vcontent p.location {
+  height: 19px;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #888888;
+}
+.bggrey .vtile .vcontent p.technologies {
+  height: 19px;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #444444;
 }
 .oldtitle {
 	color: #888;
@@ -459,6 +501,7 @@ p.link:hover {
 
 .tags {
 	margin-top: 4px;
+	margin-bottom: 0;
 	color: #888;
 	font-weight: normal;
 	padding-left: 16px;

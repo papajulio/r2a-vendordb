@@ -51,45 +51,58 @@ $(document).ready(function() {
 		var objectives = json.objectives;
 		for (var i = 0; i < objectives.length; i++) {
 		    var o = objectives[i];
+		    
 		    var personasString = "";
 		    var personasList = "";
 		    for (var j = 0; j < o.personas.length; j++) {
 		    	personasString += hyphenize(personas[o.personas[j]].name) + " ";
 		    	personasList += '<li>' + capitalizeFirstLetter(personas[o.personas[j]].name) + '</li>';
 		    }
+
+		    // Populate use cases
+		    var use_cases = json.use_cases;
+		    useCasesString = "";
+			for (var k = 0; k < use_cases.length; k++) {
+				var uc = use_cases[k];
+				if (uc.objectives.includes(i)) {
+					if (useCasesString) {
+						useCasesString += ", ";
+					}
+					useCasesString += capitalizeFirstLetter(uc.name);
+				}
+			}
+
 		    $('#tiles1').append($('<div class="main-row row sqs-row objective" id="yui_3_17_2_1_1509478945824_116" data-objective-id="' + i + '" data-categories="' + personasString + '">\
 		        			<div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
 		        				<div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
 		        					<div class="tile col sqs-col-12 span-12">\
 		       							<h3>' + capitalizeFirstLetter(o.name) + '</h3>\
 		       							<ul class="tags">' + personasList + '</ul>\
-		       							<div class="clear">&nbsp;</div>\
+		       							<p class="use_case clear">' + useCasesString + '</p>\
 		        					</div>\
 		        				</div>\
 		        			</div>\
 		        		</div>'));
 		}
 
-		// Populate use cases
-		var use_cases = json.use_cases;
-		for (var i = 0; i < use_cases.length; i++) {
-			var uc = use_cases[i];
-			$('#tiles2').append($('<div class="row sqs-row use-case" id="yui_3_17_2_1_1509478945824_116" data-use-case-id="' + i + '" data-objective-ids="' + uc.objectives.join() + '">\
+		// Add button
+		$('#tiles1').append($('<div class="main-row row sqs-row objective adder" id="yui_3_17_2_1_1509478945824_116" data-objective-id="' + i + '" data-categories="">\
 		        			<div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
 		        				<div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
 		        					<div class="tile col sqs-col-12 span-12">\
-		       							<h3>' + capitalizeFirstLetter(uc.name) + '</h3>\
-		       							<div class="clear">&nbsp;</div>\
+		       							<h3>Add an Objective</h3>\
+		       							<ul class="tags"><li></li></ul>\
+		       							<p class="use_case clear">Don\'t see your objective listed? Click here to request an addition.</p>\
 		        					</div>\
 		        				</div>\
 		        			</div>\
 		        		</div>'));
-		}
 
 		// Populate vendors
 		var vendors = shuffle(json.vendors);
 		for (var i = 0; i < vendors.length; i++) {
 			var v = vendors[i];
+			
 			var technologiesString = "";
 		    for (var j = 0; j < v.technologies.length; j++) {
 		    	technologiesString += v.technologies[j]; 
@@ -97,7 +110,16 @@ $(document).ready(function() {
 		    		technologiesString += ", ";
 		    	}
 		    }
-			$('#vendor-holder').append('<div class="row sqs-row vendor" id="yui_3_17_2_1_1509478945824_114" data-use-case-ids="' + v.use_cases.join() + '">\
+
+		    var objective_ids = [];
+		    for (var k = 0; k < v.use_cases.length; k++) {
+		    	var uc = json.use_cases[v.use_cases[k]];
+		    	for (var l = 0; l < uc.objectives.length; l++) {
+		    		if (!objective_ids.includes(uc.objectives[l])) objective_ids.push(uc.objectives[l]);
+				}
+		    }
+
+			$('#vendor-holder').append('<div class="row sqs-row vendor" id="yui_3_17_2_1_1509478945824_114" data-use-case-ids="' + v.use_cases.join() + '" data-objective-ids="' + objective_ids.join() + '">\
 		        					<div class="col sqs-col-1 span-1">\
 		        						&nbsp;\
 		        					</div>\
@@ -107,8 +129,8 @@ $(document).ready(function() {
 			        					</div>\
 			        					<div class="vcontent col sqs-col-8-5 span-8-5">\
 			       							<h4 id="vname">' + v.name + '</h4>\
-			       							<p>' + v.location + '</p>\
-			       							<p>' + technologiesString + '</p>\
+			       							<p class="location">' + v.location + '</p>\
+			       							<p class="technologies">' + technologiesString + '</p>\
 			       							<p style="display:none" id="vdesc">' + v.description + '</p>\
 			       							<p style="display:none" id="vurl">' + v.url + '</p>\
 			        					</div>\
@@ -118,19 +140,48 @@ $(document).ready(function() {
 		        					</div>\
 		        				</div>');
 		}
+		$('#vendor-holder').append('<div class="row sqs-row vendor adder" id="yui_3_17_2_1_1509478945824_114" data-use-case-ids="">\
+		        					<div class="col sqs-col-1 span-1">\
+		        						&nbsp;\
+		        					</div>\
+		        					<div class="vtile col sqs-col-10 span-10">\
+			        					<div class="vlogo col sqs-col-1-5 span-1-5">\
+			       							<span class="helper"></span><img src="" />\
+			        					</div>\
+			        					<div class="vcontent col sqs-col-8-5 span-8-5">\
+			       							<h4 id="vname">Add a Vendor</h4>\
+			       							<p></p>\
+			       							<p>Do you know a vendor that fits this use case? Click here to request an addition.</p>\
+			       							<p style="display:none" id="vdesc"></p>\
+			       							<p style="display:none" id="vurl"></p>\
+			        					</div>\
+			        				</div>\
+		        					<div class="col sqs-col-1 span-1">\
+		       							&nbsp;\
+		        					</div>\
+		        				</div>');
 	});
 
 	$('.continue').click(function(e) {
 		e.preventDefault();
 	});
 
+	if (localStorage.getItem('disclaimer') == 'shown') {
+		goToStep1(1);
+	}
+
 	$('#get-started').click(function(e) {
 		e.preventDefault();
-		$('#intro').animate({opacity: 0}, 100, function() {$('#intro').hide()} );
-		$('#prehead1').animate({opacity: 0}, 100, function() {$('#prehead1').hide()} );
-		$('#head1').show().animate({opacity: '1'}, 100);
-		$('#tiles1').show().animate({opacity: '1'}, 400).animate({height: $('#tiles1').scrollHeight}, 400, function() {$(this).height('auto')});
-	})
+		goToStep1(100);
+		localStorage.setItem('disclaimer','shown');
+	});
+
+	function goToStep1(delay) {
+		$('#intro').animate({opacity: 0}, delay, function() {$('#intro').hide()} );
+		$('#prehead1').animate({opacity: 0}, delay, function() {$('#prehead1').hide()} );
+		$('#head1').show().animate({opacity: '1'}, delay);
+		$('#tiles1').show().animate({opacity: '1'}, 4*delay).animate({height: $('#tiles1').scrollHeight}, 4*delay, function() {$(this).height('auto')});
+	}
 
 	$(document).on('click', '.cat', function() {
 		// highlight the category tile
@@ -141,13 +192,14 @@ $(document).ready(function() {
 		var category = $(this).attr('data-category-activate');
 		$("#tiles1 .tile").parents('.main-row').not('[data-categories~="'+category+'"]').hide();
 		$("#tiles1 .tile").parents('.main-row[data-categories~="'+category+'"]').show();
+		$("#tiles1 .tile").parents('.main-row.adder').show();
 	});
 	$(document).on('click', '.cat.selected', function() {
 		$('.cat').removeClass('selected');
 		$('#tiles1 .tile').parents('.main-row').show();
 	});
 
-	$(document).on('click', '.tile', function(e) {
+	$(document).on('click', '.main-row:not(.adder) .tile', function(e) {
 		e.preventDefault();
 
 		// Get the relevant elements
@@ -173,17 +225,9 @@ $(document).ready(function() {
 			$nexttilesection.find('.vendor').show(); // show all
 			if($tile.parents('.objective')[0]) {
 				var objectiveId = $tile.parents('.objective').first().attr('data-objective-id');
-				$nexttilesection.find('.use-case').each(function(){
-					var objectiveIds = $(this).attr('data-objective-ids');
-					if (!objectiveIds.split(',').includes(objectiveId)) {
-						$(this).hide();
-					}
-				});
-			} else if  ($tile.parents('.use-case')[0]) {
-				var useCaseId = $tile.parents('.use-case').first().attr('data-use-case-id');
 				$nexttilesection.find('.vendor').each(function(){
-					var useCaseIds = $(this).attr('data-use-case-ids');
-					if (!useCaseIds.split(',').includes(useCaseId)) {
+					var objectiveIds = $(this).attr('data-objective-ids');
+					if (!objectiveIds || !objectiveIds.split(',').includes(objectiveId)) {
 						$(this).hide();
 					}
 				});
@@ -203,6 +247,11 @@ $(document).ready(function() {
 				$nexttilesection.height('auto').slideToggle(600, function() {});
 			});
 		});
+	});
+
+	$(document).on('click', '.adder', function(e) {
+		e.preventDefault();
+		alert("Please contact us at info@r2accelerator.org");
 	});
 
 	$('.boff').click(function(e) {
