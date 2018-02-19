@@ -176,10 +176,16 @@
     float: none;
     min-height: 48px;
 }
+.bggrey .adder .tile {
+	background-color: #d8f2f0;
+}
 .bggrey .tile:hover {
 	background-color: #d8f2f0;
     box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
     transition: .35s;
+}
+.bggrey .adder .tile:hover {
+	background-color: #00a69e;
 }
 .bggrey .tile:active {
 	background-color: #00a69e;
@@ -191,7 +197,9 @@
     transition: .35s;
 }
 .bggrey .tile:active h3,
-.bggrey .tile:active ul li {
+.bggrey .tile:active ul li,
+.bggrey .adder .tile:hover h3,
+.bggrey .adder .tile:hover ul li {
 	color: white;
 }
 .bggrey .cats {
