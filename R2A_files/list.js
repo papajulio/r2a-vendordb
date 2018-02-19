@@ -113,7 +113,7 @@ $(document).ready(function() {
 		        					</div>\
 		        					<div class="vtile col sqs-col-10 span-10">\
 			        					<div class="vlogo col sqs-col-1-5 span-1-5">\
-			       							<span class="helper"></span><img src="" />\
+			       							<span class="helper"></span><img src="/R2A_files/vendor-logos/r2a.png" />\
 			        					</div>\
 			        					<div class="vcontent col sqs-col-8-5 span-8-5">\
 			       							<h4 id="vname">Add a Vendor</h4>\
@@ -141,6 +141,7 @@ $(document).ready(function() {
 				}
 			});
 		}
+		$('.vendor.adder').show(); // show add section
 	});
 
 	$(document).on('click', '.vtile', function() {

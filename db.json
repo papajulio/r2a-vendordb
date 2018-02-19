@@ -220,6 +220,20 @@
         },
         {
             "full_only": false,
+            "name": "Compliant Risk Technology (CRT)",
+            "url": "https://www.crt.hr",
+            "geographies": ["Global"],
+            "location": "Croatia",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 6, 7, 10],
+            "use_cases_text": [""],
+            "technologies": ["Application Programming Interfaces", "Compliance Reporting"],
+            "description": "For regulators we provide integral solutions which facilitate their fast creation and publishing of reporting templates for the automated collection and the process of information, as well as fast, accurate and timely adjustment in line with new market conditions. On the other hand, we provide optimal tools to undertakers for delivering their reports to achieve optimal, accurate and timely flow of information.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/crt.png"
+        },
+        {
+            "full_only": false,
             "name": "Carto",
             "url": "https://carto.com/",
             "geographies": ["Global"],
@@ -261,6 +275,20 @@
             "logo_url": "/R2A_files/vendor-logos/esri.png"
         },
         {
+            "full_only": true,
+            "name": "Temenos SocialComply",
+            "url": "https://www.temenos.com/en/solutions/products/risk--compliance/socialmediacompliance/",
+            "geographies": ["Switzerland"],
+            "location": "Switzerland",
+            "tagline": "",
+            "use_cases": [2, 3, 5, 7, 8, 9],
+            "use_cases_text": ["Regulatory Compliance", "Regulatory Reporting"],
+            "technologies": ["Social Media Analysis"],
+            "description": "Temenos' objective is to ensure all of our customers receive the highest level of value from the Risk and Compliance product family. Products from the Temenos Risk and Compliance family can be implemented for even the largest financial institution in a matter of days. Compliance Services, Social Media Compliance, Vendor Management and Stress Testing SaaS solutions can all be implemented with a simple set up form and a training session.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/temenos.png"
+        },
+        {
             "full_only": false,
             "name": "IPSoft Amelia",
             "url": "https://www.ipsoft.com/amelia/",
@@ -273,6 +301,48 @@
             "description": "Amelia understands the underlying meaning of your statements and can engage in fluid conversations. As she detects a customer’s mood, she is able to adapt the content of her responses and associated expressions to create a truly personal experience.",
             "contact": "",
             "logo_url": "/R2A_files/vendor-logos/ipsoft.png"
+        },
+        {
+            "full_only": false,
+            "name": "Amazon Web Services",
+            "url": "https://aws.amazon.com/financial-services/security-compliance/",
+            "geographies": ["Global"],
+            "location": "Seattle",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 4, 6, 7, 8, 9, 10],
+            "use_cases_text": [""],
+            "technologies": ["Cloud Computing"],
+            "description": "The Financial Services industry attracts some of the most hostile information security threats and is one of the most regulated industries in the world. AWS understands these obligations and has worked with the most complex Financial Services organizations to meet security and compliance requirements at every stage of their respective cloud journeys.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/aws.png"
+        },
+        {
+            "full_only": false,
+            "name": "Google Cloud Platform",
+            "url": "https://cloud.google.com/solutions/financial-services/",
+            "geographies": ["Global"],
+            "location": "San Francisco",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 4, 6, 7, 8, 9, 10],
+            "use_cases_text": [""],
+            "technologies": ["Cloud Computing"],
+            "description": "Google Cloud Platform can identify trends in massive, noisy datasets from diverse sources, provide companies with secure and efficient IT consumption models, archive large volumes of sensitive data — and most promising of all, unleash the latest machine learning techniques on dynamic market events and a wide range of real-world data.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/google.png"
+        },
+        {
+            "full_only": false,
+            "name": "Microsoft Azure",
+            "url": "https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings",
+            "geographies": ["Global"],
+            "location": "Seattle",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 4, 6, 7, 8, 9, 10],
+            "use_cases_text": [""],
+            "technologies": ["Cloud Computing"],
+            "description": "To help you comply with national, regional, and industry-specific requirements governing the collection and use of individuals’ data, Microsoft offers the most comprehensive set of compliance offerings of any cloud service provider.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/microsoft.png"
         },
         {
             "full_only": true,
@@ -1519,20 +1589,6 @@
             "description": "We are passionate about regulation and want to unlock its full potential. As we have designed our technology specifically around regulatory concerns, banks can finally achieve continuous compliance, manage their costs and easily conduct analysis.",
             "contact": "info@suade.org",
             "logo_url": "/R2A_files/vendor-logos/suade.png"
-        },
-        {
-            "full_only": true,
-            "name": "Temenos",
-            "url": "https://www.temenos.com",
-            "geographies": ["Switzerland"],
-            "location": "Switzerland",
-            "tagline": "",
-            "use_cases": [0, 2, 3, 4, 5, 11, 2, 6, 7],
-            "use_cases_text": ["Regulatory Compliance", "Regulatory Reporting"],
-            "technologies": [""],
-            "description": "Temenos' objective is to ensure all of our customers receive the highest level of value from the Risk and Compliance product family. Products from the Temenos Risk and Compliance family can be implemented for even the largest financial institution in a matter of days. Compliance Services, Social Media Compliance, Vendor Management and Stress Testing SaaS solutions can all be implemented with a simple set up form and a training session.",
-            "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/temenos.png"
         },
         {
             "full_only": true,
