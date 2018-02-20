@@ -374,6 +374,20 @@
         },
         {
             "full_only": false,
+            "name": "Clare.AI",
+            "url": "https://www.clare.ai/",
+            "geographies": ["Asia"],
+            "location": "Hong Kong",
+            "tagline": "",
+            "use_cases": [0, 1],
+            "use_cases_text": [""],
+            "technologies": ["Chatbot", "Natural Language Processing"],
+            "description": "White label end-to-end digital assistant solution powered by Artificial Intelligence and Natural Language Processing. Grow your business in the emerging Asia markets with our Natural Language Processing and digital assistant solution that support more than 11 Asian languages.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/clareai.png"
+        },
+        {
+            "full_only": false,
             "name": "Amazon Web Services",
             "url": "https://aws.amazon.com/financial-services/security-compliance/",
             "geographies": ["Global"],
