@@ -220,6 +220,20 @@
         },
         {
             "full_only": false,
+            "name": "BearingPoint",
+            "url": "http://www.bessgmbh.com/en/products/abacus-regulator/",
+            "geographies": [""],
+            "location": "",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 6, 7, 10],
+            "use_cases_text": ["Regulatory Reporting"],
+            "technologies": ["Application Programming Interfaces", "Cloud Computing"],
+            "description": "ABACUS/Regulator is BearingPoint’s standard software solution for regulators that supports regulatory data collection, data validation, data storage, data visualization as well as data remittance for example to pan-European authorities.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/bearingpoint.png"
+        },
+        {
+            "full_only": false,
             "name": "DivDoc",
             "url": "http://www.divdoc.me/",
             "geographies": ["Global"],
@@ -332,6 +346,62 @@
         },
         {
             "full_only": false,
+            "name": "Hello Vera",
+            "url": "https://www.hellovera.ai/",
+            "geographies": ["Global"],
+            "location": "New York",
+            "tagline": "",
+            "use_cases": [2, 3, 5, 7, 8, 9],
+            "use_cases_text": [],
+            "technologies": ["Social Media Analysis", "Natural Language Processing", "Chotbots"],
+            "description": "Founded in 2016 by a pair of world renowned researchers, Hello Vera’s goal is to help clients to improve their customer service through artificial intelligence technology. Our customer service artificial intelligence agent Vera has outperformed state of the art technologies at a variety of tasks on a number of benchmark data sets, and it has proven to more than triple our clients' customer service effectiveness.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/hellovera.png"
+        },
+        {
+            "full_only": false,
+            "name": "Squirro",
+            "url": "https://squirro.com/",
+            "geographies": ["Global"],
+            "location": "Switzerland",
+            "tagline": "",
+            "use_cases": [2, 3, 5, 7, 8, 9],
+            "use_cases_text": [],
+            "technologies": ["Machine Learning", "Anomaly Detection", "Social Media Analysis"],
+            "description": "Squirro is a modern Cognitive Insights Engine that uses Predictive Analytics, Machine Learning and more to enable you to turn even unstructured data into actions.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/squirro.png"
+        },
+        {
+            "full_only": false,
+            "name": "Enforcd",
+            "url": "https://www.enforcd.com/",
+            "geographies": ["UK"],
+            "location": "UK",
+            "tagline": "",
+            "use_cases": [2, 3, 5, 7, 8, 9],
+            "use_cases_text": ["Risk Assessment", "Regulatory Compliance"],
+            "technologies": ["Machine Learning", "Anomaly Detection"],
+            "description": "Enforcd is a young, innovative company that uses technology to aid regulatory compliance. Our flagship product is EDB – The Enforcement Database, which uses global regulatory enforcement data, related news and insights to help firms to identify, manage and mitigate the conduct risks they face.",
+            "contact": "info@enforcd.com",
+            "logo_url": "/R2A_files/vendor-logos/enforcd.png"
+        },
+        {
+            "full_only": false,
+            "name": "Mindbridge.ai",
+            "url": "http://www.mindbridge.ai",
+            "geographies": ["Canada"],
+            "location": "Canada",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 6, 7],
+            "use_cases_text": ["Regulatory Compliance"],
+            "technologies": ["Machine Learning", "Anomaly Detection"],
+            "description": "The MindBridge Ai Auditor™ comes preloaded and is easy to use — no need for a training budget. In a world’s first, our platform delivers advanced risk-based analytics into your existing audit workflow. Drag and drop a file from one of many popular formats and in minutes our Ai Auditor™ provides you with analysis of all entries and transactions in the file while performing completeness checks and ensuring no tampering has occurred in the source file.",
+            "contact": "info@mindbridge.ai",
+            "logo_url": "/R2A_files/vendor-logos/mindbridge.png"
+        },
+        {
+            "full_only": false,
             "name": "Brainspace",
             "url": "https://www.brainspace.com/products/discovery/",
             "geographies": ["USA"],
@@ -371,6 +441,20 @@
             "description": "Amelia understands the underlying meaning of your statements and can engage in fluid conversations. As she detects a customer’s mood, she is able to adapt the content of her responses and associated expressions to create a truly personal experience.",
             "contact": "",
             "logo_url": "/R2A_files/vendor-logos/ipsoft.png"
+        },
+        {
+            "full_only": false,
+            "name": "BotAnalytics",
+            "url": "https://botanalytics.co/",
+            "geographies": ["Global"],
+            "location": "San Francisco",
+            "tagline": "",
+            "use_cases": [0, 1],
+            "use_cases_text": [""],
+            "technologies": ["Chatbot", "Analytics"],
+            "description": "Established in 2016, we’re committed to improving human-bot interactions and conversational UI through data. By offering analytics for bots, we empower bot developers, corporate brands and agencies to improve their chatbots with historical and real time conversation data.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/botanalytics.png"
         },
         {
             "full_only": false,
@@ -427,20 +511,6 @@
             "description": "To help you comply with national, regional, and industry-specific requirements governing the collection and use of individuals’ data, Microsoft offers the most comprehensive set of compliance offerings of any cloud service provider.",
             "contact": "",
             "logo_url": "/R2A_files/vendor-logos/microsoft.png"
-        },
-        {
-            "full_only": true,
-            "name": "BearingPoint",
-            "url": "http://www.bessgmbh.com/en/products/abacus-regulator/",
-            "geographies": [""],
-            "location": "",
-            "tagline": "",
-            "use_cases": [2, 3, 4, 5, 11],
-            "use_cases_text": ["Regulatory Reporting"],
-            "technologies": [""],
-            "description": "ABACUS/Regulator is BearingPoint’s standard software solution for regulators that supports regulatory data collection, data validation, data storage, data visualization as well as data remittance for example to pan-European authorities.",
-            "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/bearingpoint.png"
         },
         {
             "full_only": true,
@@ -917,20 +987,6 @@
             "description": "encompass is the creator of know your customer (KYC) automation for major financial and professional service firms globally. we are the only provider of simultaneous, real-time access to multiple sources of global company and person data. By using robotic search to discover everything your KYC policy demands, encompass delivers more efficient processes and faster, safer regulatory compliance, resulting in lower costs and superior risk management. Encompass’ products robotically search structured and unstructured information sources to automate your KYC, AML and EDD policies. Key elements including UBOs, PEPs, sanctions and adverse media are all identified, visualised and verified in seconds. Whether it’s one, or one thousand customers, enhanced risk assessment, monitoring and remediation can now be achieved at scale through the power of automation.",
             "contact": "info@encompasscorporation.com",
             "logo_url": "/R2A_files/vendor-logos/encompass.png"
-        },
-        {
-            "full_only": true,
-            "name": "Enforcd",
-            "url": "https://www.enforcd.com/",
-            "geographies": ["UK"],
-            "location": "",
-            "tagline": "",
-            "use_cases": [0, 1, 2, 6, 7, 8, 9, 10],
-            "use_cases_text": ["Risk Assessment", "Regulatory Compliance"],
-            "technologies": [""],
-            "description": "Enforcd is a young, innovative company that uses technology to aid regulatory compliance. Our flagship product is EDB – The Enforcement Database, which uses global regulatory enforcement data, related news and insights to help firms to identify, manage and mitigate the conduct risks they face.",
-            "contact": "info@enforcd.com",
-            "logo_url": "/R2A_files/vendor-logos/enforcd.png"
         },
         {
             "full_only": true,
@@ -1785,20 +1841,6 @@
             "description": "Vizor harness technology to make financial supervision easier, faster and more effective for financial regulators. We have created one, purpose built, intelligent software solution. One system to replace multiple disjointed systems. One system that supports the full supervisory lifecycle. One system that monitors and reports on the full financial picture.",
             "contact": "info@vizorsoftware.com",
             "logo_url": "/R2A_files/vendor-logos/vizor.png"
-        },
-        {
-            "full_only": true,
-            "name": "Mindbridge.ai",
-            "url": "http://www.mindbridge.ai",
-            "geographies": ["Canada"],
-            "location": "Canada",
-            "tagline": "",
-            "use_cases": [0, 1, 2, 6, 7],
-            "use_cases_text": ["Regulatory Compliance"],
-            "technologies": [""],
-            "description": "The MindBridge Ai Auditor™ comes preloaded and is easy to use — no need for a training budget. In a world’s first, our platform delivers advanced risk-based analytics into your existing audit workflow. Drag and drop a file from one of many popular formats and in minutes our Ai Auditor™ provides you with analysis of all entries and transactions in the file while performing completeness checks and ensuring no tampering has occurred in the source file.",
-            "contact": "info@mindbridge.ai",
-            "logo_url": "/R2A_files/vendor-logos/mindbridge.png"
         },
         {
             "full_only": true,
