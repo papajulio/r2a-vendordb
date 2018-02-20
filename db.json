@@ -206,7 +206,7 @@
         },
         {
             "full_only": false,
-            "name": "Gestell",
+            "name": "Gestell + Heuristics",
             "url": "http://gestell.co/",
             "geographies": ["Global"],
             "location": "Mexico City",
@@ -220,7 +220,21 @@
         },
         {
             "full_only": false,
-            "name": "Compliant Risk Technology (CRT)",
+            "name": "DivDoc",
+            "url": "http://www.divdoc.me/",
+            "geographies": ["Global"],
+            "location": "Penarth, Wales, UK",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 6, 7, 10],
+            "use_cases_text": [""],
+            "technologies": ["Application Programming Interfaces", "Cloud Computing"],
+            "description": "DivDoc is an online cloud-based solution designed to simplify compliance regulation for businesses and individuals. Built using modular workflows, DivDoc’s solution is fully-customisable and easily-integrated to suit the needs of all businesses.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/divdoc.png"
+        },
+        {
+            "full_only": false,
+            "name": "Compliant Risk Technology (CRT) + Pinecone",
             "url": "https://www.crt.hr",
             "geographies": ["Global"],
             "location": "Croatia",
@@ -231,6 +245,34 @@
             "description": "For regulators we provide integral solutions which facilitate their fast creation and publishing of reporting templates for the automated collection and the process of information, as well as fast, accurate and timely adjustment in line with new market conditions. On the other hand, we provide optimal tools to undertakers for delivering their reports to achieve optimal, accurate and timely flow of information.",
             "contact": "",
             "logo_url": "/R2A_files/vendor-logos/crt.png"
+        },
+        {
+            "full_only": false,
+            "name": "Software Group",
+            "url": "https://www.softwaregroup.com/about-us",
+            "geographies": ["Global"],
+            "location": "Bulgaria",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 6, 7, 10],
+            "use_cases_text": [""],
+            "technologies": ["Application Programming Interfaces", "Compliance Reporting"],
+            "description": "Software Group is a global technology company that is specialized in delivery channel and integration solutions for institutions that provide financial services. We help financial service providers digitize their business and successfully go through the process of digital transformation, extend their outreach and improve operational efficiency.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/softwaregroup.png"
+        },
+        {
+            "full_only": false,
+            "name": "Symfanet Plyable",
+            "url": "http://symfanet.com/",
+            "geographies": ["Global"],
+            "location": "London, UK",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 6, 7, 10],
+            "use_cases_text": [""],
+            "technologies": ["Application Programming Interfaces", "Compliance Reporting"],
+            "description": "Keeping the integrity of data and analytics from different sources is a time-consuming and costly problem. Rapidly evolving business and regulatory demands have only increased the difficulty. Plyable addresses this problem. When a spreadsheet can no longer meet your needs, Plyable scales with greater transparency and accessibility than a bespoke IT solution, leaving users to focus on their business problems without having to reinvent their existing systems.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/symfanet.png"
         },
         {
             "full_only": false,
@@ -272,13 +314,13 @@
             "technologies": ["GIS"],
             "description": "Tableau is designed to make the most of geographical data, so you can get to the “where” as well as the “why.” With instant geocoding, Tableau automatically turns the location data and information you already have into rich, interactive maps with 16 levels of zoom.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/esri.png"
+            "logo_url": "/R2A_files/vendor-logos/tableau.png"
         },
         {
-            "full_only": true,
+            "full_only": false,
             "name": "Temenos SocialComply",
             "url": "https://www.temenos.com/en/solutions/products/risk--compliance/socialmediacompliance/",
-            "geographies": ["Switzerland"],
+            "geographies": ["Global"],
             "location": "Switzerland",
             "tagline": "",
             "use_cases": [2, 3, 5, 7, 8, 9],
@@ -287,6 +329,34 @@
             "description": "Temenos' objective is to ensure all of our customers receive the highest level of value from the Risk and Compliance product family. Products from the Temenos Risk and Compliance family can be implemented for even the largest financial institution in a matter of days. Compliance Services, Social Media Compliance, Vendor Management and Stress Testing SaaS solutions can all be implemented with a simple set up form and a training session.",
             "contact": "",
             "logo_url": "/R2A_files/vendor-logos/temenos.png"
+        },
+        {
+            "full_only": false,
+            "name": "Brainspace",
+            "url": "https://www.brainspace.com/products/discovery/",
+            "geographies": ["USA"],
+            "location": "Dallas, TX",
+            "tagline": "",
+            "use_cases": [0, 1, 2, 3, 6, 7],
+            "use_cases_text": [""],
+            "technologies": ["OCR + Automated Content Analysis"],
+            "description": "Brainspace 6 is the industry’s most advanced software for digital investigations and unstructured data analysis. Built on our patented machine learning platform, Brainspace learns dynamically without the use of lexicons or taxonomies, giving users a powerful suite of interactive visualizations and search tools to reveal the story within your data.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/brainspace.png"
+        },
+        {
+            "full_only": false,
+            "name": "LegalRobot",
+            "url": "https://www.legalrobot.com/",
+            "geographies": ["USA"],
+            "location": "San Francisco",
+            "tagline": "",
+            "use_cases": [0, 1],
+            "use_cases_text": [""],
+            "technologies": ["OCR + Automated Content Analysis", "Natural Language Processing"],
+            "description": "Legal Robot transforms complex legal language into numeric expressions, where statistical and machine learning techniques can derive meaning. We combine each layer to form higher level concepts from words to sentences to themes. Legal Robot continuously compares thousands of documents to build a legal language model that we use to continuously expand our legal language analysis.",
+            "contact": "",
+            "logo_url": "/R2A_files/vendor-logos/legalrobot.png"
         },
         {
             "full_only": false,
