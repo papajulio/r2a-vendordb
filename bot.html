@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>convForm - example</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="R2A_files/jquery.convform.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="R2A_files/botdemo.css">
+</head>
+<body>
+	<section id="demo">
+	    <div class="vertical-align">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-6 col-sm-offset-3 col-xs-offset-0">
+	                	<div id="chathead">
+                    		<span>R²A Assistant</span>
+                    	</div>
+	                    <div class="card no-border">
+	                        <div id="chat" class="conv-form-wrapper">
+	                            <form action="" method="GET" class="hidden">
+	                            	<input type="text" conv-question="Hi there, and welcome to R²A's vendor database!" no-answer="true">
+	                            	<input type="text" conv-question="My name's Artu Ay, and I'm a chatbot here to help ensure you're getting what you came here for." no-answer="true">
+	                                <select name="wanthelp" conv-question="Would you like to hear more?">
+	                                    <option value="yes">Sure!</option>
+	                                    <option value="no">No, thanks.</option>
+	                                </select>
+	                                <div conv-fork="wanthelp">
+	                                    <div conv-case="yes">
+	                                        <input type="text" name="name" conv-question="Great! Our goal here is to most effectively aid you in bringing innovative products and services to the regulatory space.|Wonderful! Our goal here is to most effectively aid you in bringing innovative products and services to the regulatory space." no-answer="true"> 
+			                                <input type="text" name="name" conv-question="First, what is your name?|Before we get started, I'd love to be able to call you by name – what is your name?" required placeholder="Please type your name and hit enter">
+			                                <input type="text" conv-question="Hi, {name}:0! It's a pleasure to meet you.|Nice to meet you, {name}:0!" no-answer="true">
+			                                <input type="text" name="org" conv-question="Out of curiosity, what organization are you from?|Since we're getting to know each other, which organization are you with?" required placeholder="Please type your company name (or 'self') and hit enter">
+			                                <select name="purpose" conv-question="Oh cool! And what's the primary purpose of your visit here today?">
+			                                    <option value="Sourcing">Sourcing Innovative Technology</option>
+			                                    <option value="Strategy">Advice on Developing Strategy</option>
+			                                    <option value="Workshops">Conducting Regtech Workshops</option>
+			                                    <option value="Other">Other</option>
+			                                </select>
+			                                <div conv-fork="purpose">
+			                                    <div conv-case="Sourcing">
+			                                        <input type="text" conv-question="Great! I'd love to help you out with {purpose}." no-answer="true">
+			                                    </div>
+			                                    <div conv-case="Strategy">
+			                                        <input type="text" conv-question="Great! I'd love to help you out with {purpose}." no-answer="true">
+			                                    </div>
+			                                    <div conv-case="Workshops">
+			                                        <input type="text" conv-question="Great! I'd love to help you out with {purpose}." no-answer="true">
+			                                    </div>
+			                                    <div conv-case="Other">
+				                                    <input name="other_details" type="text" conv-question="Oh, we love new things here at R²A! What are you looking for help with?" required placeholder="Please describe what you'd like help with and hit enter">
+				                                    <input type="text" conv-question="Great! I'd love to help you out with {other_details}." no-answer="true">
+			                                    </div>
+			                                </div>
+			                                <select name="will_share_contact" callback="storeState" conv-question="Would you mind sharing your contact information so an R2A team member can follow up with you?">
+			                                    <option value="yes">Sure!</option>
+			                                    <option value="no">I'd rather not.</option>
+			                                </select>
+			                                <div conv-fork="will_share_contact">
+			                                    <div conv-case="yes">
+			                                        <select name="contact_type" conv-question="Great, thanks, {name}:0! How might we contact you?">
+					                                    <option value="email">send an email</option>
+					                                    <option value="phone">call a phone number</option>
+					                                    <option value="other">contact via other means</option>
+			                                		</select>
+			                                		<input type="text" name="contact" conv-question="Great! Please type your info so an R²A team member can {contact_type} asap!">
+			                                		<input type="text" conv-question="Thanks! Someone will reach out to you shortly." no-answer="true">
+			                                    </div>
+			                                    <div conv-case="no">
+				                                    <input type="text" conv-question="No worries!">
+				                                    <input type="text" conv-question="I appreciate that you might be busy, but hope that you feel encouraged to come visit again, or contact us whenever it is convenient for you!">
+			                                    </div>
+			                                </div>
+			                                <input type="text" conv-question="Just one last question, if you don't mind..." no-answer="true">
+			                                <input type="text" conv-question="Once you've answered this question, I'll reset myself and we can start another exciting conversation." no-answer="true">
+											<select name="nps" conv-question="On a scale from 1 to 5, how likely are you to recommend this resource to friends and colleagues?">
+													<option value="4">1</option>
+													<option value="4">2</option>
+													<option value="4">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+											</select>
+	                                    </div>
+	                                    <div conv-case="no">
+		                                    <input type="text" conv-question="Sorry to hear! If you change your mind, you can reach us at info@r2accelerator.org" no-answer="true">
+		                                    <input type="text" conv-question="Please just send me a message if you'd like to start up another conversation, and I'll be here eagerly waiting!">
+	                                    </div>
+	                                </div>
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="R2A_files/autosize.min.js"></script>
+	<script type="text/javascript" src="R2A_files/jquery.convform.js"></script>
+	<script>
+		$(document).ready(function() {
+			// Toggle chat window
+			$(document).on('click', '#chathead', function() {
+				$('.card').slideToggle(400);
+			});
+		});
+	</script>
+</body>
+</html>
