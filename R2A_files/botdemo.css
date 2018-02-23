@@ -50,13 +50,24 @@ div#chathead span {
 }
 
 div#chat.my-conv-form-wrapper form {
-	background: white;
+	box-shadow: none;
+	width: calc(100% - 33px);
 }
 
 div#chat.my-conv-form-wrapper form.convFormDynamic textarea.userInputDynamic,
 div#chat.my-conv-form-wrapper form.convFormDynamic input.userInputDynamic {
-    width: calc(100% - 90px);
+    width: calc(100% - 74px);
     min-height: 1em;
+    padding: 11px 17px;
+    margin: 0 -6px 0 0;
+}
+
+form.convFormDynamic button.submit {
+	padding: 8px;
+	margin: 0;
+	width: 46px;
+	height: 41px;
+	border-radius: 0 8px 8px 0;
 }
 
 div#chat.my-conv-form-wrapper div.wrapper-messages {
@@ -66,6 +77,7 @@ div#chat.my-conv-form-wrapper div.wrapper-messages {
 div#chat.my-conv-form-wrapper div#messages {
 	overflow-y: scroll;
 	max-height: 55vh;
+	padding-bottom: 0 !important;
 }
 
 div#chat.my-conv-form-wrapper div#messages div.message.to {
@@ -78,6 +90,11 @@ div#chat.my-conv-form-wrapper div#messages div.message.from {
 	color: #444;
 }
 
+
+div#chat.my-conv-form-wrapper div.options {
+	display: block;
+	position: inherit;
+}
 div#chat.my-conv-form-wrapper div.options div.option {
 	border-color: #53998f;
 	color: #53998f;

@@ -783,6 +783,14 @@
 	    <script type="text/javascript" src="R2A_files/autosize.min.js"></script>
 		<script type="text/javascript" src="R2A_files/jquery.convform.js"></script>
 		<script>
+			function toggleChat() {
+				$('.card').slideToggle(400, function() { $('.chevron').toggleClass('flipped'); });
+				if (localStorage.getItem('chatstate')) {
+					localStorage.removeItem('chatstate');
+				} else {
+					localStorage.setItem('chatstate', 'minimized')
+				}
+			}
 			$(document).ready(function() {
 				// Custom convform
 				var convForm = $('.my-conv-form-wrapper').convform({
@@ -790,9 +798,13 @@
 					typeInputUi: 'input'
 				});
 
+				if (localStorage.getItem('chatstate') && localStorage.getItem('chatstate') == 'minimized') {
+					toggleChat();
+				}
+
 				// Toggle chat window
 				$(document).on('click', '#chathead', function() {
-					$('.card').slideToggle(400, function() { $('.chevron').toggleClass('flipped'); });
+					toggleChat();
 				});
 			});
 		</script>
