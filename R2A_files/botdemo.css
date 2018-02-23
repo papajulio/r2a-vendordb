@@ -5,49 +5,132 @@ html, body {
 	font-size: 16px;
 }
 
-section#demo {
-	background: #fbfbfb;
-    position: relative;
+section#bot {
+	background: #FFFFFF00;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
     padding: 0;
     min-height: 100vh;
     transition: height 9999s;
+    z-index: 99999999;
+}
+section#bot div.row div {
+	pointer-events: auto;
+}
+section#bot div.row>div {
+	position: absolute;
+	right: 20px;
+    bottom: 0;
 }
 .vertical-align {
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 0;
+	top: 100%;
+	transform: translateY(-100%);
+	right: 0;
 	width: 100%;
 }
 .card {
-	background: #fff;
-    box-shadow: 13px 13px 28px 2px rgba(0, 0, 0, 0.035);
+	background: #ebebeb;
+    box-shadow: 0px 8px 20px 2px rgba(0, 0, 0, 0.25);
     padding: 7px 15px;
     border-radius: 0 0 16px 16px;
 }
 
 div#chathead {
-	width: 100%;
 	padding: 10px 10px 10px 16px;
 	background: #622269;
 	color: white;
 	border-radius: 16px 16px 0 0;
+	cursor: pointer;
 }
 div#chathead span {
 	font-size: 20px;
 }
 
-div#chat.conv-form-wrapper div#messages div.message.to {
+div#chat.my-conv-form-wrapper form {
+	background: white;
+}
+
+div#chat.my-conv-form-wrapper form.convFormDynamic textarea.userInputDynamic,
+div#chat.my-conv-form-wrapper form.convFormDynamic input.userInputDynamic {
+    width: calc(100% - 90px);
+    min-height: 1em;
+}
+
+div#chat.my-conv-form-wrapper div.wrapper-messages {
+	max-height: 55vh;
+}
+
+div#chat.my-conv-form-wrapper div#messages {
+	overflow-y: scroll;
+	max-height: 55vh;
+}
+
+div#chat.my-conv-form-wrapper div#messages div.message.to {
 	background: #BBDFD9;
 	color: #444;
 }
 
-div#chat.conv-form-wrapper div#messages div.message.from {
+div#chat.my-conv-form-wrapper div#messages div.message.from {
 	background: #CCC;
 	color: #444;
 }
 
-div#chat.conv-form-wrapper div.options div.option {
+div#chat.my-conv-form-wrapper div.options div.option {
 	border-color: #53998f;
 	color: #53998f;
+	background: #ebebeb;
+}
+div#chat.my-conv-form-wrapper:before {
+	background: none;
+}
+
+.chevron{
+    position:relative;
+    display:block;
+    height:12px;/*height should be double border*/
+    float: right;
+    margin-top: 12px;
+    margin-right: 20px;
+}
+.chevron:before,
+.chevron:after{
+    position:absolute;
+    display:block;
+    content:"";
+    border:6px solid transparent;/*adjust size*/
+}
+/* Replace all text `top` below with left/right/bottom to rotate the chevron */
+.chevron:before{
+    top:0;
+    border-top-color:#fff;/*chevron Color*/
+}
+.chevron:after{
+    top:-2px;/*adjust thickness*/
+    border-top-color:#622269;/*Match background colour*/
+}
+
+.chevron.flipped {
+	margin-top: 10px;
+	margin-right: 8px;
+}
+.chevron.flipped:before{
+	border-top: none;
+    bottom:8px;
+    border-bottom-color:#fff;/*chevron Color*/
+}
+.chevron.flipped:after{
+	border-top: none;
+    bottom:3px;/*adjust thickness*/
+    border-bottom-color:#622269;/*Match background colour*/
+}
+
+.flipped {
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  transform:rotateY(180deg);
 }

@@ -114,6 +114,11 @@
 		top: 192px;
 	}
 }
+@media screen and (max-width: 800px) {
+	#bot {
+		display: none;
+	}
+}
 #overlay #close {
 	position: absolute;
     right: 20px;
