@@ -131,6 +131,9 @@ $(document).ready(function() {
 
 	$('#filters').change(function() {
 		var useCaseId = $(this).val();
+
+		ga('send', 'event', 'FullList', 'usecasefilter', useCaseId);
+
 		$('.vendor').show(); // show all
 
 		if (useCaseId) {
@@ -148,6 +151,9 @@ $(document).ready(function() {
 		var vname = $(this).find('#vname').html();
 		var vdesc = $(this).find('#vdesc').html();
 		var vurl = $(this).find('#vurl').html();
+
+		ga('send', 'event', 'FullList', 'vendoropen', vname);
+
 		if (vurl) { vdesc += ' (<a target="_blank" href="' + vurl + '">website</a>)'; }
 		$('#overlay #vendor-name').html(vname);
 		$('#overlay input[name="vendor"]').val(vname);
@@ -167,5 +173,7 @@ $(document).ready(function() {
 		// unlock scrolling
 		$(document).unbind('scroll'); 
   		$('body').css({'overflow':'visible'});
+
+  		ga('send', 'event', 'FullList', 'overlayclose', '');
 	});
 });
