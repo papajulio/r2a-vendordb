@@ -44,6 +44,7 @@ $(document).ready(function() {
 		    						<i class="fa ' + p.icon + '"></i><br />\
 		    						<span class="catlabel">' + titleCase(p.name) + '</span>\
 		    					</div>'));
+		    $('#persona-select').append($('<option value="' + hyphenize(p.name) + '">' + titleCase(p.name) + '</option>"'));
 		}
 		$('#persona-holder').append($('<div class="clear">&nbsp;</div>'));
 
@@ -205,13 +206,35 @@ $(document).ready(function() {
 		$('.cat').removeClass('selected');
 		$(this).addClass('selected');
 
-		// display only tiles of the selected category
 		var category = $(this).attr('data-category-activate');
+
+		// change the category select
+		$('#persona-select option').removeAttr('selected');
+		$('#persona-select option[value="'+category+'"]').attr('selected',"selected");
+
+		// display only tiles of the selected category
 		$("#tiles1 .tile").parents('.main-row').not('[data-categories~="'+category+'"]').hide();
 		$("#tiles1 .tile").parents('.main-row[data-categories~="'+category+'"]').show();
 		$("#tiles1 .tile").parents('.main-row.adder').show();
 	});
+
+	$(document).on('change', '#persona-select', function() {
+		var category = $(this).val();
+
+		// highlight the category tile
+		$('.cat').removeClass('selected');
+		$('.cat[data-category-activate="'+category+'"]').addClass('selected');
+
+		// display only tiles of hte selected category
+		$("#tiles1 .tile").parents('.main-row').not('[data-categories~="'+category+'"]').hide();
+		$("#tiles1 .tile").parents('.main-row[data-categories~="'+category+'"]').show();
+		$("#tiles1 .tile").parents('.main-row.adder').show();
+	});
+
 	$(document).on('click', '.cat.selected', function() {
+		$('#persona-select option').removeAttr('selected');
+		$('#persona-select option[value=""]').attr('selected','selected');
+
 		$('.cat').removeClass('selected');
 		$('#tiles1 .tile').parents('.main-row').show();
 	});

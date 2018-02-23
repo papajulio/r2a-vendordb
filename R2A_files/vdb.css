@@ -109,13 +109,32 @@
 #overlay div.span-4.white {
 	background: white;
 }
-@media screen and (min-width: 800px) {
+#persona-select {
+	margin-left: 12px;
+	width: 80%;
+}
+@media screen and (min-width: 1000px) {
 	#overlay #overlay-form {
 		top: 192px;
 	}
+	#persona-holder {
+		display: block;
+	}
+	#persona-select {
+		display: none;
+	}
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 	#bot {
+		display: none;
+	}
+	ul.tags {
+		display: none;
+	}
+	#persona-select {
+		display: inline-block;
+	}
+	#persona-holder {
 		display: none;
 	}
 }
