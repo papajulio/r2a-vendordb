@@ -106,9 +106,26 @@
 #overlay span.required {
 	display: none;
 }
-#overlay div.span-4.white {
+#overlay div.span-6.white {
 	background: white;
 }
+@media screen and (min-width: 1000px) {
+	#overlay div.span-6 {
+		width: 33%;
+	}
+	#overlay div.span-3 {
+		width: 33%;
+	}
+}
+@media screen and (max-width: 1000px) {
+	#overlay div.span-6 {
+		width: 67%;
+	}
+	#overlay div.span-3 {
+		width: 16.5%;
+	}
+}
+
 #persona-select {
 	margin-left: 12px;
 	width: 80%;
