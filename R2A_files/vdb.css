@@ -41,6 +41,14 @@
     max-width: 1020px;
 }
 
+i.material-icons {
+	font-size: 40px;
+    float: left;
+    padding: 4px 7px;
+    color: #023b48;
+}
+
+
 #intro div.row {
 	padding-left: 4px;
 	padding-right: 4px;
@@ -127,8 +135,9 @@
 }
 
 #persona-select {
-	margin-left: 12px;
-	width: 80%;
+	height: 50px;
+	margin: 0 16px;
+	width: calc(100% - 32px);
 }
 @media screen and (min-width: 1000px) {
 	#overlay #overlay-form {
@@ -154,6 +163,14 @@
 	#persona-holder {
 		display: none;
 	}
+	h1 {
+		padding-left: 16px;
+	}
+	div.row.objective,
+	div.row.vendor {
+		padding: 0 16px;
+	}
+
 }
 #overlay #close {
 	position: absolute;
@@ -182,6 +199,7 @@
 }
 #head1 a, #head2 a, #head3 a {
 	color: #023b48;
+	font-weight: bold;
 }
 #tiles1, #tiles2, #tiles3 {
 	display:none;

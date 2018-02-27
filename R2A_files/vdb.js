@@ -90,10 +90,10 @@ $(document).ready(function() {
 		$('#tiles1').append($('<div class="main-row row sqs-row objective adder" id="yui_3_17_2_1_1509478945824_116" data-objective-id="' + i + '" data-categories="">\
 		        			<div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
 		        				<div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
-		        					<div class="tile col sqs-col-12 span-12">\
-		       							<h3>Add an Objective</h3>\
-		       							<ul class="tags"><li></li></ul>\
-		       							<p class="use_case clear">Don\'t see your objective listed? Click here to request an addition.</p>\
+		        					<div class="col sqs-col-12 span-12">\
+		       							<p class="use_case clear" style="text-align: center; margin: 36px auto 0;">\
+		       								Don\'t see your objective listed? <a href="#" onclick="alert(\'Contact us at info@r2accelerator.org\'); return false;" style="font-weight: bold; text-decoration: underline;">Add an objective</a>\
+		       							</p>\
 		        					</div>\
 		        				</div>\
 		        			</div>\
@@ -162,17 +162,10 @@ $(document).ready(function() {
 		        					<div class="col sqs-col-1 span-1">\
 		        						&nbsp;\
 		        					</div>\
-		        					<div class="vtile col sqs-col-10 span-10">\
-			        					<div class="vlogo col sqs-col-1-5 span-1-5">\
-			       							<span class="helper"></span><img src="/R2A_files/vendor-logos/r2a.png" />\
-			        					</div>\
-			        					<div class="vcontent col sqs-col-8-5 span-8-5">\
-			       							<h4 id="vname">Add a Vendor</h4>\
-			       							<p></p>\
-			       							<p>Do you know a vendor that fits this use case? Click here to request an addition.</p>\
-			       							<p style="display:none" id="vdesc"></p>\
-			       							<p style="display:none" id="vurl"></p>\
-			        					</div>\
+		        					<div class="col sqs-col-10 span-10">\
+			        					<p class="use_case clear" style="text-align: center; margin: 24px auto 0; padding-bottom: 0 !important;">\
+		       								Know a vendor that fits this use case? <a href="#" onclick="alert(\'Contact us at info@r2accelerator.org\'); return false;" style="font-weight: bold; text-decoration: underline;">Add a vendor</a>\
+		       							</p>\
 			        				</div>\
 		        					<div class="col sqs-col-1 span-1">\
 		       							&nbsp;\
