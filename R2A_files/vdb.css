@@ -282,7 +282,7 @@ i.material-icons {
 	margin-left: 4px;
 	padding: 8px;
 	text-align: center;
-	height: 78px;
+	height: 70px;
 }
 .bggrey .cats .cat.selected {
 	border-color: #00a69c;
@@ -299,7 +299,7 @@ i.material-icons {
 }
 .bggrey .cats .cat .catlabel {
 	font-weight: bold;
-	padding-bottom: 8px;
+	padding-bottom: 0px;
 	line-height: 1.1em;
     display: block;
     font-size: 13px;
