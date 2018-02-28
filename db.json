@@ -1,27 +1,27 @@
 {
     "personas": [{
             "name": "licensing",
-            "icon": "fa-file-text-o"
+            "icon": "/R2A_files/licensing.png"
         },
         {
             "name": "reporting",
-            "icon": "fa-list-alt"
+            "icon": "/R2A_files/reporting.png"
         },
         {
             "name": "consumer protection",
-            "icon": "fa-user"
+            "icon": "/R2A_files/consumer_protection.png"
         },
         {
             "name": "fraud detection + AML",
-            "icon": "fa-shield"
+            "icon": "/R2A_files/fraud_prevention.png"
         },
         {
             "name": "ecosystem monitoring",
-            "icon": "fa-search"
+            "icon": "/R2A_files/ecosystem.png"
         },
         {
             "name": "other",
-            "icon": "fa-institution"
+            "icon": "/R2A_files/other.png"
         }
     ],
     "objectives": [{

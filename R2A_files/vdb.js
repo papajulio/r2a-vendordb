@@ -41,7 +41,7 @@ $(document).ready(function() {
 		for (var i = 0; i < personas.length; i++) {
 		    var p = personas[i];
 		    $('#persona-holder').append($('<div class="col sqs-col-2 span-2 cat persona" data-category-activate="' + hyphenize(p.name) + '">\
-		    						<i class="fa ' + p.icon + '"></i><br />\
+		    						<img class="persona-icon" src="' + p.icon + '" /><br />\
 		    						<span class="catlabel">' + titleCase(p.name) + '</span>\
 		    					</div>'));
 		    $('#persona-select').append($('<option value="' + hyphenize(p.name) + '">' + titleCase(p.name) + '</option>"'));
