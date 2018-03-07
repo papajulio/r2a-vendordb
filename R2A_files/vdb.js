@@ -92,7 +92,7 @@ $(document).ready(function() {
 		        				<div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
 		        					<div class="col sqs-col-12 span-12">\
 		       							<p class="use_case clear" style="text-align: center; margin: 36px auto 0;">\
-		       								Don\'t see your objective listed? <a href="#" onclick="alert(\'Contact us at info@r2accelerator.org\'); return false;" style="font-weight: bold; text-decoration: underline;">Add an objective</a>\
+		       								Don\'t see your objective listed? <a href="#" onclick="return false;" style="font-weight: bold; text-decoration: underline;">Add an objective</a>\
 		       							</p>\
 		        					</div>\
 		        				</div>\
@@ -164,7 +164,7 @@ $(document).ready(function() {
 		        					</div>\
 		        					<div class="col sqs-col-10 span-10">\
 			        					<p class="use_case clear" style="text-align: center; margin: 24px auto 0; padding-bottom: 0 !important;">\
-		       								Know a vendor that fits this use case? <a href="#" onclick="alert(\'Contact us at info@r2accelerator.org\'); return false;" style="font-weight: bold; text-decoration: underline;">Add a vendor</a>\
+		       								Know a vendor that fits this use case? <a href="#" onclick="return false;" style="font-weight: bold; text-decoration: underline;">Add a vendor</a>\
 		       							</p>\
 			        				</div>\
 		        					<div class="col sqs-col-1 span-1">\
@@ -198,7 +198,14 @@ $(document).ready(function() {
 	$(document).on('click', '.cat', function() {
 		// highlight the category tile
 		$('.cat').removeClass('selected');
+		$('.cat').each(function() {
+			var newsrc = $(this).find('.persona-icon').attr('src').replace('_white.png', '.png').replace('_white', '');
+			$(this).find('.persona-icon').attr('src', newsrc);
+		});
+
 		$(this).addClass('selected');
+		var newsrc = $(this).find('.persona-icon').attr('src').replace('.png', '_white.png'); 
+		$(this).find('.persona-icon').attr('src', newsrc);
 
 		var category = $(this).attr('data-category-activate');
 
@@ -233,9 +240,13 @@ $(document).ready(function() {
 	$(document).on('click', '.cat.selected', function() {
 		$('#persona-select option').removeAttr('selected');
 		$('#persona-select option[value=""]').attr('selected','selected');
+		var newsrc = $(this).find('.persona-icon').attr('src').replace('_white.png', '.png').replace('_white', '');
+		$(this).find('.persona-icon').attr('src', newsrc);
 
 		$('.cat').removeClass('selected');
 		$('#tiles1 .tile').parents('.main-row').show();
+
+		var category = $(this).attr('data-category-activate');
 
 		ga('send', 'event', 'Persona-Filter-Button', 'deselect', category);
 	});

@@ -70,6 +70,7 @@ i.material-icons {
     border-top: 1px solid #ddd;
     padding-top: 30px;
     padding-bottom: 24px;
+    padding-left: 17px;
     width: auto;
     margin: auto;
     max-width: 1020px;
@@ -127,10 +128,10 @@ i.material-icons {
 }
 @media screen and (max-width: 1000px) {
 	#overlay div.span-6 {
-		width: 67%;
+		width: calc(100% - 48px);
 	}
 	#overlay div.span-3 {
-		width: 16.5%;
+		width: 24px;
 	}
 }
 
@@ -174,6 +175,10 @@ i.material-icons {
 	div.row.vendor {
 		padding: 0 16px;
 	}
+	.bggrey .tile h3,
+	.bggrey .tile .use_case {
+		width: calc(100% - 24px) !important;
+	}
 
 }
 #overlay #close {
@@ -204,6 +209,9 @@ i.material-icons {
 #head1 a, #head2 a, #head3 a {
 	color: #023b48;
 	font-weight: bold;
+}
+#head1 a:hover, #head2 a:hover, #head3 a:hover {
+	text-decoration: none;
 }
 #tiles1, #tiles2, #tiles3 {
 	display:none;
@@ -339,7 +347,6 @@ i.material-icons {
 
 .bggrey .vtile {
 	box-shadow: 1px 2px 2px #aaa;
-	height: 100px;
 	margin-top: 8px;
 	cursor: pointer;
 	margin-left: auto;
@@ -348,6 +355,8 @@ i.material-icons {
     max-width: 1020px;
     float: none;
     min-height: 48px;
+    display:flex;
+    background-color: #00a69c11;
 }
 .bggrey .vtile:hover {
 	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
@@ -362,9 +371,7 @@ i.material-icons {
 	float: left !important;
 }
 .bggrey .vtile .vlogo {
-	background-color: #00a69c11;
-	height: 100%;
-	display: flex;
+	
 }
 .bggrey .vtile .vlogo .helper {
     display: inline-block;
@@ -376,6 +383,7 @@ i.material-icons {
     margin: 0 10%;
 	object-fit: contain;
 	object-position: center;
+	min-height: 100%;
 }
 .bggrey .vtile .vcontent {
 	background: white;
@@ -387,7 +395,6 @@ i.material-icons {
 	margin: 6px;
 }
 .bggrey .vtile .vcontent h4 {
-  height: 24px;
   font-family: Europa;
   font-size: 24px;
   font-weight: bold;
@@ -413,7 +420,6 @@ i.material-icons {
   color: #888888;
 }
 .bggrey .vtile .vcontent p.technologies {
-  height: 19px;
   font-family: Lato;
   font-size: 16px;
   font-weight: normal;

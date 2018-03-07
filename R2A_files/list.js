@@ -108,24 +108,15 @@ $(document).ready(function() {
 		        				</div>');
 		}
 		$('#vendor-holder').append('<div class="row sqs-row vendor adder" id="yui_3_17_2_1_1509478945824_114" data-use-case-ids="">\
-		        					<div class="col sqs-col-1 span-1">\
-		        						&nbsp;\
-		        					</div>\
-		        					<div class="vtile col sqs-col-10 span-10">\
-			        					<div class="vlogo col sqs-col-1-5 span-1-5">\
-			       							<span class="helper"></span><img src="/R2A_files/vendor-logos/r2a.png" />\
-			        					</div>\
-			        					<div class="vcontent col sqs-col-8-5 span-8-5">\
-			       							<h4 id="vname">Add a Vendor</h4>\
-			       							<p></p>\
-			       							<p>Do you know a vendor that fits this use case? Click here to request an addition.</p>\
-			       							<p style="display:none" id="vdesc"></p>\
-			       							<p style="display:none" id="vurl"></p>\
-			        					</div>\
-			        				</div>\
-		        					<div class="col sqs-col-1 span-1">\
-		       							&nbsp;\
-		        					</div>\
+		        					<div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
+				        				<div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
+				        					<div class="col sqs-col-12 span-12">\
+				       							<p class="use_case clear" style="text-align: center; margin: 36px auto 0;">\
+				       								Don\'t see your objective listed? <a href="#" onclick="return false;" style="font-weight: bold; text-decoration: underline;">Add an objective</a>\
+				       							</p>\
+				        					</div>\
+				        				</div>\
+				        			</div>\
 		        				</div>');
 	});
 
@@ -147,7 +138,7 @@ $(document).ready(function() {
 		$('.vendor.adder').show(); // show add section
 	});
 
-	$(document).on('click', '.vtile', function() {
+	$(document).on('click', '.vtile:not(.adder)', function() {
 		var vname = $(this).find('#vname').html();
 		var vdesc = $(this).find('#vdesc').html();
 		var vurl = $(this).find('#vurl').html();
@@ -165,6 +156,12 @@ $(document).ready(function() {
 		$(document).bind('scroll',function () { 
 		     window.scrollTo(0,0); 
 		});
+	});
+
+	$(document).on('click', '.adder', function(e) {
+		e.preventDefault();
+		alert("Please contact us at info@r2accelerator.org");
+		ga('send', 'event', 'Adder', 'click', e);
 	});
 
 	$("#overlay #close").click(function() {
