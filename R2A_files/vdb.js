@@ -303,7 +303,7 @@ $(document).ready(function() {
 		});
 	});
 
-	$(document).on('click', '.adder', function(e) {
+	$(document).on('click', '.adder a', function(e) {
 		e.preventDefault();
 		alert("Please contact us at info@r2accelerator.org");
 		ga('send', 'event', 'Adder', 'click', e);

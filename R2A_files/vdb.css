@@ -356,7 +356,7 @@ i.material-icons {
     float: none;
     min-height: 48px;
     display:flex;
-    background-color: #00a69c11;
+    background-color: white;
 }
 .bggrey .vtile:hover {
 	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
@@ -371,7 +371,7 @@ i.material-icons {
 	float: left !important;
 }
 .bggrey .vtile .vlogo {
-	
+	background-color: #00a69c11;
 }
 .bggrey .vtile .vlogo .helper {
     display: inline-block;
