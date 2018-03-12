@@ -227,7 +227,14 @@ $(document).ready(function() {
 
 		// highlight the category tile
 		$('.cat').removeClass('selected');
+		$('.cat').each(function() {
+			var newsrc = $(this).find('.persona-icon').attr('src').replace('_white.png', '.png').replace('_white', '');
+			$(this).find('.persona-icon').attr('src', newsrc);
+		});
+
 		$('.cat[data-category-activate="'+category+'"]').addClass('selected');
+		var newsrc = $(this).find('.persona-icon').attr('src').replace('.png', '_white.png'); 
+		$(this).find('.persona-icon').attr('src', newsrc);
 
 		// display only tiles of hte selected category
 		$("#tiles1 .tile").parents('.main-row').not('[data-categories~="'+category+'"]').hide();
