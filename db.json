@@ -1,27 +1,27 @@
 {
     "personas": [{
             "name": "licensing",
-            "icon": "/R2A_files/licensing.png"
+            "icon": "/static/images/persona-icons/licensing.png"
         },
         {
             "name": "reporting",
-            "icon": "/R2A_files/reporting.png"
+            "icon": "/static/images/persona-icons/reporting.png"
         },
         {
             "name": "consumer protection",
-            "icon": "/R2A_files/consumer_protection.png"
+            "icon": "/static/images/persona-icons/consumer_protection.png"
         },
         {
             "name": "fraud detection + AML",
-            "icon": "/R2A_files/fraud_prevention.png"
+            "icon": "/static/images/persona-icons/fraud_prevention.png"
         },
         {
             "name": "ecosystem monitoring",
-            "icon": "/R2A_files/ecosystem.png"
+            "icon": "/static/images/persona-icons/ecosystem.png"
         },
         {
             "name": "other",
-            "icon": "/R2A_files/other.png"
+            "icon": "/static/images/persona-icons/other.png"
         }
     ],
     "objectives": [{
@@ -132,7 +132,7 @@
             "technologies": ["Robotic Process Automation"],
             "description": "We design and deliver the most advanced automation platform. Businesses of all sizes, BPO providers and shared service organizations around the world use our software to provide exceptional benefits in operational quality, speed and cost.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/uipath.png"
+            "logo_url": "/static/images/vendor-logos/uipath.png"
         },
         {
             "full_only": false,
@@ -146,7 +146,7 @@
             "technologies": ["Robotic Process Automation"],
             "description": "Imagine a different kind of workforce. A workforce that you can teach countless skills. The more it learns, the more efficient it becomes. It works without ever taking a vacation. It can be small one day or large when your business hits a spike. And it frees up your best people to really be your very best people. Meet the Software Robots – the Digital Workforce.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/blueprism.png"
+            "logo_url": "/static/images/vendor-logos/blueprism.png"
         },
         {
             "full_only": false,
@@ -160,7 +160,7 @@
             "technologies": ["Robotic Process Automation"],
             "description": "RPA is one of the tools in WorkFusion’s automation toolkit. Most business processes begin with pulling data and end with pushing data, and WorkFusion makes RPA easy to apply to business processes that tap into legacy applications.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/workfusion.png"
+            "logo_url": "/static/images/vendor-logos/workfusion.png"
         },
         {
             "full_only": false,
@@ -174,7 +174,7 @@
             "technologies": ["Robotic Process Automation"],
             "description": "Loop AI Labs is a California company that is working to radically change how machines can autonomously learn and understand the human world, mirroring the same learning process that humans use.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/loopai.png"
+            "logo_url": "/static/images/vendor-logos/loopai.png"
         },
         {
             "full_only": false,
@@ -188,7 +188,7 @@
             "technologies": ["Robotic Process Automation"],
             "description": "Kryon RPA platform delivers attended automation including application guidance and task automation to improve tasks handled by your human workforce. With Kryon’s unique Hybrid Automation, people can initiate processes on their desktop and then seamlessly pass tasks within the process to a robot for action as needed.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/kryonsystems.png"
+            "logo_url": "/static/images/vendor-logos/kryonsystems.png"
         },
         {
             "full_only": false,
@@ -202,7 +202,7 @@
             "technologies": ["Machine Learning as a Service"],
             "description": "To stay relevant in a faster, complex, connected, and uncertain world, predictive applications will have to take advantage of Machine Learning and other Artificial Intelligence techniques in one way or another. BigML's platform, private deployments, and rich toolset will continue to help our customers create, rapidly experiment, fully automate and manage Machine Learning workflows that power best-in-class intelligent applications.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/bigml.png"
+            "logo_url": "/static/images/vendor-logos/bigml.png"
         },
         {
             "full_only": false,
@@ -216,7 +216,7 @@
             "technologies": ["Application Programming Interfaces", "Cloud Computing", "ML", "Data Mining", "Robotic Process Automation"],
             "description": "Gestell's Gnosis automates data reconciliation by replacing Excel sheets and legacy systems through a quick, economical, and cloud-based solution. We create a 'single source of truth', from which our clients perform a better management of their risks, finances and regulatory obligations.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/gestell.png"
+            "logo_url": "/static/images/vendor-logos/gestell.png"
         },
         {
             "full_only": false,
@@ -230,7 +230,7 @@
             "technologies": ["Application Programming Interfaces", "Cloud Computing"],
             "description": "ABACUS/Regulator is BearingPoint’s standard software solution for regulators that supports regulatory data collection, data validation, data storage, data visualization as well as data remittance for example to pan-European authorities.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/bearingpoint.png"
+            "logo_url": "/static/images/vendor-logos/bearingpoint.png"
         },
         {
             "full_only": false,
@@ -244,7 +244,7 @@
             "technologies": ["Application Programming Interfaces", "Cloud Computing"],
             "description": "DivDoc is an online cloud-based solution designed to simplify compliance regulation for businesses and individuals. Built using modular workflows, DivDoc’s solution is fully-customisable and easily-integrated to suit the needs of all businesses.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/divdoc.png"
+            "logo_url": "/static/images/vendor-logos/divdoc.png"
         },
         {
             "full_only": false,
@@ -258,7 +258,7 @@
             "technologies": ["Application Programming Interfaces", "Compliance Reporting"],
             "description": "For regulators we provide integral solutions which facilitate their fast creation and publishing of reporting templates for the automated collection and the process of information, as well as fast, accurate and timely adjustment in line with new market conditions. On the other hand, we provide optimal tools to undertakers for delivering their reports to achieve optimal, accurate and timely flow of information.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/crt.png"
+            "logo_url": "/static/images/vendor-logos/crt.png"
         },
         {
             "full_only": false,
@@ -272,7 +272,7 @@
             "technologies": ["Application Programming Interfaces", "Compliance Reporting"],
             "description": "Software Group is a global technology company that is specialized in delivery channel and integration solutions for institutions that provide financial services. We help financial service providers digitize their business and successfully go through the process of digital transformation, extend their outreach and improve operational efficiency.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/softwaregroup.png"
+            "logo_url": "/static/images/vendor-logos/softwaregroup.png"
         },
         {
             "full_only": false,
@@ -286,7 +286,7 @@
             "technologies": ["Application Programming Interfaces", "Compliance Reporting"],
             "description": "Keeping the integrity of data and analytics from different sources is a time-consuming and costly problem. Rapidly evolving business and regulatory demands have only increased the difficulty. Plyable addresses this problem. When a spreadsheet can no longer meet your needs, Plyable scales with greater transparency and accessibility than a bespoke IT solution, leaving users to focus on their business problems without having to reinvent their existing systems.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/symfanet.png"
+            "logo_url": "/static/images/vendor-logos/symfanet.png"
         },
         {
             "full_only": false,
@@ -300,7 +300,7 @@
             "technologies": ["GIS"],
             "description": "Unlock the potential of your location data. CARTO is the platform for turning location data into business outcomes.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/carto.png"
+            "logo_url": "/static/images/vendor-logos/carto.png"
         },
         {
             "full_only": false,
@@ -314,7 +314,7 @@
             "technologies": ["GIS"],
             "description": "Get started right away. ArcGIS Online comes with a suite of basemaps, high-resolution imagery, and the highest rated demographic data. Make 2D and 3D maps with the built-in map viewer and scene viewer. ",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/esri.png"
+            "logo_url": "/static/images/vendor-logos/esri.png"
         },
         {
             "full_only": false,
@@ -328,7 +328,7 @@
             "technologies": ["GIS"],
             "description": "Tableau is designed to make the most of geographical data, so you can get to the “where” as well as the “why.” With instant geocoding, Tableau automatically turns the location data and information you already have into rich, interactive maps with 16 levels of zoom.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/tableau.png"
+            "logo_url": "/static/images/vendor-logos/tableau.png"
         },
         {
             "full_only": false,
@@ -342,7 +342,7 @@
             "technologies": ["Social Media Analysis"],
             "description": "Temenos' objective is to ensure all of our customers receive the highest level of value from the Risk and Compliance product family. Products from the Temenos Risk and Compliance family can be implemented for even the largest financial institution in a matter of days. Compliance Services, Social Media Compliance, Vendor Management and Stress Testing SaaS solutions can all be implemented with a simple set up form and a training session.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/temenos.png"
+            "logo_url": "/static/images/vendor-logos/temenos.png"
         },
         {
             "full_only": false,
@@ -356,7 +356,7 @@
             "technologies": ["Social Media Analysis", "Natural Language Processing", "Chotbots"],
             "description": "Founded in 2016 by a pair of world renowned researchers, Hello Vera’s goal is to help clients to improve their customer service through artificial intelligence technology. Our customer service artificial intelligence agent Vera has outperformed state of the art technologies at a variety of tasks on a number of benchmark data sets, and it has proven to more than triple our clients' customer service effectiveness.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/hellovera.png"
+            "logo_url": "/static/images/vendor-logos/hellovera.png"
         },
         {
             "full_only": false,
@@ -370,7 +370,7 @@
             "technologies": ["Machine Learning", "Anomaly Detection", "Social Media Analysis"],
             "description": "Squirro is a modern Cognitive Insights Engine that uses Predictive Analytics, Machine Learning and more to enable you to turn even unstructured data into actions.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/squirro.png"
+            "logo_url": "/static/images/vendor-logos/squirro.png"
         },
         {
             "full_only": false,
@@ -384,7 +384,7 @@
             "technologies": ["Machine Learning", "Anomaly Detection"],
             "description": "Enforcd is a young, innovative company that uses technology to aid regulatory compliance. Our flagship product is EDB – The Enforcement Database, which uses global regulatory enforcement data, related news and insights to help firms to identify, manage and mitigate the conduct risks they face.",
             "contact": "info@enforcd.com",
-            "logo_url": "/R2A_files/vendor-logos/enforcd.png"
+            "logo_url": "/static/images/vendor-logos/enforcd.png"
         },
         {
             "full_only": false,
@@ -398,7 +398,7 @@
             "technologies": ["Machine Learning", "Anomaly Detection"],
             "description": "The MindBridge Ai Auditor™ comes preloaded and is easy to use — no need for a training budget. In a world’s first, our platform delivers advanced risk-based analytics into your existing audit workflow. Drag and drop a file from one of many popular formats and in minutes our Ai Auditor™ provides you with analysis of all entries and transactions in the file while performing completeness checks and ensuring no tampering has occurred in the source file.",
             "contact": "info@mindbridge.ai",
-            "logo_url": "/R2A_files/vendor-logos/mindbridge.png"
+            "logo_url": "/static/images/vendor-logos/mindbridge.png"
         },
         {
             "full_only": false,
@@ -412,7 +412,7 @@
             "technologies": ["OCR + Automated Content Analysis"],
             "description": "Brainspace 6 is the industry’s most advanced software for digital investigations and unstructured data analysis. Built on our patented machine learning platform, Brainspace learns dynamically without the use of lexicons or taxonomies, giving users a powerful suite of interactive visualizations and search tools to reveal the story within your data.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/brainspace.png"
+            "logo_url": "/static/images/vendor-logos/brainspace.png"
         },
         {
             "full_only": false,
@@ -426,7 +426,7 @@
             "technologies": ["OCR + Automated Content Analysis", "Natural Language Processing"],
             "description": "Legal Robot transforms complex legal language into numeric expressions, where statistical and machine learning techniques can derive meaning. We combine each layer to form higher level concepts from words to sentences to themes. Legal Robot continuously compares thousands of documents to build a legal language model that we use to continuously expand our legal language analysis.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/legalrobot.png"
+            "logo_url": "/static/images/vendor-logos/legalrobot.png"
         },
         {
             "full_only": false,
@@ -440,7 +440,7 @@
             "technologies": ["Chatbot"],
             "description": "Amelia understands the underlying meaning of your statements and can engage in fluid conversations. As she detects a customer’s mood, she is able to adapt the content of her responses and associated expressions to create a truly personal experience.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/ipsoft.png"
+            "logo_url": "/static/images/vendor-logos/ipsoft.png"
         },
         {
             "full_only": false,
@@ -454,7 +454,7 @@
             "technologies": ["Chatbot", "Analytics"],
             "description": "Established in 2016, we’re committed to improving human-bot interactions and conversational UI through data. By offering analytics for bots, we empower bot developers, corporate brands and agencies to improve their chatbots with historical and real time conversation data.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/botanalytics.png"
+            "logo_url": "/static/images/vendor-logos/botanalytics.png"
         },
         {
             "full_only": false,
@@ -468,7 +468,7 @@
             "technologies": ["Chatbot", "Natural Language Processing"],
             "description": "White label end-to-end digital assistant solution powered by Artificial Intelligence and Natural Language Processing. Grow your business in the emerging Asia markets with our Natural Language Processing and digital assistant solution that support more than 11 Asian languages.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/clareai.png"
+            "logo_url": "/static/images/vendor-logos/clareai.png"
         },
         {
             "full_only": false,
@@ -482,7 +482,7 @@
             "technologies": ["Cloud Computing"],
             "description": "The Financial Services industry attracts some of the most hostile information security threats and is one of the most regulated industries in the world. AWS understands these obligations and has worked with the most complex Financial Services organizations to meet security and compliance requirements at every stage of their respective cloud journeys.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/aws.png"
+            "logo_url": "/static/images/vendor-logos/aws.png"
         },
         {
             "full_only": false,
@@ -496,7 +496,7 @@
             "technologies": ["Cloud Computing"],
             "description": "Google Cloud Platform can identify trends in massive, noisy datasets from diverse sources, provide companies with secure and efficient IT consumption models, archive large volumes of sensitive data — and most promising of all, unleash the latest machine learning techniques on dynamic market events and a wide range of real-world data.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/google.png"
+            "logo_url": "/static/images/vendor-logos/google.png"
         },
         {
             "full_only": false,
@@ -510,7 +510,7 @@
             "technologies": ["Cloud Computing"],
             "description": "To help you comply with national, regional, and industry-specific requirements governing the collection and use of individuals’ data, Microsoft offers the most comprehensive set of compliance offerings of any cloud service provider.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/microsoft.png"
+            "logo_url": "/static/images/vendor-logos/microsoft.png"
         },
         {
             "full_only": true,
@@ -524,7 +524,7 @@
             "technologies": ["XBRL Analytics", "AI", "Forms"],
             "description": "SQL Power Suite is an eSignature-ready supervision management framework that's completely multilingual. The solution integrates easily into existing regulatory infrastructures to unify de-centralized operations, and streamline important regulatory oversight functions. The platform has been field-proven by Canadian as well as international regulators. The SQL Power Suite's dynamic rules-based architecture allows business users to easily update an organization's taxonomy in order to reflect the most recent regulatory policy or legislative changes. The solution automatically renders web-forms/returns from the latest taxonomy, and cascades taxonomy changes throughout the system, without any need for re-coding. This reduces the dependency on outside consultants or IT for ongoing system maintenance. It fully insulates the regulator and the filing entities from XBRL's complexities, while delivering all the advantages of a complete end-to-end XBRL-based regulatory platform - ensuring maximum adoption, transparency, flexibility and compliance. SQL Power's real-time SQL Analytics platform is the most powerful SQL Business Intelligence (BI) platform on the market, delivering a pre-built data mart solution that is taxonomy-agnostic (no ETL changes required) and a BI tool in MicroStrategy that provides all Business Intelligence requirements including: standard reports, ROLAP cubes, data mining - predictive and regression modeling, mobile dashboards and ad-hoc reporting. Built organically from the ground up specifically to satisfy complex and evolving financial regulatory requirements, SQL Power's zero-footprint solution is establishing the pattern for disclosure in the 21st century - the preeminent blend of regulatory expertise and enterprise-class software engineering.",
             "contact": "info@sqlpower.ca",
-            "logo_url": "/R2A_files/vendor-logos/sql-power.png"
+            "logo_url": "/static/images/vendor-logos/sql-power.png"
         },
         {
             "full_only": true,
@@ -538,7 +538,7 @@
             "technologies": ["Proprietary"],
             "description": "With cutting edge technology, 8of9 consultants offer global experience and local knowledge in large complex financial transactions to help you focus on the big picture and succeed in any public or private business environment.",
             "contact": "info@8of9.nyc",
-            "logo_url": "/R2A_files/vendor-logos/8of9.png"
+            "logo_url": "/static/images/vendor-logos/8of9.png"
         },
         {
             "full_only": true,
@@ -552,7 +552,7 @@
             "technologies": ["Proprietary"],
             "description": "Our cloud based Hub technology enables seamless processing of high data volumes, flexible cross-regime and cross-asset class reporting, making it the ultimate end to end reporting solution for banks, brokerage houses, hedge funds and asset managers. With cutting edge technology controlled from a single, secure and intuitive user interface, clients are able to submit their transactional data, into the NEX Regulatory Reporting Hub in multiple formats and from multiple sources, for data normalisation, enrichment, determination, reconciliation and validation. It is then delivered to the relevant regulatory end point. The Hub and the accompanying user interface has been designed to offer full transparency of the transaction lifecycle process along with powerful insights into underlying reporting timeliness and data quality",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/abide-financial.png"
+            "logo_url": "/static/images/vendor-logos/abide-financial.png"
         },
         {
             "full_only": true,
@@ -566,7 +566,7 @@
             "technologies": ["Proprietary"],
             "description": "Accudelta offers a range of services, that facilitate flexible and cost-efficient access to high quality data from one, centralised and trusted source. Accudelta aggregates, validates, controls and enriches product information creating a trusted store accessible by multiple business interfaces.",
             "contact": "info@accudelta.com",
-            "logo_url": "/R2A_files/vendor-logos/accudelta.png"
+            "logo_url": "/static/images/vendor-logos/accudelta.png"
         },
         {
             "full_only": true,
@@ -580,7 +580,7 @@
             "technologies": ["AI", "ML"],
             "description": "The AIDA Team’s multi-award winning track record in developing innovative machine learning solutions for the banking and insurance sector coupled with its customizable Machine Learning solutions bring a new ease to developing high precision analytical solutions for the sector. AIDA’s solutions focused towards delivering advanced AI technologies for Risk and Compliance Analytics. AIDA’s innovative solutions enable Risk and Compliance Management to take on a new dimension of being predictive and preventive, rather than detect events that have occurred. AIDA’s Technology Platform with its suite of algorithms for unsupervised Machine Learning deliver intelligent systems that can watch over and help Risk and Compliance Managers see change as they emerge.",
             "contact": "enquiries@aidatech.io",
-            "logo_url": "/R2A_files/vendor-logos/aida.png"
+            "logo_url": "/static/images/vendor-logos/aida.png"
         },
         {
             "full_only": true,
@@ -594,7 +594,7 @@
             "technologies": ["Data Management", "Information Security"],
             "description": "Opus was founded on a simple premise: that faster, better decisions in compliance and risk management could give businesses an extraordinary advantage in the marketplace. Today, the world’s most respected, global corporations rely on Opus to free their business from the complexity and uncertainty of managing customer, vendor, and third-party risks. By combining the most innovative SaaS platforms with unparalleled data solutions, Opus turns information into action so your business thrives. Formed through the $500M partnership of Doug Bergeron, Chairman of Opus, and leading Private Equity Firm GTCR, Opus is changing the landscape of risk management. (Acquired Alacra & Hiperos)",
             "contact": "1.908.981.0080 | +44 (0) 20 3059 5765 | +65 6589 8995",
-            "logo_url": "/R2A_files/vendor-logos/opus.png"
+            "logo_url": "/static/images/vendor-logos/opus.png"
         },
         {
             "full_only": true,
@@ -608,7 +608,7 @@
             "technologies": ["Information Security"],
             "description": "Alyne is a Munich based B2B RegTech offering organisations risk insight capabilities through a Software as a Service. Our unique proposition is built on a combination of providing a curated content library crafted by industry experts and highly usable functionality at an extremely competitive price.",
             "contact": "support@alyne.com",
-            "logo_url": "/R2A_files/vendor-logos/alyne.png"
+            "logo_url": "/static/images/vendor-logos/alyne.png"
         },
         {
             "full_only": true,
@@ -622,7 +622,7 @@
             "technologies": ["Data Analytics", "Data Visualization", "Cloud Computing", "Data Analytics"],
             "description": "Ancoa provides contextual surveillance and insightful analytics for exchanges, regulators, buy & sell-side firms. Our highly sophisticated, yet easy to deploy and simple to use, monitoring and surveillance platform helps firms take full control of their regulatory, reputational and operational risks across markets, functions and asset classes.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/ancoa.png"
+            "logo_url": "/static/images/vendor-logos/ancoa.png"
         },
         {
             "full_only": true,
@@ -636,7 +636,7 @@
             "technologies": ["Data Aggregation and Analytics", "API Development", "Cloud Computing"],
             "description": "AQMetrics provides integrated compliance and risk management software to fund administrators, asset managers, investment managers and broker dealer companies. Its consolidated platform delivers data management, risk profiling and monitoring, compliance workflows and reports all in one place. With AQMetrics, customers understand their risks whilst complying with regulations in a way that has never before been possible.",
             "contact": "partnerships@aqmetrics.com",
-            "logo_url": "/R2A_files/vendor-logos/aqmetrics.png"
+            "logo_url": "/static/images/vendor-logos/aqmetrics.png"
         },
         {
             "full_only": true,
@@ -650,7 +650,7 @@
             "technologies": ["Robotic Process Automation", "Big Data Analytics", "Data Integration"],
             "description": "Arachnys uses a unique combination of robotic process automation and analyst cognitive enhancement to help you defeat your KYC, AML and EDD challenges.",
             "contact": "info@arachnys.com",
-            "logo_url": "/R2A_files/vendor-logos/arachnys.png"
+            "logo_url": "/static/images/vendor-logos/arachnys.png"
         },
         {
             "full_only": true,
@@ -664,7 +664,7 @@
             "technologies": ["ML", "Predictive Analysis"],
             "description": "Ascent helps its customers follow laws and regulations. We are a new type of company, a “RegTech” organization that combines a SaaS platform with intelligent content to provide customized tools and targeted advice for our customers. We’re using modern techniques like machine learning and predictive analytics to stay on the cutting edge of our industry. The Ascent platform makes it easy for compliance officers in regulated industries to see exactly what is expected of their companies, then track and report on the steps they’re taking to stay compliant. The efficient intelligence we provide helps our customers fulfill the spirit (and letter) of their obligations in a way that lets them breathe easy and focus on creating value for their own customers through their core business. We’re a team of compliance officers, lawyers, data scientists, and technologists united by the goal of helping you know your business so well that you not only comply with your obligations, but anticipate your future exposure. We combine decades of experience for actionable insights that are built into the platform.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/ascent.png"
+            "logo_url": "/static/images/vendor-logos/ascent.png"
         },
         {
             "full_only": true,
@@ -678,7 +678,7 @@
             "technologies": ["AI", "Big Data"],
             "description": "At Ayasdi, we believe that deriving insight from big data will become essential and transformative for every enterprise. We believe that machine intelligence has the ability to revolutionize industries, allowing businesses to scale with algorithms and raw computing power rather than people, drastically improving human productivity, increasing operational effectiveness, and advancing scientific discovery.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/ayasdi.png"
+            "logo_url": "/static/images/vendor-logos/ayasdi.png"
         },
         {
             "full_only": true,
@@ -692,7 +692,7 @@
             "technologies": ["Proprietary"],
             "description": "Banker’s Toolbox, Inc. provides software-based solutions for financial institutions. Our diverse staff consists of seasoned bankers, CAMS certified professionals, former regulators and technology experts who specialize in designing, developing, and implementing risk management solutions. Our commitment to customers is unmatched in the industry and is reflected in our dedication to customer support. Become a member of the Banker’s toolbox family and feel the Banker’s Toolbox difference.",
             "contact": "512.279.5700",
-            "logo_url": "/R2A_files/vendor-logos/bankers-toolbox.png"
+            "logo_url": "/static/images/vendor-logos/bankers-toolbox.png"
         },
         {
             "full_only": true,
@@ -706,7 +706,7 @@
             "technologies": ["Information Security", "Biometrics"],
             "description": "We believe that great user experiences should never come with a security risk. BehavioSec has created the new model for strong, multilayered customer security. Now you can can stop fraud, prevent attacks, and verify your customers — all without slowing them down. We call it behavioral biometrics, and it uses continuous machine learning to authenticate users based, not on what they do, but on how they do it. Our algorithm can verify who someone is based on how they naturally interact with their device and deliver instant identity verification, along with continuous authentication. No special sensors. No extra hardware. Just artificial intelligence that works with your customers’ natural behavior to protect their online integrity",
             "contact": "contact@behaviosec.com",
-            "logo_url": "/R2A_files/vendor-logos/behaviosec.png"
+            "logo_url": "/static/images/vendor-logos/behaviosec.png"
         },
         {
             "full_only": true,
@@ -720,7 +720,7 @@
             "technologies": ["AI", "Data Security"],
             "description": "Behavox is the People Analytics company that uses AI to make companies smarter, more secure and more successful. The Behavox Platform generates previously unidentifiable insights into all aspects of business operations, strengthening compliance, culture and competitiveness.",
             "contact": "ny@behavox.com",
-            "logo_url": "/R2A_files/vendor-logos/behavox.png"
+            "logo_url": "/static/images/vendor-logos/behavox.png"
         },
         {
             "full_only": true,
@@ -734,7 +734,7 @@
             "technologies": ["Proprietary"],
             "description": "Modern business intelligence, lifecycle management and regulatory compliance for corporate tax credits & incentives.",
             "contact": "info@bigcontrols.com",
-            "logo_url": "/R2A_files/vendor-logos/bigcontrols.png"
+            "logo_url": "/static/images/vendor-logos/bigcontrols.png"
         },
         {
             "full_only": true,
@@ -748,7 +748,7 @@
             "technologies": ["Proprietary"],
             "description": "Focusing on protecting identities online while providing online and mobile users with a frictionless experience, the BioCatch platform develops behavioral biometric profiles of online users to recognize a wide range of human and non-human cybersecurity threats.",
             "contact": "info@biocatch.com",
-            "logo_url": "/R2A_files/vendor-logos/biocatch.png"
+            "logo_url": "/static/images/vendor-logos/biocatch.png"
         },
         {
             "full_only": true,
@@ -762,7 +762,7 @@
             "technologies": ["Proprietary"],
             "description": "Compliance As A Service is an innovative company that seeks to improve the in-effeciencies in operational regulatory management systems and to mitigate the subsequent risk impact and compliance exposure for investment banks, trading firms and hedge funds. Providing a service that efficiently and economically manages regulatory risk and meets the complex operational and logistical compliance obligations, that everchanging compliance legislation requires",
             "contact": "info@caas-ltd.com",
-            "logo_url": "/R2A_files/vendor-logos/caas.jpg"
+            "logo_url": "/static/images/vendor-logos/caas.jpg"
         },
         {
             "full_only": true,
@@ -776,7 +776,7 @@
             "technologies": ["Proprietary"],
             "description": "Capnovum’s Compliance Management solution and underlying Joint Learning™​ platform address these challenges by combining regulatory monitoring, collaboration and communication tools with PMO capabilities and best practice processes. Cloud technologies enable timely and cost-effective delivery. Machine learning and analytics ensure that content stays relevant and up-to-date. Asset based services help our clients stay informed and in control of ever more complex regulatory requirements. Our clients, investing in their own resources; mitigate risk, drive down cost of change, and reduce dependence on management consultants for execution",
             "contact": "tellmeabout@capnovum.com",
-            "logo_url": "/R2A_files/vendor-logos/capnovum.png"
+            "logo_url": "/static/images/vendor-logos/capnovum.png"
         },
         {
             "full_only": true,
@@ -790,7 +790,7 @@
             "technologies": ["Proprietary"],
             "description": "Using our year’s of building customized solutions led to the creation of Capptivate, a cloud based and multi-jurisdiction regulatory reporting hub. Servicing EMIR, Dodd-Frank, MiFID and ASIC, Capptivate is an easy to implement and cost effective alternative to self reporting or delegated reporting to a Prime Broker",
             "contact": "info@cappitech.com",
-            "logo_url": "/R2A_files/vendor-logos/cappitech.png"
+            "logo_url": "/static/images/vendor-logos/cappitech.png"
         },
         {
             "full_only": true,
@@ -804,7 +804,7 @@
             "technologies": ["Proprietary"],
             "description": "ClearMash’s solutions ensure employee compliance with minimal efforts and increased awareness, in real time. They allow its clients to handle regulatory content and gather regulatory intelligence easily by providing a common framework of templates, search, workflows, analytics and best practices. The solution identifies employee working processes in real time and pops up relevant regulation information, alerts in case of potential mistake and produces evidence to investigate compliance violations.",
             "contact": "sales@clearmash.com",
-            "logo_url": "/R2A_files/vendor-logos/clearmash.png"
+            "logo_url": "/static/images/vendor-logos/clearmash.png"
         },
         {
             "full_only": true,
@@ -818,7 +818,7 @@
             "technologies": ["Proprietary"],
             "description": "We are a team of compliance and risk experts, engineers and data scientists. We’re on a mission to help fight financial crime by revolutionizing the way companies can protect themselves from criminals, terrorists and money launderers.",
             "contact": "contact.usa@complyadvantage.com",
-            "logo_url": "/R2A_files/vendor-logos/comply-advantage.png"
+            "logo_url": "/static/images/vendor-logos/comply-advantage.png"
         },
         {
             "full_only": true,
@@ -832,7 +832,7 @@
             "technologies": ["AI"],
             "description": "ComplySci provides strategic governance, risk and compliance solutions to the financial services and professional services community. Led by pioneers in the GRC space, the Complysci platform uses web-based corporate compliance technology that leverages a robust data network and innovative forensic analytics to monitor employee risk and automate code of ethics compliance. ComplySci focus is on data quality, its deep domain expertise and award winning “white glove” concierge service.",
             "contact": "212-327-1533",
-            "logo_url": "/R2A_files/vendor-logos/comply-sci.png"
+            "logo_url": "/static/images/vendor-logos/comply-sci.png"
         },
         {
             "full_only": true,
@@ -846,7 +846,7 @@
             "technologies": ["Information Security", "Data Management", "Cloud Hosting"],
             "description": "We perform detailed checks on people, companies & ID documents, to help our clients optimise their business processes, reduce risk, and help ensure compliance",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/contego.png"
+            "logo_url": "/static/images/vendor-logos/contego.png"
         },
         {
             "full_only": true,
@@ -860,7 +860,7 @@
             "technologies": ["Proprietary"],
             "description": "Continuity is the recognized RegTech leader, providing compliance management solutions that create a competitive advantage for our clients. We combine our RegTech expertise with technology to deliver RegTech solutions that provide measurable value and satisfaction to our stakeholders. With ever-increasing regulatory change, managing compliance is now a significant part of a financial institution's cost structure. It doesn't have to be this way. Continuity provides a combination of technology, expertise and leadership designed to make compliance a seamless part of how your institution does business. We guide you through a strategic plan to convert your existing compliance management processes into automated solutions, lifting the compliance burden to allow you to work smarter and faster—flawlessly.",
             "contact": "Info@continuity.net",
-            "logo_url": "/R2A_files/vendor-logos/continuity.png"
+            "logo_url": "/static/images/vendor-logos/continuity.png"
         },
         {
             "full_only": true,
@@ -874,7 +874,7 @@
             "technologies": ["AI", "workflow"],
             "description": "Cordium helps financial services firms around the world transform governance, risk and compliance (GRC) challenges into opportunities – to enhance regulatory relationships, improve processes, manage risk and grow the business. The deep expertise of our teams enables Cordium to support clients across the entire GRC lifecycle – from start-up through maturity – with a wide range of consulting services and technology solutions. Our specialists understand the challenges financial services firms face because they have served as compliance officers, lawyers, regulators, and in other roles. This means Cordium’s specialists are able to truly partner with firms, bringing in the right expertise – from regulatory change management to tax services, regulatory hosting to employee filing software support.",
             "contact": ",+1 617 348 9801",
-            "logo_url": "/R2A_files/vendor-logos/cordium.png"
+            "logo_url": "/static/images/vendor-logos/cordium.png"
         },
         {
             "full_only": true,
@@ -888,7 +888,7 @@
             "technologies": ["Proprietary"],
             "description": "Corlytics is the world’s leading provider of regulatory risk intelligence. Working in partnership with regulators and eminent financial institutions globally. We will enable a more transparent and stable financial system through greater regulatory compliance. By delivering world class regulatory risk data and analytics, we empower our partners to make transformational, informed, positive choices.",
             "contact": "info@corlytics.com",
-            "logo_url": "/R2A_files/vendor-logos/corlytics.png"
+            "logo_url": "/static/images/vendor-logos/corlytics.png"
         },
         {
             "full_only": true,
@@ -902,7 +902,7 @@
             "technologies": ["AI"],
             "description": "CoVi Analytics is making compliance simple for financial institutions based on an AI powered SaaS suite. Our mission is to help compliance, risk and business teams simplify their dealings with an increasingly complex regulatory environment and automate repetitive activities.",
             "contact": "(+44) 77 2591 3129",
-            "logo_url": "/R2A_files/vendor-logos/covi.png"
+            "logo_url": "/static/images/vendor-logos/covi.png"
         },
         {
             "full_only": true,
@@ -916,7 +916,7 @@
             "technologies": ["AI", "Data Management"],
             "description": "CUBE's AI driven RegTech solution provides an automated approach to identifying, analysing and monitoring global regulatory requirements to automate risk and compliance processes, establishing the world's first automated Regulatory Data Service that monitors every regulatory source globally",
             "contact": "enquiries@cube.global",
-            "logo_url": "/R2A_files/vendor-logos/cube-global.png"
+            "logo_url": "/static/images/vendor-logos/cube-global.png"
         },
         {
             "full_only": true,
@@ -930,7 +930,7 @@
             "technologies": ["AI", "ML"],
             "description": "We help clients in the Financial Services Sector (including FinTech start-ups) and the Professional Services Sector better comply with ever-increasing regulatory requirements, in particular anti money laundering (AML), counter terrorism financing (CTF) and Know-Your-Customer (KYC). We offer a range of Software-as-a-Service (SaaS) products for our clients. This allows them to stay ahead of the regulatory curve and focus on what matters most - their Core Business.",
             "contact": "sales@cynopsis.co",
-            "logo_url": "/R2A_files/vendor-logos/cynopsis-solutions.png"
+            "logo_url": "/static/images/vendor-logos/cynopsis-solutions.png"
         },
         {
             "full_only": true,
@@ -944,7 +944,7 @@
             "technologies": [""],
             "description": "Datactics is ideally positioned to meet the specific data requirements of firms operating in the financial sector as they prepare for emerging regulations. We provide sophisticated tools to help financial institutions get their data in order and quickly respond to new standards. We offer agile data quality and powerful matching software for reference, entity and instrument data that is designed to be operated by Data Analysts and requires no coding or programming to configure complex data workflows. This agile nature helps to get projects off the ground and into production very quickly. The powerful matching capability allows firms to field map across instruments and identifiers and the proprietary ‘fuzzy logic’ helps to de-duplicate records. Datactics helps firms to make sense of their big data warehouses by rapidly profiling to spot potential errors and identify patterns. The tools can then improve the quality of the data and link disparate datasets together in order to get an improved view across the enterprise. The tools may be deployed by Data Scientists to build sophisticated data cleansing, re-engineering and matching projects, or as an overall enterprise platform for managing a global workflow on large data quality projects.",
             "contact": "info@datactics.com",
-            "logo_url": "/R2A_files/vendor-logos/datactics.png"
+            "logo_url": "/static/images/vendor-logos/datactics.png"
         },
         {
             "full_only": true,
@@ -958,7 +958,7 @@
             "technologies": [""],
             "description": "Datarama is the one-stop source for hard-to-find risk analysis and due diligence information on China and South-east Asia. Our database includes 17,000+ companies, 16,000+ individuals, 27 business families, and maps out 46,000 relationships between them. The list is growing every day.",
             "contact": "info@datarama.com",
-            "logo_url": "/R2A_files/vendor-logos/datarama.png"
+            "logo_url": "/static/images/vendor-logos/datarama.png"
         },
         {
             "full_only": true,
@@ -972,7 +972,7 @@
             "technologies": [""],
             "description": "Paper-based KYC is outdated, slow, frustrating & makes you highly susceptible to fraud. In addition to this, it creates a poor customer experience which is one of the greatest causes of drop-off during the application process. You should be able to offer your clients the ability to sign up instantly, at any time of the day, from anywhere in the world. DocFox automatically verifies client information and creates a rapid, easy and 100% KYC compliant experience.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/docfox.png"
+            "logo_url": "/static/images/vendor-logos/docfox.png"
         },
         {
             "full_only": true,
@@ -986,7 +986,7 @@
             "technologies": [""],
             "description": "encompass is the creator of know your customer (KYC) automation for major financial and professional service firms globally. we are the only provider of simultaneous, real-time access to multiple sources of global company and person data. By using robotic search to discover everything your KYC policy demands, encompass delivers more efficient processes and faster, safer regulatory compliance, resulting in lower costs and superior risk management. Encompass’ products robotically search structured and unstructured information sources to automate your KYC, AML and EDD policies. Key elements including UBOs, PEPs, sanctions and adverse media are all identified, visualised and verified in seconds. Whether it’s one, or one thousand customers, enhanced risk assessment, monitoring and remediation can now be achieved at scale through the power of automation.",
             "contact": "info@encompasscorporation.com",
-            "logo_url": "/R2A_files/vendor-logos/encompass.png"
+            "logo_url": "/static/images/vendor-logos/encompass.png"
         },
         {
             "full_only": true,
@@ -1000,7 +1000,7 @@
             "technologies": ["ML"],
             "description": "Featurespace is the world leader in Adaptive Behavioural Analytics – machine learning software to monitor every individual customer in real-time and predict what they’re going to do next. Its unique ARIC engine hasmany applications and is having huge impact on fraud prevention and customer management. Organisations and merchants in Financial Services, Insurance and Gaming are using Featurespace to catch more fraud, accept more transactions and reduce headcount needed to deal with alerts",
             "contact": "info@featurespace.co.uk",
-            "logo_url": "/R2A_files/vendor-logos/featurespace.png"
+            "logo_url": "/static/images/vendor-logos/featurespace.png"
         },
         {
             "full_only": true,
@@ -1014,7 +1014,7 @@
             "technologies": ["AI", "ML"],
             "description": "Feedzai’s intelligent platform ingests and transforms multiple data streams and fraud insights across any channel, then enriches the data to create hypergranular risk profiles. Feedzai’s machine learning then works to process events and transactions in milliseconds and delivers explainable AI by adding a human-readable semantic layer to the underlying machine logic. The result is better fraud prevention, streamlined operations, and improved customer experience.",
             "contact": "info@feedzai.com",
-            "logo_url": "/R2A_files/vendor-logos/feedzai.png"
+            "logo_url": "/static/images/vendor-logos/feedzai.png"
         },
         {
             "full_only": true,
@@ -1028,7 +1028,7 @@
             "technologies": [""],
             "description": "Fenergo’s software solutions enable financial institutions to solve the challenges of the “perfect storm” by streamlining the end-to-end Client Lifecycle Management processes (from regulatory onboarding, data integration, client and counterparty data management, client lifecycle reviews and remediation all the way to client offboarding etc.). Our solutions are proven to improve compliance, operational efficiencies, time to revenue and client experience.",
             "contact": "hello@fenergo.com",
-            "logo_url": "/R2A_files/vendor-logos/fenergo.png"
+            "logo_url": "/static/images/vendor-logos/fenergo.png"
         },
         {
             "full_only": true,
@@ -1042,7 +1042,7 @@
             "technologies": [""],
             "description": "Fintellix builds a platform which is now in its 5th year of development which has two loosely coupled components – \"DataHub\" and \"Data Platform\". The \"DataHub\" vision is to make the job of aggregating and organizing rich, granular data from multiple data sources easy. The \"Data Platform\" vision is to provide a \"codeless\" interface for Business Analysts, Data Analysts and Business Users to collaborate to convert the data into reporting outputs and submissions. Fintellix also develops Products on the Platform meeting regulatory change requirements in various geographies such as ADF/RBS/ECL in India, MAS Reporting revamp in Singapore, CECL in USA, LCR/NSFR globally, BOM reporting revamp in Mauritius etc.",
             "contact": "info@fintellix.com",
-            "logo_url": "/R2A_files/vendor-logos/fintellix.png"
+            "logo_url": "/static/images/vendor-logos/fintellix.png"
         },
         {
             "full_only": true,
@@ -1056,7 +1056,7 @@
             "technologies": [""],
             "description": "Fortia Financial Solutions is a software provider company founded by professional asset management and R & D engineers to design new solutions dedicated to compliance management, internal control and reporting. Its solutions are based on the desire to design solutions marking a real breakthrough in innovation. More than three quarters of its sales is reinvested in its R&D activities. Its goal: to provide solutions in a very easy to use and with artificial intelligence able to greatly facilitate the work of users.",
             "contact": "contact@fortia.fr",
-            "logo_url": "/R2A_files/vendor-logos/fortia.png"
+            "logo_url": "/static/images/vendor-logos/fortia.png"
         },
         {
             "full_only": true,
@@ -1070,7 +1070,7 @@
             "technologies": [""],
             "description": "FSCom is a specialist financial services compliance company which provides practical tailored solutions to businesses in the regulated sector. FSCom is now one of the leading best practice compliance specialists in the UK. KYC-PRO, the latest offering from FSCom has been developed to meet our existing customers needs. It has partnered with some of the biggest names in the industry to pull KYC information from the most reliable sources, into one automated solution.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/fscom.png"
+            "logo_url": "/static/images/vendor-logos/fscom.png"
         },
         {
             "full_only": true,
@@ -1084,7 +1084,7 @@
             "technologies": [""],
             "description": "FundApps is unique as it provides both technology and content. We make white-hot technology written by some of the best developers around, but we also partner with the most respected content providers in the industry to deliver the rules & updates which happen so frequently in financial regulation nowadays.",
             "contact": "info@fundapps.co",
-            "logo_url": "/R2A_files/vendor-logos/fundapps.png"
+            "logo_url": "/static/images/vendor-logos/fundapps.png"
         },
         {
             "full_only": true,
@@ -1098,7 +1098,7 @@
             "technologies": [""],
             "description": "We are a RegTECH (Regulatory Technology) company, with a unique combination of regulatory expertise and best-of-breed technology. We are taking the complex challenges with risk, compliance and regulatory reporting and are making them very simple. For investment managers and depositaries having to comply with increasing demands for investment compliance, risk and regulatory reporting, our solutions enable you to quickly meet the regulatory requirements without the need for costly implementations and risky projects. We help you to meet your regulatory obligations at a lower cost, lower risk and in a shorter time-frame compared to our competitors or if you develop an in-house solution. We also provide fully managed outsourcing services, from our Belfast operations hub, which enables you to quickly transform your internal cost base.",
             "contact": "info@funds-axis.com",
-            "logo_url": "/R2A_files/vendor-logos/funds-axis.png"
+            "logo_url": "/static/images/vendor-logos/funds-axis.png"
         },
         {
             "full_only": true,
@@ -1112,7 +1112,7 @@
             "technologies": [""],
             "description": "Fundsquare provides answers to the growing concerns of fund industry actors regarding costs, inefficiencies, redundant systems, disparate processes and lack of standardisation. Increasing economic and regulatory pressures are at the origin of Fundsquare and have encouraged the creation of a unified mechanism that will decrease costs and risks.",
             "contact": "info@fundsquare.net",
-            "logo_url": "/R2A_files/vendor-logos/fundsquare.png"
+            "logo_url": "/static/images/vendor-logos/fundsquare.png"
         },
         {
             "full_only": true,
@@ -1126,7 +1126,7 @@
             "technologies": [""],
             "description": "",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/gecko-governance.png"
+            "logo_url": "/static/images/vendor-logos/gecko-governance.png"
         },
         {
             "full_only": true,
@@ -1140,7 +1140,7 @@
             "technologies": [""],
             "description": "Governance.io enables you to deal with regulatory requirements effortlessly, and to collect, connect and control any data or document. The result? Unprecedented transparency of your governance processes, secure access to your data wherever you are and the possibility to collaborate in real-time.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/governance-io.png"
+            "logo_url": "/static/images/vendor-logos/governance-io.png"
         },
         {
             "full_only": true,
@@ -1154,7 +1154,7 @@
             "technologies": [""],
             "description": "Global Risk and Data Authority Ltd. brings you the GRADA Platform, a purpose-built software developed to facilitate global “Know Your Customer” (KYC) and “Know Your Customers’ Customer” (KYCC) compliance requirements. The platform was created to address the ever-increasing complexities of Anti Money Laundering (AML), Counter Terrorist Financing (CTF) and global taxation initiatives such as the Foreign Accounts Tax Compliance Action (FATCA) and OECD Common Reporting Standards (CRS). Our platform provides an easy, user friendly and cost effective on-line solution for the financial service provider dealing with compliance and regulatory initiatives.",
             "contact": "info@grada.io",
-            "logo_url": "/R2A_files/vendor-logos/grada.png"
+            "logo_url": "/static/images/vendor-logos/grada.png"
         },
         {
             "full_only": true,
@@ -1168,7 +1168,7 @@
             "technologies": [""],
             "description": "OUR PROACTIVE COMPLIANCE PLATFORM HELPS YOUR BUSINESS MEET STANDARDS THAT ARE NOT ONLY REQUIRED BY THE LAW, BUT ALSO EXPECTED BY YOUR CUSTOMERS.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/helm.png"
+            "logo_url": "/static/images/vendor-logos/helm.png"
         },
         {
             "full_only": true,
@@ -1182,7 +1182,7 @@
             "technologies": ["Big Data Analytics"],
             "description": "Hexanika’s advanced data management and reporting solutions helps financial services firms adapt to the fast-changing environment. We are here to make Big Data work for your enterprise by providing simplified, scalable products and services to tackle rapid change, regulatory pressures and increasing global competition. Our Big Data softwares can provide competitive advantage for companies by guiding them to make crucial, data-driven decisions to improve business process and performance. The banking sector has gone through enormous changes in the past few years such as consolidation, data growth, financial crisis and dynamically evolving compliance requirements. Errors arising due to evolving compliance coupled with incapable legacy systems has resulted in these institutions paying fines in billions of dollars. In this highly evolving regulatory and business environment, Hexanika’s solution comes at a vital time to help banks and financial firms cope up to the challenging regulatory environment.",
             "contact": "info@hexanika.com",
-            "logo_url": "/R2A_files/vendor-logos/hexanika.png"
+            "logo_url": "/static/images/vendor-logos/hexanika.png"
         },
         {
             "full_only": true,
@@ -1196,7 +1196,7 @@
             "technologies": ["Big Data Analytics"],
             "description": "We give the people fighting financial crimes superpowers. Our service is designed to enhance anti-money laundering and counter-terrorist financing investigations. It reduces cumbersome paperwork, provides insightful analytics, and enables collaboration for compliance professionals and law enforcement agents. We’re on a mission to turn the tables against criminals who pollute our financial system. Modern criminals are sophisticated, tech-savvy, and agile. The tools used to fight financial crimes should be, too.",
             "contact": "info@hummingbird.co",
-            "logo_url": "/R2A_files/vendor-logos/hummingbird.jpg"
+            "logo_url": "/static/images/vendor-logos/hummingbird.jpg"
         },
         {
             "full_only": true,
@@ -1210,7 +1210,7 @@
             "technologies": [""],
             "description": "IdentityMind provides a plug-in software solution that handles the necessary Anti-Money Laundering (AML) requirements, including KYC (Know Your Customer), required to launch your ICO around the world. It ensures that your ICO meets the existing legal requirements, demonstrating to regulators you're doing the right thing. With our extensive digital currency, regulatory, and risk management knowledge, we can make this part of your ICO a whole lot easier.",
             "contact": "650-618-9977",
-            "logo_url": "/R2A_files/vendor-logos/identitymind.png"
+            "logo_url": "/static/images/vendor-logos/identitymind.png"
         },
         {
             "full_only": true,
@@ -1224,7 +1224,7 @@
             "technologies": [""],
             "description": "We use our unique Information Matrix to help our clients join up all their customer data - without lengthy and expensive system changes. This helps our clients to achieve and demonstrate regulatory compliance, and provides a foundation for improved risk management, capital management and enhanced customer service",
             "contact": "info@ICX4.com",
-            "logo_url": "/R2A_files/vendor-logos/icx4.png"
+            "logo_url": "/static/images/vendor-logos/icx4.png"
         },
         {
             "full_only": true,
@@ -1238,7 +1238,7 @@
             "technologies": [""],
             "description": "INVOXIS provides software solutions in order to help decision-makers to use efficiently information from different sources. Its unique technology offers a Search & Extraction Builder with APIs and an investigation platform, which collects strategic information to help banks in their KYC, Client-Onboarding, AML, DueDil Investigation & Sectorial Analysis processes.",
             "contact": "info@invoxis.com",
-            "logo_url": "/R2A_files/vendor-logos/invoxis.png"
+            "logo_url": "/static/images/vendor-logos/invoxis.png"
         },
         {
             "full_only": true,
@@ -1252,7 +1252,7 @@
             "technologies": [""],
             "description": "iSignthis Ltd (ASX : ISX) is the global leader in dynamic, digital AML/CFT KYC identity proofing. Our Paydentity® solution incorporates real time electronic verification which converges authenticated remote payments with Know Your Customer (KYC) verification. By converging payments and identity, iSignthis delivers regulatory compliance with automated customer on-boarding. We offer a global reach of any of the world’s 3.5Bn financially included or “banked” persons. iSignthis’ unique solutions protect both online customers and merchants from fraud and identity theft, and thus increase confidence and trust by all parties involved in remote transactions.",
             "contact": "contact@isignthis.com",
-            "logo_url": "/R2A_files/vendor-logos/isignthis.png"
+            "logo_url": "/static/images/vendor-logos/isignthis.png"
         },
         {
             "full_only": true,
@@ -1266,7 +1266,7 @@
             "technologies": [""],
             "description": "Compliance.ai provides organizations with access to the most comprehensive collection of regulatory content. Focused on changes important to the financial services industry, the solution integrates with enterprise solutions (content & document management systems, portals, etc.) that are already being used within companies.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/compliance-ai.png"
+            "logo_url": "/static/images/vendor-logos/compliance-ai.png"
         },
         {
             "full_only": true,
@@ -1280,7 +1280,7 @@
             "technologies": [""],
             "description": "Know Your Customer Limited provides clients with cutting edge 21st century KYC and anti-money laundering technology solutions. It works as technology partner for firms in banking, law, accountancy and other fields in need of efficient customer ID verification. Know Your Customer's ID-Check is a mobile app that simplifies and accelerates identity verification for client on-boarding. Using the latest cyber-security, technology and international AML database we can provide the highest level of KYC verification.",
             "contact": "info@knowyourcustomer.com",
-            "logo_url": "/R2A_files/vendor-logos/know-your-customer.png"
+            "logo_url": "/static/images/vendor-logos/know-your-customer.png"
         },
         {
             "full_only": true,
@@ -1294,7 +1294,7 @@
             "technologies": ["AI", "NLP"],
             "description": "Kompli-Global has developed the world’s first networked, multi-jurisdictional, multi-lingual due diligence, search platform. Kompli-Global is transforming the financial crime and regulatory compliance space by combining cutting-edge Artificial Intelligence (AI) technology, human expertise and effective processes. Kompli-Global enables businesses to perform quick, thorough customer due diligence checks in an increasingly complex and regulated environment. The platform empowers organisations to consistently and repeatedly screen for adverse information on target entities on a global basis that would otherwise be unavailable, too time consuming or expensive to analyse. With Kompli-Global, due diligence becomes fast, accurate and thorough saving cost and reducing risk.",
             "contact": "hello@kompli-global.com",
-            "logo_url": "/R2A_files/vendor-logos/kompli-global.png"
+            "logo_url": "/static/images/vendor-logos/kompli-global.png"
         },
         {
             "full_only": true,
@@ -1308,7 +1308,7 @@
             "technologies": [""],
             "description": "Setting the Standard as the first secure communication platform for Know Your Customer (KYC) and Customer Due Diligence (CDD) purposes for the Financial Industry.",
             "contact": "info@kyc-exchange.net",
-            "logo_url": "/R2A_files/vendor-logos/kyc-exchange-net.png"
+            "logo_url": "/static/images/vendor-logos/kyc-exchange-net.png"
         },
         {
             "full_only": true,
@@ -1322,7 +1322,7 @@
             "technologies": [""],
             "description": "KYC-Chain is a novel platform built over the convenience and security of Distributed Ledger technology, allowing users to manage their digital identity securely, while businesses and financial institutions are able to manage customer data in a reliable and easy manner.",
             "contact": "info@kyc-chain.com",
-            "logo_url": "/R2A_files/vendor-logos/kyc-chain.png"
+            "logo_url": "/static/images/vendor-logos/kyc-chain.png"
         },
         {
             "full_only": true,
@@ -1336,7 +1336,7 @@
             "technologies": [""],
             "description": "KYC3.com was founded in 2013 with the mission to deliver data mining and analysis solutions for risk management using big data. Through their own projects, a couple of seasoned big data experts and due diligence professionals saw a need and filled it for themselves. When they kept coming back to the system the commercial potential was clear and they decided to share it with the world. So here we are: Know Your Customer, Counterparty and Competition: KYC3",
             "contact": "sales@kyc3.com",
-            "logo_url": "/R2A_files/vendor-logos/kyc3.png"
+            "logo_url": "/static/images/vendor-logos/kyc3.png"
         },
         {
             "full_only": true,
@@ -1350,7 +1350,7 @@
             "technologies": [""],
             "description": "KYC Global Technologies develops and delivers highly innovative RegTech software solutions specifically targeted at the management of fin crime risk and the enhancement of risk governance performance. The Group supplies over 200 financial institutions globally and is backed by several UNHWI's including Simon Nixon (founder of MoneySupermarket.com) and Stephen Chandler (Managing Partner of Notion Capital, the UK's largest Fintech Venture Capital Fund).",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/kyc360.png"
+            "logo_url": "/static/images/vendor-logos/kyc360.png"
         },
         {
             "full_only": true,
@@ -1364,7 +1364,7 @@
             "technologies": [""],
             "description": "The mission of LockPath is to help our customers bring order to the chaos of managing their risk, audit and compliance programs",
             "contact": "1 913 601 4800",
-            "logo_url": "/R2A_files/vendor-logos/lockpath.png"
+            "logo_url": "/static/images/vendor-logos/lockpath.png"
         },
         {
             "full_only": true,
@@ -1378,7 +1378,7 @@
             "technologies": [""],
             "description": "The control framework can monitor for and highlight trades with breaks - failed reporting submissions, mismatched valuations, settlement exceptions - across functions throughout the trade lifecycle. Gathering data from multiple sources, both internal and external into a consistent model allows for n-way trade fact matching and portfolio reconciliation. The knowledge that breaks have occurred at multiple control points offers a unique opportunity to optimise investigations and remediation.",
             "contact": "info@messageautomation.com",
-            "logo_url": "/R2A_files/vendor-logos/message-automation.png"
+            "logo_url": "/static/images/vendor-logos/message-automation.png"
         },
         {
             "full_only": true,
@@ -1392,7 +1392,7 @@
             "technologies": [""],
             "description": "Met Facilities is a leading provider of a comprehensive and flexible FCA regulatory hosting umbrella for funds, start-ups, fintechs and financial services firms. This incubation platform allows start-ups to leverage capabilities that are traditionally reserved for major institutions. Its solutiondriven FCA regulatory hosting umbrella is founded on many years of knowledge and experience.",
             "contact": "020 7604 5777",
-            "logo_url": "/R2A_files/vendor-logos/metfacilities.png"
+            "logo_url": "/static/images/vendor-logos/metfacilities.png"
         },
         {
             "full_only": true,
@@ -1406,7 +1406,7 @@
             "technologies": [""],
             "description": "Our team provides expertise in our specialist areas of online trading in capital markets, combined with a thorough understanding of financial regulation and technology, which has resulted in our unprecedented platform - muinmos PASS.",
             "contact": "info@muinmos.com",
-            "logo_url": "/R2A_files/vendor-logos/muinmos.png"
+            "logo_url": "/static/images/vendor-logos/muinmos.png"
         },
         {
             "full_only": true,
@@ -1420,7 +1420,7 @@
             "technologies": [""],
             "description": "NeoRM was created to fill a glaring gap in the risk management market.",
             "contact": "INFO@NEORM.IO",
-            "logo_url": "/R2A_files/vendor-logos/neorm.png"
+            "logo_url": "/static/images/vendor-logos/neorm.png"
         },
         {
             "full_only": true,
@@ -1434,7 +1434,7 @@
             "technologies": [""],
             "description": "netConsult specialise in clients who are regulated by the FCA, SEC, CSSF and PCI. We understand better than most what you require from your IT. We understand how critical it is that your data is always secure and that your systems keep up with continuous changes in compliance. If your business survives on communication, you need instant back-up should your in-house systems fail. We can help.",
             "contact": "info@netconsult.co.uk",
-            "logo_url": "/R2A_files/vendor-logos/netconsult.png"
+            "logo_url": "/static/images/vendor-logos/netconsult.png"
         },
         {
             "full_only": true,
@@ -1448,7 +1448,7 @@
             "technologies": [""],
             "description": "We take a unique approach to fraud and risk assurance solutions by leveraging Big Data to correlate and analyze behaviors across the entire bank system – not just at the transaction level. This broader vision is the secret to our creative edge.",
             "contact": "info@netguardians.ch",
-            "logo_url": "/R2A_files/vendor-logos/netguardians.png"
+            "logo_url": "/static/images/vendor-logos/netguardians.png"
         },
         {
             "full_only": true,
@@ -1462,7 +1462,7 @@
             "technologies": [""],
             "description": "Neurensic is the culmination of thousands of hours of collaborative research between data technologists and seasoned experts in the banking, compliance, and trading industries. We show financial institutions the true power of artificial intelligence by delivering clearly prioritized calls to action. This empowers decision makers to solve challenging business problems.",
             "contact": "sales@neurensic.com",
-            "logo_url": "/R2A_files/vendor-logos/neurensic.jpg"
+            "logo_url": "/static/images/vendor-logos/neurensic.jpg"
         },
         {
             "full_only": true,
@@ -1476,7 +1476,7 @@
             "technologies": [""],
             "description": "Everything we do arises from the regulatory evolution. Legal frameworks are implemented to value fair business environments, maintain financial stability, prevent illegal activities and safeguard consumers. We contribute to the development of technology and infrastructure that support and maintain a healthy economy reflecting those values",
             "contact": "info@newbanking.com",
-            "logo_url": "/R2A_files/vendor-logos/newbanking.png"
+            "logo_url": "/static/images/vendor-logos/newbanking.png"
         },
         {
             "full_only": true,
@@ -1490,7 +1490,7 @@
             "technologies": ["AI"],
             "description": "Omniscience commercializes US intelligence agency AI and distributed data mining research to connect the dots across large, diverse data sources. Financial services companies use Omniscience for risk management, underwriting, and sales intelligence. Omniscience offers military-grade, distributed data mining algorithms, a diverse array of public and private data sources, and connectors to popular SaaS and enterprise software technologies as a SaaS product.",
             "contact": "contact@omni.sc",
-            "logo_url": "/R2A_files/vendor-logos/omniscience.png"
+            "logo_url": "/static/images/vendor-logos/omniscience.png"
         },
         {
             "full_only": true,
@@ -1504,7 +1504,7 @@
             "technologies": ["AI", "ML"],
             "description": "Onfido builds trust in an online world by helping businesses digitally verify people’s identities. Using machine learning technology, Onfido validates a user’s identity document and compares it with their facial biometrics. The identity can then be cross-referenced against international credit and watchlist databases.",
             "contact": "1 (415) 855-7113",
-            "logo_url": "/R2A_files/vendor-logos/onfido.png"
+            "logo_url": "/static/images/vendor-logos/onfido.png"
         },
         {
             "full_only": true,
@@ -1518,7 +1518,7 @@
             "technologies": [""],
             "description": "OpusDatum is well placed to help in the fight against financial crime, leveraging our extensive knowledge of a range of financial crime subjects. These include customer due diligence, transaction monitoring, reporting suspicions of money laundering, preventing bribery and corruption, managing fraud risks and preventing market abuse. Our team has excellent knowledge and understanding of financial crime legislation and regulation as they pertain to the banking industry, including Financial Conduct Authority (FCA) rules, money laundering regulations and Joint Money Laundering Steering Group (JMLSG) guidelines, as well as up-to-date knowledge of international sanctions legislation",
             "contact": "contact@opusdatum.com",
-            "logo_url": "/R2A_files/vendor-logos/opusdatum.jpg"
+            "logo_url": "/static/images/vendor-logos/opusdatum.jpg"
         },
         {
             "full_only": true,
@@ -1532,7 +1532,7 @@
             "technologies": [""],
             "description": "Panalytics Comply® is reinventing the way that Financial Services firms identify, manage and respond to regulatory risks and compliance violations across disparate data sources. To learn more, provide your email address below to download the Panalytics Comply Datasheet",
             "contact": "info@panalyticsco.com",
-            "logo_url": "/R2A_files/vendor-logos/panalytics.png"
+            "logo_url": "/static/images/vendor-logos/panalytics.png"
         },
         {
             "full_only": true,
@@ -1546,7 +1546,7 @@
             "technologies": [""],
             "description": "assFort CLM delivers a powerful and flexible AML and KYC compliance framework. Regulated businesses of all sizes can set up and manage onboarding processes in just a few clicks. Make costly negotiations and transformation projects a thing of the past.",
             "contact": "info@passfort.com",
-            "logo_url": "/R2A_files/vendor-logos/passfort.png"
+            "logo_url": "/static/images/vendor-logos/passfort.png"
         },
         {
             "full_only": true,
@@ -1560,7 +1560,7 @@
             "technologies": [""],
             "description": "Improve operational efficiency, reduce errors in unnecessary manual work and enjoy the power of seamless risk aggregation. RiskMine provides an entirely automated data pipeline for a firm’s risk data in any format. It incorporates automation to collect, process and aggregate in an efficient and scalable manner. Flexible configuration and bespoke in-memory cubes mean Risk Managers spend less time fighting daily data issues and more time achieving their goals.",
             "contact": "203 7455595",
-            "logo_url": "/R2A_files/vendor-logos/percentile.png"
+            "logo_url": "/static/images/vendor-logos/percentile.png"
         },
         {
             "full_only": true,
@@ -1574,7 +1574,7 @@
             "technologies": [""],
             "description": "Provenir makes risk analytics faster and simpler for financial institutions. Our Provenir risk analytics and decisioning Platform is a powerful orchestration hub that can listen to any channel, integrate with any data service and operationalize any analytic model. We help clients process more applications with greater efficiency and increase sales conversions with instant, real-time risk decisioning. We serve clients in a broad range of financial verticals including consumer, cards, payments, ecommerce and auto financing.",
             "contact": "Marketing@Provenir.com",
-            "logo_url": "/R2A_files/vendor-logos/provenir.png"
+            "logo_url": "/static/images/vendor-logos/provenir.png"
         },
         {
             "full_only": true,
@@ -1588,7 +1588,7 @@
             "technologies": [""],
             "description": "QuanTemplate enables you to bring in data from a vast array of sources, cleanse it, and analyse it at quantum speed. Then, see it feed instantly into your reports. With seamless implementation into your organisation and no disruption to your existing infrastructure, QuanTemplate provides you with the flexibility you need to tailor your reporting.",
             "contact": "enquiries@quantemplate.com",
-            "logo_url": "/R2A_files/vendor-logos/quantemplate.png"
+            "logo_url": "/static/images/vendor-logos/quantemplate.png"
         },
         {
             "full_only": true,
@@ -1602,7 +1602,7 @@
             "technologies": [""],
             "description": "Quarule is a smart AI Assistant that automates compliance program management, certification, and controls by using a controlled vocabulary, semantic rules and reasoning engine to teach computers the meaning of regulations, policies, and standards. In conjunction with work flow processes, productivity is greatly enhanced and consistent quality assured with transparency into every step and outcome. Quarule was founded by experts in financial markets regulation and semantic technologies for business-centric software solutions to address the inadequacy of legacy technologies in meeting the requirements of global regulatory reform.",
             "contact": "wesley.moore@quarule.com",
-            "logo_url": "/R2A_files/vendor-logos/quarule.png"
+            "logo_url": "/static/images/vendor-logos/quarule.png"
         },
         {
             "full_only": true,
@@ -1616,7 +1616,7 @@
             "technologies": ["AI", "ML"],
             "description": "Ravelin prevents fraud and protects margins for some of the world's leading online businesses",
             "contact": "info@ravelin.com",
-            "logo_url": "/R2A_files/vendor-logos/ravelin.png"
+            "logo_url": "/static/images/vendor-logos/ravelin.png"
         },
         {
             "full_only": true,
@@ -1630,7 +1630,7 @@
             "technologies": [""],
             "description": "We offer a systems-oriented approach to insider threat detection and analytics, cloud-based user and application protection, next-gen network protection, data security and systems visibility. It’s a new approach to cybersecurity never seen before. And as technology and users’ needs evolve, we are constantly looking to expand our offerings while staying true to our core in protecting the human point",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/forcepoint.png"
+            "logo_url": "/static/images/vendor-logos/forcepoint.png"
         },
         {
             "full_only": true,
@@ -1644,7 +1644,7 @@
             "technologies": [""],
             "description": "We facilitate technology as the mean of developing solutions for improving the regulatory data exchange in the finance industry",
             "contact": "info@regtify.com",
-            "logo_url": "/R2A_files/vendor-logos/regtify.png"
+            "logo_url": "/static/images/vendor-logos/regtify.png"
         },
         {
             "full_only": true,
@@ -1658,7 +1658,7 @@
             "technologies": [""],
             "description": "Risk Focus delivers trading, risk and cloud-enabling solutions to the global capital markets. It offers a full-service model from independent advisory and architecture services through full implementation and solution delivery. Its proprietary software platform, Report-it.Trade, offers component-based regulatory reporting solutions on the cloud or as packaged software, including Validate.Trade, the only data validation and emulation engine for the DTCC GTR.",
             "contact": "apixsales@riskfocus.com",
-            "logo_url": "/R2A_files/vendor-logos/riskfocus.png"
+            "logo_url": "/static/images/vendor-logos/riskfocus.png"
         },
         {
             "full_only": true,
@@ -1672,7 +1672,7 @@
             "technologies": [""],
             "description": "Silverfinch, part of the CSS MoneyMate Group, creates a secure central venue for regulatory data exchange between asset managers, fund distributors and investors.",
             "contact": "info@silverfinch.com",
-            "logo_url": "/R2A_files/vendor-logos/silverfinch.png"
+            "logo_url": "/static/images/vendor-logos/silverfinch.png"
         },
         {
             "full_only": true,
@@ -1686,7 +1686,7 @@
             "technologies": [""],
             "description": "Designed to manage supply chain risks, startup Simple KYC aims to simplify and consolidate the client onboarding process and the heavy compliance requirements placed on businesses in this area by regulators.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/simplekyc.png"
+            "logo_url": "/static/images/vendor-logos/simplekyc.png"
         },
         {
             "full_only": true,
@@ -1700,7 +1700,7 @@
             "technologies": [""],
             "description": "Semaphore, our Intelligent Information platform, is an enterprise-grade, easy to use semantic platform that integrates with content management systems, workflow and search engines, business application and databases to solve complex problems that traditional technologies cannot. Semaphore brings structure to the unstructured, scales to manage organizational volumes, and supports industry-standard semantic vocabularies. Keep track of information you generate for state and local regulators",
             "contact": "1 408 213 9500",
-            "logo_url": "/R2A_files/vendor-logos/smartlogic.png"
+            "logo_url": "/static/images/vendor-logos/smartlogic.png"
         },
         {
             "full_only": true,
@@ -1714,7 +1714,7 @@
             "technologies": [""],
             "description": "SmartStream enables its clients to respond to forthcoming industry regulations, ensuring they have the necessary risk controls in place to assist with compliance rules.",
             "contact": "(0)20 7898 0600",
-            "logo_url": "/R2A_files/vendor-logos/smartstream.gif"
+            "logo_url": "/static/images/vendor-logos/smartstream.gif"
         },
         {
             "full_only": true,
@@ -1728,7 +1728,7 @@
             "technologies": [""],
             "description": "We are passionate about regulation and want to unlock its full potential. As we have designed our technology specifically around regulatory concerns, banks can finally achieve continuous compliance, manage their costs and easily conduct analysis.",
             "contact": "info@suade.org",
-            "logo_url": "/R2A_files/vendor-logos/suade.png"
+            "logo_url": "/static/images/vendor-logos/suade.png"
         },
         {
             "full_only": true,
@@ -1742,7 +1742,7 @@
             "technologies": [""],
             "description": "TheMarketsTrust is an innovative integrated solutions company, providing next-generation products for the financial industry together with expert consulting and solutions integration. Thanks to the in-house research & development team, its technology proficiency and financial expertise, TheMarketsTrust creates original solutions and delivers unique products.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/themarketstrust.png"
+            "logo_url": "/static/images/vendor-logos/themarketstrust.png"
         },
         {
             "full_only": true,
@@ -1756,7 +1756,7 @@
             "technologies": [""],
             "description": "Tradle's blockchain based bot framework enables you to build new customer interactions, customize compliance rules, and develop new consensus algorithms! We take care of all the server, network, security and app pain so you can concentrate on your rapid business evolution.",
             "contact": "info@tradle.io",
-            "logo_url": "/R2A_files/vendor-logos/tradle.png"
+            "logo_url": "/static/images/vendor-logos/tradle.png"
         },
         {
             "full_only": true,
@@ -1770,7 +1770,7 @@
             "technologies": [""],
             "description": "TransparINT is a full service technology company focused on providing the next generation of financial crimes compliance tools.",
             "contact": "info@transparint.com",
-            "logo_url": "/R2A_files/vendor-logos/transparint.png"
+            "logo_url": "/static/images/vendor-logos/transparint.png"
         },
         {
             "full_only": true,
@@ -1784,7 +1784,7 @@
             "technologies": [""],
             "description": "Trulioo is a leading global ID verification company providing advanced analytics based on traditional information such as public records, credit files and government data as well as alternative sources including social login providers, ad networks, mobile applications, e-commerce websites and social networks. Trulioo’s instant electronic identity verification service, GlobalGateway, was created specifically to help businesses comply with cross-border Anti-Money Laundering (AML) and Know Your Customer (KYC) rules and has since evolved to support a diverse range of international electronic identity verification requirements (eIDV). With the ability to verify 4 billion people in over 60 countries, Trulioo offers the most robust and comprehensive identity intelligence data from over 200 trusted sources globally. Our technology allows for seamless integration of identity information into existing systems that perform frictionless, on-demand ID verification at a competitive price.",
             "contact": "support@trulioo.com",
-            "logo_url": "/R2A_files/vendor-logos/trulioo.png"
+            "logo_url": "/static/images/vendor-logos/trulioo.png"
         },
         {
             "full_only": true,
@@ -1798,7 +1798,7 @@
             "technologies": [""],
             "description": "See how Trustev can help banks and credit providers by blocking fraud in real time—without mistakenly turning away good customers.",
             "contact": "1-917-336-7076",
-            "logo_url": "/R2A_files/vendor-logos/trustev.png"
+            "logo_url": "/static/images/vendor-logos/trustev.png"
         },
         {
             "full_only": true,
@@ -1812,7 +1812,7 @@
             "technologies": [""],
             "description": "Instant and accurate identity verification for streamlined onboarding, reduced fraud and Know Your Customer requirements.",
             "contact": "sales@veridu.com",
-            "logo_url": "/R2A_files/vendor-logos/veridu.png"
+            "logo_url": "/static/images/vendor-logos/veridu.png"
         },
         {
             "full_only": true,
@@ -1826,7 +1826,7 @@
             "technologies": [""],
             "description": "ViClarity is an innovative platform that allows you to track and manage all your compliance in one system and provide powerful reports. You can build your own checklists or choose from our many pre-populated templates and customise to suit the exact needs of your Organisation.",
             "contact": "info@viclarity.com",
-            "logo_url": "/R2A_files/vendor-logos/viclarity.png"
+            "logo_url": "/static/images/vendor-logos/viclarity.png"
         },
         {
             "full_only": true,
@@ -1840,7 +1840,7 @@
             "technologies": [""],
             "description": "Vizor harness technology to make financial supervision easier, faster and more effective for financial regulators. We have created one, purpose built, intelligent software solution. One system to replace multiple disjointed systems. One system that supports the full supervisory lifecycle. One system that monitors and reports on the full financial picture.",
             "contact": "info@vizorsoftware.com",
-            "logo_url": "/R2A_files/vendor-logos/vizor.png"
+            "logo_url": "/static/images/vendor-logos/vizor.png"
         },
         {
             "full_only": true,
@@ -1854,7 +1854,7 @@
             "technologies": ["BigData", "AI", "ML"],
             "description": "AdviceRobo is the global specialist in innovative risk scoring. It applies thousands of behavioural data on its artificial intelligence platform to score credit risk. Products are (1) automated underwriting, (2) thin file psychographic credit scoring and (3) near real time risk tracking. AdviceRobo is European market leader delivering over 1 million credit scores to banks and lenders from Sweden to Spain, from the UK to Poland. The business launched its platform onto the UK market in December 2016.",
             "contact": "info@advicerobo.com",
-            "logo_url": "/R2A_files/vendor-logos/advicerobo.jpeg"
+            "logo_url": "/static/images/vendor-logos/advicerobo.jpeg"
         },
         {
             "full_only": true,
@@ -1868,7 +1868,7 @@
             "technologies": ["AI"],
             "description": "We understand what aspects of your digital business keep you awake at night, and we revel in finding new ways to address digital challenges. We go beyond web, mobile and social archiving. We dig deeper. We know that the big data we collect, while gathering all of the information required to ensure compliance, transforms archived data into compliant insights. Our innovative use of technology, our unique approach, and our highly talented team, forms a solid foundation for efficient, secure and accountable digital business – now and in the future.",
             "contact": "",
-            "logo_url": "/R2A_files/vendor-logos/qumram.png"
+            "logo_url": "/static/images/vendor-logos/qumram.png"
         },
         {
             "full_only": true,
@@ -1882,7 +1882,7 @@
             "technologies": [""],
             "description": "While online retailers and consumer services are leveraging data science in ways that are literally shifting the tides of entire industries, commercial banking has barely dipped a toe into the deep waters of consumer data. Yet the stakes in our industry are much higher. Raised in banking, the QuantaVerse team sees what is possible when data science is well-applied to the industry’s greatest challenges. Instead of being an unwitting tool used by terrorists and criminals to further their aims, bankers can be a weapon in the fight against financial crime and the tragedies those crimes pay to support. Instead of being a bystander as customers struggle to steer a financial course for their families, bankers can pilot them to outcomes that enrich their lives today and for generations to come. These are the rewards of an insightful customer data analytics platform purpose-built for banking and leveraging an unprecedented variety of data. This is how QuantaVerse helps you improve your business while improving the world.",
             "contact": "info@quantaverse.net",
-            "logo_url": "/R2A_files/vendor-logos/quantaverse.png"
+            "logo_url": "/static/images/vendor-logos/quantaverse.png"
         },
         {
             "full_only": true,
@@ -1896,7 +1896,7 @@
             "technologies": ["BigData", "AI", "ML"],
             "description": "Sunoida Solutions is one of the fastest growing Business Intelligence and Analytics Company in the emerging markets. As a niche player in the area of Business Intelligence and Enterprise Risk Management for Financial Institutions, Sunoida provides technology solutions on the back of very strong domain consulting in the banking space. Our solutions have been designed “For Bankers by Bankers”. The company has a perfect blend of business domain experts and technology experts and that combined knowledge is critical to succeed in today’s dynamic business environment. Sunoida provides Best-In-Class Products & Services and ensures that we deliver top quality solutions to our customers, on time and within budget meeting or exceeding client expectations and helping our customers to achieve their business objectives. Sunoida’s offerings are anchored on the back of very strong banking domain expertise residing across its various centers of excellence which are made up of professionals with years of successful experience at building and delivering solutions for various banking functions.Our company is headquartered in Dubai and we have presence in Europe, Africa, Middle East, India and Asia Pacific regions.",
             "contact": "marketing@sunoida.com",
-            "logo_url": "/R2A_files/vendor-logos/sunoida.png"
+            "logo_url": "/static/images/vendor-logos/sunoida.png"
         },
         {
             "full_only": true,
@@ -1910,7 +1910,7 @@
             "technologies": ["BigData", "AI", "ML"],
             "description": "Digital Reasoning is a leader in cognitive computing. We build software that understands human communication - in many languages, across many domains, and at enormous scale. We help people see the world more clearly so they can make a positive difference for humanity.",
             "contact": "support@digitalreasoning.com",
-            "logo_url": "/R2A_files/vendor-logos/digital-reasoning.png"
+            "logo_url": "/static/images/vendor-logos/digital-reasoning.png"
         }
     ]
 }

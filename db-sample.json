@@ -127,21 +127,21 @@
 			"name": "Chatastiq Solutions, LLC",
 			"location": "New Celland",
 			"technologies": ["Facebook Chatbot, High-Level Analytics"],
-			"logo_url": "./R2A_files/vendor-chatastiq.png",
+			"logo_url": "./static/images/demo/vendor-chatastiq.png",
 			"use_cases": [4]
 		},
 		{
 			"name": "ACRONYM Ltd.",
 			"location": "Global",
 			"technologies": ["Database Software", "Infrastructure", "Natural Language Processing"],
-			"logo_url": "./R2A_files/vendor-acronym.png",
+			"logo_url": "./static/images/demo/vendor-acronym.png",
 			"use_cases": [4]
 		},
 		{
 			"name": "Synertechmatic Global",
 			"location": "London, UK",
 			"technologies": ["Chatbot Platform", "Interactive Dashboard", "Detailed Reporting"],
-			"logo_url": "./R2A_files/vendor-synertechmatic.png",
+			"logo_url": "./static/images/demo/vendor-synertechmatic.png",
 			"use_cases": [4]
 		}
 	]
