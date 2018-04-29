@@ -4,7 +4,6 @@ function customGA() {
         console.log(arguments);
         return;
     }
-    console.log('sending ga');
     ga.apply(null, arguments);
 }
 

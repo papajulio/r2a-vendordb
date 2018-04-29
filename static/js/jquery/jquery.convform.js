@@ -86,10 +86,11 @@ ConvState.prototype.printQuestion = function(){
 };
 ConvState.prototype.printAnswers = function(answers, multiple){
     this.wrapper.find('div.options div.option').remove();
+    this.wrapper.find('div.options').html('');
     if(multiple){
         for(var i in answers){
             if(answers.hasOwnProperty(i)){
-                var option = $('<div class="option">'+answers[i].text+'</div>')
+                var option = $('<div class="option">'+answers[i].text+'</div>' + this.multilineHtml())
                     .data("answer", answers[i])
                     .click(function(event){
                         var indexOf = this.current.input.selected.indexOf($(event.target).data("answer").value);
@@ -113,9 +114,10 @@ ConvState.prototype.printAnswers = function(answers, multiple){
             }
         }
     } else {
+        this.toggleOptionPlaceholder();
         for(var i in answers){
             if(answers.hasOwnProperty(i)){
-                var option = $('<div class="option">'+answers[i].text+'</div>')
+                var option = $('<div class="option">'+answers[i].text+'</div>' + this.multilineHtml())
                     .data("answer", answers[i])
                     .click(function(event){
                         this.current.input.selected = $(event.target).data("answer").value;
@@ -123,6 +125,8 @@ ConvState.prototype.printAnswers = function(answers, multiple){
                         this.wrapper.find(this.parameters.inputIdHashTagName).val('');
                         this.answerWith($(event.target).data("answer").text, $(event.target).data("answer"));
                         this.wrapper.find('div.options div.option').remove();
+                        this.wrapper.find('div.options').html('');
+                        this.toggleOptionPlaceholder();
                     }.bind(this));
                 this.wrapper.find('div.options').append(option);
                 $(window).trigger('dragreset');
@@ -132,6 +136,23 @@ ConvState.prototype.printAnswers = function(answers, multiple){
     var diff = $(this.wrapper).find('div.options').height();
     $(this.wrapper).find('#messages').css({paddingBottom: diff});
 
+};
+ConvState.prototype.multilineHtml = function() {
+    if (this.current.input.isMultiline) {
+        return '<br />';
+    }
+
+    return '';
+};
+ConvState.prototype.toggleOptionPlaceholder = function() {
+    var input = $(this.wrapper).find('#' + this.parameters.inputIdName);
+    if (input.attr('readonly')) {
+        input.removeAttr('readonly');
+        input.attr('placeholder', this.parameters.placeHolder);
+    } else {
+        input.attr('readonly', '');
+        input.attr('placeholder', this.parameters.optionPlaceHolder);
+    }
 };
 ConvState.prototype.answerWith = function(answerText, answerObject) {
     //console.log('previous answer: ', answerObject);
@@ -188,6 +209,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
 
         var parameters = $.extend(true, {}, {
             placeHolder : 'Type Here',
+            optionPlaceHolder : 'Select an option',
             typeInputUi : 'textarea',
             timeOutFirstQuestion : 1200,
             buttonClassStyle : 'icon2-arrow',
@@ -218,6 +240,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
             if($(this).attr('type'))
                 input['type'] = $(this).attr('type');
             input['questions'] = $(this).attr('conv-question').split("|");
+            input['isMultiline'] = $(this).attr('multiline-options');
             if($(this).attr('pattern'))
                 input['pattern'] = $(this).attr('pattern');
             if($(this).attr('callback'))
