@@ -185,7 +185,7 @@ $(document).ready(function() {
         e.preventDefault();
         goToStep1(100);
         localStorage.setItem('disclaimer','shown');
-        ga('send', 'event', 'Button', 'click', 'get-started');
+        customGA('send', 'event', 'Button', 'click', 'get-started');
     });
 
     function goToStep1(delay) {
@@ -219,7 +219,7 @@ $(document).ready(function() {
         $("#tiles1 .tile").parents('.main-row.adder').show();
 
 
-        ga('send', 'event', 'Persona-Filter-Button', 'select', category);
+        customGA('send', 'event', 'Persona-Filter-Button', 'select', category);
     });
 
     $(document).on('change', '#persona-select', function() {
@@ -243,7 +243,7 @@ $(document).ready(function() {
         $("#tiles1 .tile").parents('.main-row[data-categories~="'+category+'"]').show();
         $("#tiles1 .tile").parents('.main-row.adder').show();
 
-        ga('send', 'event', 'Persona-Filter-Dropdown', 'select', category);
+        customGA('send', 'event', 'Persona-Filter-Dropdown', 'select', category);
     });
 
     $(document).on('click', '.cat.selected', function() {
@@ -257,7 +257,7 @@ $(document).ready(function() {
 
         var category = $(this).attr('data-category-activate');
 
-        ga('send', 'event', 'Persona-Filter-Button', 'deselect', category);
+        customGA('send', 'event', 'Persona-Filter-Button', 'deselect', category);
     });
 
     $(document).on('click', '.main-row:not(.adder) .tile', function(e) {
@@ -286,7 +286,7 @@ $(document).ready(function() {
             $nexttilesection.find('.vendor').show(); // show all
             if($tile.parents('.objective')[0]) {
                 var objectiveId = $tile.parents('.objective').first().attr('data-objective-id');
-                ga('send', 'event', 'Objective', 'click', objectiveId);
+                customGA('send', 'event', 'Objective', 'click', objectiveId);
                 $nexttilesection.find('.vendor').each(function(){
                     var objectiveIds = $(this).attr('data-objective-ids');
                     if (!objectiveIds || !objectiveIds.split(',').includes(objectiveId)) {
@@ -315,7 +315,7 @@ $(document).ready(function() {
     $(document).on('click', '.adder a', function(e) {
         e.preventDefault();
         alert("Please contact us at info@r2accelerator.org");
-        ga('send', 'event', 'Adder', 'click', e);
+        customGA('send', 'event', 'Adder', 'click', e);
     });
 
     $('.boff').click(function(e) {
@@ -338,7 +338,7 @@ $(document).ready(function() {
              window.scrollTo(0,0); 
         });
 
-        ga('send', 'event', 'Vendor', 'click', vname);
+        customGA('send', 'event', 'Vendor', 'click', vname);
     });
 
     $("#overlay #close").click(function() {
@@ -348,7 +348,7 @@ $(document).ready(function() {
         $(document).unbind('scroll'); 
           $('body').css({'overflow':'visible'});
 
-          ga('send', 'event', 'Overlay', 'close', '');
+          customGA('send', 'event', 'Overlay', 'close', '');
     });
 
     $('.edit').click(function(e) {
@@ -370,7 +370,7 @@ $(document).ready(function() {
         $tiles_section.nextAll('.dynamic-tiles').animate({height: '0px'}, 10, function() {$tiles_section.nextAll('.dynamic-tiles').hide()});
         $tiles_section.show().animate({height: $tiles_section.scrollHeight}, 700, function() {$(this).height('auto')});
 
-        ga('send', 'event', 'EditButton', 'click', step);
+        customGA('send', 'event', 'EditButton', 'click', step);
     });
 
     $('.reset').click(function(e) {

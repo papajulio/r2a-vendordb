@@ -11,3 +11,5 @@ docker run --name nginx -v `pwd`:/usr/share/nginx/html -p 8080:80 -d nginx:lates
 # Go to localhost:8080
 # You may also need a `docker restart nginx` if you see Nginx default site
 ```
+
+If the URL we are using for development contains `localhost` some behaviors would only be printed to developers console. Simple code is located at `isDevelopmentEnviroment` function. Send analitics using `customGA` function.
