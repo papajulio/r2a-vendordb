@@ -123,7 +123,7 @@ $(document).ready(function() {
 	$('#filters').change(function() {
 		var useCaseId = $(this).val();
 
-		ga('send', 'event', 'FullList', 'usecasefilter', useCaseId);
+		customGA('send', 'event', 'FullList', 'usecasefilter', useCaseId);
 
 		$('.vendor').show(); // show all
 
@@ -143,7 +143,7 @@ $(document).ready(function() {
 		var vdesc = $(this).find('#vdesc').html();
 		var vurl = $(this).find('#vurl').html();
 
-		ga('send', 'event', 'FullList', 'vendoropen', vname);
+		customGA('send', 'event', 'FullList', 'vendoropen', vname);
 
 		if (vurl) { vdesc += ' (<a target="_blank" href="' + vurl + '">website</a>)'; }
 		$('#overlay #vendor-name').html(vname);
@@ -161,7 +161,7 @@ $(document).ready(function() {
 	$(document).on('click', '.adder a', function(e) {
 		e.preventDefault();
 		alert("Please contact us at info@r2accelerator.org");
-		ga('send', 'event', 'Adder', 'click', e);
+		customGA('send', 'event', 'Adder', 'click', e);
 	});
 
 	$("#overlay #close").click(function() {
@@ -171,6 +171,6 @@ $(document).ready(function() {
 		$(document).unbind('scroll'); 
   		$('body').css({'overflow':'visible'});
 
-  		ga('send', 'event', 'FullList', 'overlayclose', '');
+  		customGA('send', 'event', 'FullList', 'overlayclose', '');
 	});
 });

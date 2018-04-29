@@ -446,5 +446,5 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
 $(function(){
     //instantiate conversation form on .conv-form-wrapper (default class for plugin);
     var convForm = $('.conv-form-wrapper').convform();
-    console.log(convForm);
+    //console.log(convForm);
 });
