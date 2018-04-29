@@ -43,11 +43,14 @@ $(document).ready(function() {
 });
 
 function getNewConvForm(selector) {
+    var timeout = isDevelopmentEnviroment() ? 0 : 1200;
     return $(selector).convform({
         eventList: {
             onSubmitForm: sendChatBotForm
         },
         placeHolder: "Write your message...",
+        optionPlaceHolder: "Please, select an option...",
+        timeOutFirstQuestion : timeout,
         typeInputUi: 'input'
     });
 }

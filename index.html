@@ -726,7 +726,7 @@
                                                 <input type="text" name="name" conv-question="First, what is your name?|Before we get started, I'd love to be able to call you by name &mdash; what is your name?" required placeholder="Please type your name and hit enter" callback="botga">
                                                 <input type="text" conv-question="Hi, {name}:0! It's a pleasure to meet you.|Nice to meet you, {name}:0!" no-answer="true">
                                                 <input type="text" name="org" conv-question="Out of curiosity, what organization are you from?|Since we're getting to know each other, which organization are you with?" required placeholder="Please type your company name (or 'self') and hit enter">
-                                                <select name="purpose" conv-question="Oh cool! And what's the primary purpose of your visit here today?" callback="botga">
+                                                <select multiline-options="true" name="purpose" conv-question="Oh cool! And what's the primary purpose of your visit here today?" callback="botga">
                                                     <option value="Sourcing">Sourcing Innovative Technology</option>
                                                     <option value="Strategy">Advice on Developing Strategy</option>
                                                     <option value="Workshops">Conducting Regtech Workshops</option>
