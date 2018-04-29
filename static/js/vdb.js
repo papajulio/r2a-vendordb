@@ -233,8 +233,10 @@ $(document).ready(function() {
 		});
 
 		$('.cat[data-category-activate="'+category+'"]').addClass('selected');
-		var newsrc = $(this).find('.persona-icon').attr('src').replace('.png', '_white.png'); 
-		$(this).find('.persona-icon').attr('src', newsrc);
+        if ($(this).find('.persona-icon').attr('src')) {
+            var newsrc = $(this).find('.persona-icon').attr('src').replace('.png', '_white.png');
+            $(this).find('.persona-icon').attr('src', newsrc);
+        }
 
 		// display only tiles of hte selected category
 		$("#tiles1 .tile").parents('.main-row').not('[data-categories~="'+category+'"]').hide();
