@@ -537,6 +537,10 @@ p.button.bempty:hover,
 p.button.edit {
 	width: 116px;
 }
+p.button.full-list {
+	width: 175px;
+    margin-left: 10px;
+}
 p.button.vendorlist:hover {
 	background-color: rgba(2, 59, 72, 0.1);
 	transition: .35s;
