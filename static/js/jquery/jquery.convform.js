@@ -68,6 +68,7 @@ ConvState.prototype.printQuestion = function(){
     setTimeout(function(){
         messageObj.html(question);
         messageObj.removeClass('typing').addClass('ready');
+        this.setDefaultPlaceholder();
         if(this.current.input.type=="select"){
             this.printAnswers(this.current.input.answers, this.current.input.multiple);
         }
@@ -114,7 +115,7 @@ ConvState.prototype.printAnswers = function(answers, multiple){
             }
         }
     } else {
-        this.toggleOptionPlaceholder();
+        this.setOptionPlaceholder();
         for(var i in answers){
             if(answers.hasOwnProperty(i)){
                 var option = $('<div class="option">'+answers[i].text+'</div>' + this.multilineHtml())
@@ -126,7 +127,7 @@ ConvState.prototype.printAnswers = function(answers, multiple){
                         this.answerWith($(event.target).data("answer").text, $(event.target).data("answer"));
                         this.wrapper.find('div.options div.option').remove();
                         this.wrapper.find('div.options').html('');
-                        this.toggleOptionPlaceholder();
+                        this.setDefaultPlaceholder();
                     }.bind(this));
                 this.wrapper.find('div.options').append(option);
                 $(window).trigger('dragreset');
@@ -144,15 +145,15 @@ ConvState.prototype.multilineHtml = function() {
 
     return '';
 };
-ConvState.prototype.toggleOptionPlaceholder = function() {
+ConvState.prototype.setDefaultPlaceholder = function() {
     var input = $(this.wrapper).find('#' + this.parameters.inputIdName);
-    if (input.attr('readonly')) {
-        input.removeAttr('readonly');
-        input.attr('placeholder', this.parameters.placeHolder);
-    } else {
-        input.attr('readonly', '');
-        input.attr('placeholder', this.parameters.optionPlaceHolder);
-    }
+    input.removeAttr('readonly');
+    input.attr('placeholder', this.parameters.placeHolder);
+};
+ConvState.prototype.setOptionPlaceholder = function() {
+    var input = $(this.wrapper).find('#' + this.parameters.inputIdName);
+    input.attr('readonly', '');
+    input.attr('placeholder', this.parameters.optionPlaceHolder);
 };
 ConvState.prototype.answerWith = function(answerText, answerObject) {
     //console.log('previous answer: ', answerObject);

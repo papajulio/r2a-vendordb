@@ -754,7 +754,7 @@
                                                 </select>
                                                 <div conv-fork="will_share_contact">
                                                     <div conv-case="yes">
-                                                        <select name="contact_type" conv-question="Great, thanks, {name}:0! How might we contact you?" callback="botga">
+                                                        <select name="contact_type" multiline-options="true" conv-question="Great, thanks, {name}:0! How might we contact you?" callback="botga">
                                                             <option value="email">send an email</option>
                                                             <option value="phone">call a phone number</option>
                                                             <option value="other">contact via other means</option>
@@ -770,9 +770,9 @@
                                                 <input type="text" conv-question="Just one last question, if you don't mind..." no-answer="true">
                                                 <input type="text" conv-question="Once you've answered this question, I'll reset myself and we can start another exciting conversation." no-answer="true">
                                                 <select name="nps" conv-question="On a scale from 1 to 5, how likely are you to recommend this resource to friends and colleagues?" callback="botga">
-                                                        <option value="4">1</option>
-                                                        <option value="4">2</option>
-                                                        <option value="4">3</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
                                                         <option value="4">4</option>
                                                         <option value="5">5</option>
                                                 </select>
