@@ -49,6 +49,25 @@ function populatePersonas(json) {
 function populateObjetives(json) {
     var objectives = json.objectives;
     var personas = json.personas;
+    var useCases = json.use_cases;
+    var vendors = json.vendors;
+
+    var vendorsPerObjetive = [];
+    for (var i in objectives) {
+        vendorsPerObjetive[i] = 0;
+    }
+    for (var vendorId in vendors) {
+        if (vendors[vendorId].full_only) {
+            continue;
+        }
+        var vendorUseCases = vendors[vendorId].use_cases;
+        for (var vendorUseCaseId in vendorUseCases) {
+            var useCase = vendorUseCases[vendorUseCaseId];
+            var objectiveId = useCases[useCase].objectives[0];
+            vendorsPerObjetive[objectiveId] += 1;
+        }
+    }
+
     for (var i = 0; i < objectives.length; i++) {
         var o = objectives[i];
 
@@ -76,7 +95,7 @@ function populateObjetives(json) {
                         <div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
                             <div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
                                 <div class="tile col sqs-col-12 span-12">\
-                                        <h3>' + capitalizeFirstLetter(o.name) + ' vaca</h3>\
+                                        <h3>' + capitalizeFirstLetter(o.name) + ' (' + vendorsPerObjetive[i] + ')</h3>\
                                         <ul class="tags">' + personasList + '</ul>\
                                         <p class="use_case clear">' + useCasesString + '</p>\
                                 </div>\
@@ -267,7 +286,9 @@ $(document).ready(function() {
         customGA('send', 'event', 'Persona-Filter-Button', 'deselect', category);
     });
 
-    $(document).on('click', '.main-row:not(.adder) .tile', function(e) {
+    $(document).on('click', '.main-row:not(.adder) .tile', clickAtObjetive);
+
+    function clickAtObjetive(e) {
         e.preventDefault();
 
         // Get the relevant elements
@@ -317,7 +338,7 @@ $(document).ready(function() {
                 $nexttilesection.height('auto').slideToggle(600, function() {});
             });
         });
-    });
+    }
 
     $(document).on('click', '.adder a', function(e) {
         e.preventDefault();

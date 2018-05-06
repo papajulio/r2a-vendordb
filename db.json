@@ -25,95 +25,118 @@
         }
     ],
     "objectives": [{
+            "id": 0,
             "name": "manage licensing process",
             "personas": [0]
         },
         {
+            "id": 1,
             "name": "help providers to navigate regulatory regimes",
             "personas": [0, 1]
         },
         {
+            "id": 2,
             "name": "verify compliance",
             "personas": [1]
         },
         {
+            "id": 3,
             "name": "complaints handling",
             "personas": [2]
         },
         {
+            "id": 4,
             "name": "identify ponzi schemes and product/agent/network problems and frauds",
             "personas": [2, 3]
         },
         {
+            "id": 5,
             "name": "audit providers' compliance with AML regimes",
             "personas": [3]
         },
         {
+            "id": 6,
             "name": "investigate suspicious transaction reports",
             "personas": [3]
         },
         {
+            "id": 7,
             "name": "real-time monitoring of payment flows",
             "personas": [3, 4]
         },
         {
+            "id": 8,
             "name": "map financial access",
             "personas": [4]
         },
         {
+            "id": 9,
             "name": "understand competition dynamics and identify abuses",
             "personas": [4]
         }
     ],
     "use_cases": [{
+            "id": 0,
             "name": "manage queries on new regulations with a chatbot",
             "objectives": [0]
         },
         {
+            "id": 1,
             "name": "issue regulations in digital format OCR and make them searchable",
             "objectives": [1]
         },
         {
+            "id": 2,
             "name": "receive and analyze data from providers",
             "objectives": [2]
         },
         {
+            "id": 3,
             "name": "analyze complaints handled by providers",
             "objectives": [3]
         },
         {
+            "id": 4,
             "name": "housing users and agents complaints",
             "objectives": [3]
         },
         {
+            "id": 5,
             "name": "scraping big data from social media",
             "objectives": [4]
         },
         {
+            "id": 6,
             "name": "offsite auditing",
             "objectives": [5]
         },
         {
+            "id": 7,
             "name": "onsite auditing",
             "objectives": [5]
         },
         {
+            "id": 8,
             "name": "analyze financial transaction patterns",
             "objectives": [6]
         },
         {
+            "id": 9,
             "name": "analyse financial transaction patterns in real time",
             "objectives": [7]
         },
         {
+            "id": 10,
             "name": "monitor network resilience",
             "objectives": [7]
         },
         {
+            "id": 11,
             "name": "understand geolocalization of access points",
             "objectives": [8]
         },
         {
+            "id": 12,
             "name": "analyse transactional data by provider and products (non real time)",
             "objectives": [9]
         }
