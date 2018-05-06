@@ -48,26 +48,24 @@ function populatePersonas(json) {
 
 function populateObjetives(json) {
     var objectives = json.objectives;
-    var personas = json.personas;
     var useCases = json.use_cases;
-    var vendors = json.vendors;
 
     var vendorsPerObjetive = [];
     for (var i in objectives) {
         vendorsPerObjetive[i] = 0;
     }
-    for (var vendorId in vendors) {
-        if (vendors[vendorId].full_only) {
+    for (var vendor of json.vendors) {
+        if (vendor.full_only) {
             continue;
         }
-        var vendorUseCases = vendors[vendorId].use_cases;
-        for (var vendorUseCaseId in vendorUseCases) {
-            var useCase = vendorUseCases[vendorUseCaseId];
-            var objectiveId = useCases[useCase].objectives[0];
-            vendorsPerObjetive[objectiveId] += 1;
+        for (var useCase of vendor.use_cases) {
+            for (var objective of useCases[useCase].objectives) {
+                vendorsPerObjetive[objective] += 1;
+            }
         }
     }
 
+    var personas = json.personas;
     for (var i = 0; i < objectives.length; i++) {
         var o = objectives[i];
 
