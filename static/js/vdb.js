@@ -8,178 +8,202 @@ function titleCase(str) {
      }
      return words.join(' ');
 }
+
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
 function hyphenize(str) {
     return str.replace(/\s+/g, '-').toLowerCase();
 }
+
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
+    var currentIndex = array.length;
+    while (currentIndex > 0) {
+        var randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        swapValues(array, currentIndex, randomIndex);
+    }
+    return array;
 }
 
-$(document).ready(function() {
-    /* Read in db */
-    $.getJSON("db.json").done(function(json) { 
-        // Populate personas
-        var personas = json.personas;
-        for (var i = 0; i < personas.length; i++) {
-            var p = personas[i];
-            $('#persona-holder').append($('<div class="col sqs-col-2 span-2 cat persona" data-category-activate="' + hyphenize(p.name) + '">\
-                                    <img class="persona-icon" src="' + p.icon + '" /><br />\
-                                    <span class="catlabel">' + titleCase(p.name) + '</span>\
-                                </div>'));
-            $('#persona-select').append($('<option value="' + hyphenize(p.name) + '">' + titleCase(p.name) + '</option>"'));
+function swapValues(array, currentIndex, randomIndex) {
+    var temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+}
+
+function populatePersonas(json) {
+    var personas = json.personas;
+    for (var i = 0; i < personas.length; i++) {
+        var p = personas[i];
+        $('#persona-holder').append($('<div class="col sqs-col-2 span-2 cat persona" data-category-activate="' + hyphenize(p.name) + '">\
+                                <img class="persona-icon" src="' + p.icon + '" /><br />\
+                                <span class="catlabel">' + titleCase(p.name) + '</span>\
+                            </div>'));
+        $('#persona-select').append($('<option value="' + hyphenize(p.name) + '">' + titleCase(p.name) + '</option>"'));
+    }
+    $('#persona-holder').append($('<div class="clear">&nbsp;</div>'));
+}
+
+function populateObjetives(json) {
+    var objectives = json.objectives;
+    var useCases = json.use_cases;
+
+    var vendorsPerObjetive = [];
+    for (var i in objectives) {
+        vendorsPerObjetive[i] = 0;
+    }
+    for (var vendor of json.vendors) {
+        if (vendor.full_only) {
+            continue;
         }
-        $('#persona-holder').append($('<div class="clear">&nbsp;</div>'));
-
-        // Populate objectives
-        var objectives = json.objectives;
-        for (var i = 0; i < objectives.length; i++) {
-            var o = objectives[i];
-            
-            var personasString = "";
-            var personasList = "";
-            for (var j = 0; j < o.personas.length; j++) {
-                personasString += hyphenize(personas[o.personas[j]].name) + " ";
-                personasList += '<li>' + capitalizeFirstLetter(personas[o.personas[j]].name) + '</li>';
+        for (var useCase of vendor.use_cases) {
+            for (var objective of useCases[useCase].objectives) {
+                vendorsPerObjetive[objective] += 1;
             }
+        }
+    }
 
-            // Populate use cases
-            var use_cases = json.use_cases;
-            useCasesString = "";
-            for (var k = 0; k < use_cases.length; k++) {
-                var uc = use_cases[k];
-                if (uc.objectives.includes(i)) {
-                    if (useCasesString) {
-                        useCasesString += ", ";
-                    }
-                    useCasesString += capitalizeFirstLetter(uc.name);
+    var personas = json.personas;
+    for (var i = 0; i < objectives.length; i++) {
+        var o = objectives[i];
+
+        var personasString = "";
+        var personasList = "";
+        for (var j = 0; j < o.personas.length; j++) {
+            personasString += hyphenize(personas[o.personas[j]].name) + " ";
+            personasList += '<li>' + capitalizeFirstLetter(personas[o.personas[j]].name) + '</li>';
+        }
+
+        // Populate use cases
+        var use_cases = json.use_cases;
+        useCasesString = "";
+        for (var k = 0; k < use_cases.length; k++) {
+            var uc = use_cases[k];
+            if (uc.objectives.includes(i)) {
+                if (useCasesString) {
+                    useCasesString += ", ";
                 }
+                useCasesString += capitalizeFirstLetter(uc.name);
             }
+        }
 
-            $('#tiles1').append($('<div class="main-row row sqs-row objective" id="yui_3_17_2_1_1509478945824_116" data-objective-id="' + i + '" data-categories="' + personasString + '">\
-                            <div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
-                                <div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
-                                    <div class="tile col sqs-col-12 span-12">\
-                                           <h3>' + capitalizeFirstLetter(o.name) + '</h3>\
-                                           <ul class="tags">' + personasList + '</ul>\
-                                           <p class="use_case clear">' + useCasesString + '</p>\
-                                    </div>\
+        $('#tiles1').append($('<div class="main-row row sqs-row objective" id="yui_3_17_2_1_1509478945824_116" data-objective-id="' + i + '" data-categories="' + personasString + '">\
+                        <div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
+                            <div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
+                                <div class="tile col sqs-col-12 span-12">\
+                                        <h3>' + capitalizeFirstLetter(o.name) + ' (' + vendorsPerObjetive[i] + ')</h3>\
+                                        <ul class="tags">' + personasList + '</ul>\
+                                        <p class="use_case clear">' + useCasesString + '</p>\
                                 </div>\
                             </div>\
-                        </div>'));
-        }
+                        </div>\
+                    </div>'));
+    }
 
-        // Add button
-        $('#tiles1').append($('<div class="main-row row sqs-row objective adder" id="yui_3_17_2_1_1509478945824_116" data-objective-id="' + i + '" data-categories="">\
-                            <div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
-                                <div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
-                                    <div class="col sqs-col-12 span-12">\
-                                           <p class="use_case clear" style="text-align: center; margin: 36px auto 0;">\
-                                               Don\'t see your objective listed? <a href="#" onclick="return false;" style="font-weight: bold; text-decoration: underline;">Add an objective</a>\
-                                           </p>\
-                                    </div>\
+    // Add button
+    $('#tiles1').append($('<div class="main-row row sqs-row objective adder" id="yui_3_17_2_1_1509478945824_116" data-objective-id="' + i + '" data-categories="">\
+                        <div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
+                            <div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
+                                <div class="col sqs-col-12 span-12">\
+                                        <p class="use_case clear" style="text-align: center; margin: 36px auto 0;">\
+                                            Don\'t see your objective listed? <a href="#" onclick="return false;" style="font-weight: bold; text-decoration: underline;">Add an objective</a>\
+                                        </p>\
                                 </div>\
                             </div>\
-                        </div>'));
+                        </div>\
+                    </div>'));
+}
 
-        // Populate vendors
-        var vendors = shuffle(json.vendors);
-        for (var i = 0; i < vendors.length; i++) {
-            var v = vendors[i];
+function populateVendors(json) {
+    var vendors = shuffle(json.vendors);
+    for (var i = 0; i < vendors.length; i++) {
+        var v = vendors[i];
 
-            if (!v.full_only) {
-            
-                var technologiesString = "";
-                for (var j = 0; j < v.technologies.length; j++) {
-                    technologiesString += v.technologies[j]; 
-                    if (technologiesString && j < v.technologies.length - 1) {
-                        technologiesString += ", ";
-                    }
+        if (!v.full_only) {
+        
+            var technologiesString = "";
+            for (var j = 0; j < v.technologies.length; j++) {
+                technologiesString += v.technologies[j]; 
+                if (technologiesString && j < v.technologies.length - 1) {
+                    technologiesString += ", ";
                 }
-                var useCasesTextString = "";
-                for (var k=0; k < v.use_cases_text.length; k++) {
-                    useCasesTextString += v.use_cases_text[k];
-                    if (useCasesTextString && k < v.use_cases_text.length - 1) {
-                        useCasesTextString += ", ";
-                    }
-                }
-
-                if (useCasesTextString) {
-                    if (technologiesString && useCasesTextString) {
-                        technologiesString += ", "
-                    }
-                    technologiesString += useCasesTextString;
-                }
-
-                var objective_ids = [];
-                for (var k = 0; k < v.use_cases.length; k++) {
-                    var uc = json.use_cases[v.use_cases[k]];
-                    for (var l = 0; l < uc.objectives.length; l++) {
-                        if (!objective_ids.includes(uc.objectives[l])) objective_ids.push(uc.objectives[l]);
-                    }
-                }
-
-                $('#vendor-holder').append('<div class="row sqs-row vendor" id="yui_3_17_2_1_1509478945824_114" data-use-case-ids="' + v.use_cases.join() + '" data-objective-ids="' + objective_ids.join() + '">\
-                                        <div class="col sqs-col-1 span-1">\
-                                            &nbsp;\
-                                        </div>\
-                                        <div class="vtile col sqs-col-10 span-10">\
-                                            <div class="vlogo col sqs-col-1-5 span-1-5">\
-                                                   <span class="helper"></span><img src="' + v.logo_url + '" />\
-                                            </div>\
-                                            <div class="vcontent col sqs-col-8-5 span-8-5">\
-                                                   <h4 id="vname">' + v.name + '</h4>\
-                                                   <p class="location">' + v.location + '</p>\
-                                                   <p class="technologies">' + technologiesString + '</p>\
-                                                   <p style="display:none" id="vdesc">' + v.description + '</p>\
-                                                   <p style="display:none" id="vurl">' + v.url + '</p>\
-                                            </div>\
-                                        </div>\
-                                        <div class="col sqs-col-1 span-1">\
-                                               &nbsp;\
-                                        </div>\
-                                    </div>');
             }
-        }
-        $('#vendor-holder').append('<div class="row sqs-row vendor adder" id="yui_3_17_2_1_1509478945824_114" data-use-case-ids="">\
+            var useCasesTextString = "";
+            for (var k=0; k < v.use_cases_text.length; k++) {
+                useCasesTextString += v.use_cases_text[k];
+                if (useCasesTextString && k < v.use_cases_text.length - 1) {
+                    useCasesTextString += ", ";
+                }
+            }
+
+            if (useCasesTextString) {
+                if (technologiesString && useCasesTextString) {
+                    technologiesString += ", "
+                }
+                technologiesString += useCasesTextString;
+            }
+
+            var objective_ids = [];
+            for (var k = 0; k < v.use_cases.length; k++) {
+                var uc = json.use_cases[v.use_cases[k]];
+                for (var l = 0; l < uc.objectives.length; l++) {
+                    if (!objective_ids.includes(uc.objectives[l])) objective_ids.push(uc.objectives[l]);
+                }
+            }
+
+            $('#vendor-holder').append('<div class="row sqs-row vendor" id="yui_3_17_2_1_1509478945824_114" data-use-case-ids="' + v.use_cases.join() + '" data-objective-ids="' + objective_ids.join() + '">\
                                     <div class="col sqs-col-1 span-1">\
                                         &nbsp;\
                                     </div>\
-                                    <div class="col sqs-col-10 span-10">\
-                                        <p class="use_case clear" style="text-align: center; margin: 24px auto 0; padding-bottom: 0 !important;">\
-                                               Know a vendor that fits this use case? <a href="#" onclick="return false;" style="font-weight: bold; text-decoration: underline;">Add a vendor</a>\
-                                           </p>\
+                                    <div class="vtile col sqs-col-10 span-10">\
+                                        <div class="vlogo col sqs-col-1-5 span-1-5">\
+                                                <span class="helper"></span><img src="' + v.logo_url + '" />\
+                                        </div>\
+                                        <div class="vcontent col sqs-col-8-5 span-8-5">\
+                                                <h4 id="vname">' + v.name + '</h4>\
+                                                <p class="location">' + v.location + '</p>\
+                                                <p class="technologies">' + technologiesString + '</p>\
+                                                <p style="display:none" id="vdesc">' + v.description + '</p>\
+                                                <p style="display:none" id="vurl">' + v.url + '</p>\
+                                        </div>\
                                     </div>\
                                     <div class="col sqs-col-1 span-1">\
-                                           &nbsp;\
+                                            &nbsp;\
                                     </div>\
                                 </div>');
+        }
+    }
+    $('#vendor-holder').append('<div class="row sqs-row vendor adder" id="yui_3_17_2_1_1509478945824_114" data-use-case-ids="">\
+                                <div class="col sqs-col-1 span-1">\
+                                    &nbsp;\
+                                </div>\
+                                <div class="col sqs-col-10 span-10">\
+                                    <p class="use_case clear" style="text-align: center; margin: 24px auto 0; padding-bottom: 0 !important;">\
+                                            Know a vendor that fits this use case? <a href="#" onclick="return false;" style="font-weight: bold; text-decoration: underline;">Add a vendor</a>\
+                                        </p>\
+                                </div>\
+                                <div class="col sqs-col-1 span-1">\
+                                        &nbsp;\
+                                </div>\
+                            </div>');
+}
+
+$(document).ready(function() {
+    if (localStorage.getItem('disclaimer') == 'shown') {
+        goToStep1(1);
+    }
+
+    $.getJSON("db.json").done(function(json) { 
+        populatePersonas(json);
+        populateObjetives(json);
+        populateVendors(json);
     });
 
     $('.continue').click(function(e) {
         e.preventDefault();
     });
-
-    if (localStorage.getItem('disclaimer') == 'shown') {
-        goToStep1(1);
-    }
 
     $('#get-started').click(function(e) {
         e.preventDefault();
@@ -260,7 +284,9 @@ $(document).ready(function() {
         customGA('send', 'event', 'Persona-Filter-Button', 'deselect', category);
     });
 
-    $(document).on('click', '.main-row:not(.adder) .tile', function(e) {
+    $(document).on('click', '.main-row:not(.adder) .tile', clickAtObjetive);
+
+    function clickAtObjetive(e) {
         e.preventDefault();
 
         // Get the relevant elements
@@ -310,7 +336,7 @@ $(document).ready(function() {
                 $nexttilesection.height('auto').slideToggle(600, function() {});
             });
         });
-    });
+    }
 
     $(document).on('click', '.adder a', function(e) {
         e.preventDefault();
