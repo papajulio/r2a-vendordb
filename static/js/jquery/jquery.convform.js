@@ -327,12 +327,6 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
                             var results = state.current.input.answers.filter(function (el) {
                                 return el.text.toLowerCase().indexOf(input.toLowerCase()) != -1;
                             });
-                            if (results.length) {
-                                state.current.input.selected = results[0];
-                                $(this).parent('form').submit();
-                            } else {
-                                state.wrapper.find(parameters.inputIdHashTagName).addClass('error');
-                            }
                         }
                     } else if(state.current.input.type=="select" && state.current.input.multiple) {
                         if(input.trim() != "") {
@@ -396,12 +390,6 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
                         var results = state.current.input.answers.filter(function (el) {
                             return el.text.toLowerCase().indexOf(input.toLowerCase()) != -1;
                         });
-                        if (results.length) {
-                            state.current.input.selected = results[0];
-                            $(this).parent('form').submit();
-                        } else {
-                            state.wrapper.find(parameters.inputIdHashTagName).addClass('error');
-                        }
                     }
                 } else if(state.current.input.type=="select" && state.current.input.multiple) {
                     if(state.current.input.required) {
