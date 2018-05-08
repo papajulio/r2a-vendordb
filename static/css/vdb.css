@@ -593,3 +593,12 @@ p.link:hover {
 	list-style: none;
 	font-size: 14px;
 }
+
+#google_translate_element {
+    text-align: right;
+    padding: 0.2em 0.2em 0 0;
+}
+
+.header-inner {
+    padding: 0 0 20px 0;
+}
