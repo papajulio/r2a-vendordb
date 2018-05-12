@@ -122,10 +122,10 @@ function populateVendors(json) {
         var v = vendors[i];
 
         if (!v.full_only) {
-        
+
             var technologiesString = "";
             for (var j = 0; j < v.technologies.length; j++) {
-                technologiesString += v.technologies[j]; 
+                technologiesString += v.technologies[j];
                 if (technologiesString && j < v.technologies.length - 1) {
                     technologiesString += ", ";
                 }
@@ -195,7 +195,7 @@ $(document).ready(function() {
         goToStep1(1);
     }
 
-    $.getJSON("db.json").done(function(json) { 
+    $.getJSON("db.json").done(function(json) {
         populatePersonas(json);
         populateObjectives(json);
         populateVendors(json);
@@ -216,7 +216,7 @@ $(document).ready(function() {
         });
 
         $(this).addClass('selected');
-        var newsrc = $(this).find('.persona-icon').attr('src').replace('.png', '_white.png'); 
+        var newsrc = $(this).find('.persona-icon').attr('src').replace('.png', '_white.png');
         $(this).find('.persona-icon').attr('src', newsrc);
 
         var category = $(this).attr('data-category-activate');
@@ -297,8 +297,8 @@ $(document).ready(function() {
 
         // Lock scrolling
         $('body').css({'overflow':'hidden'});
-        $(document).bind('scroll',function () { 
-             window.scrollTo(0,0); 
+        $(document).bind('scroll',function () {
+             window.scrollTo(0,0);
         });
 
         customGA('send', 'event', 'Vendor', 'click', vname);
@@ -308,13 +308,13 @@ $(document).ready(function() {
         $('#overlay').hide();
 
         // unlock scrolling
-        $(document).unbind('scroll'); 
+        $(document).unbind('scroll');
           $('body').css({'overflow':'visible'});
 
           customGA('send', 'event', 'Overlay', 'close', '');
     });
 
-    $('.edit').click(clickAtEditButton);
+    $('.edit').click(clickAtChangeButton);
 
     $('.reset').click(function(e) {
         // Prevent the default click action
@@ -401,7 +401,7 @@ function clickAtObjective(e) {
         var $prehead_section = $('#pre' + $tiles_section.attr('data-partner'));
         $nextpreheadsection = $prehead_section.nextAll('.prehead').first();
         $nextpreheadsection.animate({opacity: 0}, 100, function() {
-            $nextpreheadsection.hide()} 
+            $nextpreheadsection.hide()}
         );
 
         // Show the next heading
@@ -414,10 +414,11 @@ function clickAtObjective(e) {
     history.pushState(null, $(document).find("title").text(), '');
 }
 
-function clickAtEditButton(e) {
+function clickAtChangeButton(e) {
     e.preventDefault();
     resetToInitialState();
-    customGA('send', 'event', 'EditButton', 'click', step);
+    goToStep1(1);
+    customGA('send', 'event', 'ChangeButton', 'click', $(this).attr('data-step'));
 };
 
 function resetToInitialState() {
