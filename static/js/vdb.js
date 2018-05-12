@@ -314,7 +314,7 @@ $(document).ready(function() {
           customGA('send', 'event', 'Overlay', 'close', '');
     });
 
-    $('.edit').click(clickAtEditButton);
+    $('.edit').click(clickAtChangeButton);
 
     $('.reset').click(function(e) {
         // Prevent the default click action
@@ -414,11 +414,11 @@ function clickAtObjective(e) {
     history.pushState(null, $(document).find("title").text(), '');
 }
 
-function clickAtEditButton(e) {
+function clickAtChangeButton(e) {
     e.preventDefault();
     resetToInitialState();
     goToStep1(1);
-    customGA('send', 'event', 'EditButton', 'click', $(this).attr('data-step'));
+    customGA('send', 'event', 'ChangeButton', 'click', $(this).attr('data-step'));
 };
 
 function resetToInitialState() {
