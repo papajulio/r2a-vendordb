@@ -205,19 +205,7 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('#get-started').click(function(e) {
-        e.preventDefault();
-        goToStep1(100);
-        localStorage.setItem('disclaimer','shown');
-        customGA('send', 'event', 'Button', 'click', 'get-started');
-    });
-
-    function goToStep1(delay) {
-        $('#intro').animate({opacity: 0}, delay, function() {$('#intro').hide()} );
-        $('#prehead1').animate({opacity: 0}, delay, function() {$('#prehead1').hide()} );
-        $('#head1').show().animate({opacity: '1'}, delay);
-        $('#tiles1').show().animate({opacity: '1'}, 4*delay).animate({height: $('#tiles1').scrollHeight}, 4*delay, function() {$(this).height('auto')});
-    }
+    $('#get-started').click(clickAtGetStarted);
 
     $(document).on('click', '.cat', function() {
         // highlight the category tile
@@ -284,59 +272,8 @@ $(document).ready(function() {
         customGA('send', 'event', 'Persona-Filter-Button', 'deselect', category);
     });
 
-    $(document).on('click', '.main-row:not(.adder) .tile', clickAtObjetive);
+    $(document).on('click', '.main-row:not(.adder) .tile', clickAtObjective);
 
-    function clickAtObjetive(e) {
-        e.preventDefault();
-
-        // Get the relevant elements
-        var $tile = $(this);
-        var $tiles_section = $tile.parents('.dynamic-tiles');
-        var $head_section = $('#' + $tiles_section.attr('data-partner'));
-
-        // Hide the current heading
-        $head_section.animate({opacity: 0}, 400, function() {
-            $head_section.hide()
-        });
-
-        // Collapse and hide the current tiles
-        $tiles_section.animate({height: '0px'}, 400, function() {
-            $tiles_section.hide();
-
-            // Update the new heading before showing it
-            $('h3[data-filler="' + $tiles_section.attr('data-partner') + '"]').html($tile.children('h3').html());
-
-            // Before showing them, hide new tiles that don't fall under the selected category
-            $nexttilesection = $tiles_section.nextAll('.dynamic-tiles').first();
-            $nexttilesection.find('.use-case').show(); // show all
-            $nexttilesection.find('.vendor').show(); // show all
-            if($tile.parents('.objective')[0]) {
-                var objectiveId = $tile.parents('.objective').first().attr('data-objective-id');
-                customGA('send', 'event', 'Objective', 'click', objectiveId);
-                $nexttilesection.find('.vendor').each(function(){
-                    var objectiveIds = $(this).attr('data-objective-ids');
-                    if (!objectiveIds || !objectiveIds.split(',').includes(objectiveId)) {
-                        $(this).hide();
-                    }
-                });
-            }
-            $nexttilesection.find('.vendor.adder').show(); // show add section
-
-            // Hide the preheading
-            var $prehead_section = $('#pre' + $tiles_section.attr('data-partner'));
-            $nextpreheadsection = $prehead_section.nextAll('.prehead').first();
-            $nextpreheadsection.animate({opacity: 0}, 100, function() {
-                $nextpreheadsection.hide()} 
-            );
-
-            // Show the next heading
-            $head_section.nextAll('.dynamic-head').first().show().animate({opacity: '1'}, 100, function() {
-                // show the next section's tiles
-                //$nexttilesection.show().animate({height: $nexttilesection.scrollHeight}, 800, function() {$(this).height('auto')});
-                $nexttilesection.height('auto').slideToggle(600, function() {});
-            });
-        });
-    }
 
     $(document).on('click', '.adder a', function(e) {
         e.preventDefault();
@@ -377,27 +314,7 @@ $(document).ready(function() {
           customGA('send', 'event', 'Overlay', 'close', '');
     });
 
-    $('.edit').click(function(e) {
-        // Prevent the default click action
-        e.preventDefault();
-
-        // Transition the heading
-        var $head_section = $(this).parents('.dynamic-head');
-        var step = $(this).attr('data-step');
-        var $prev_head_section = $('#head' + step);
-        $prev_head_section.show().animate({opacity: '1'}, 100);
-        $head_section.animate({opacity: 0}, 100, function() {$head_section.hide()} );
-
-        // Transition the preheading
-        $('#pre' + $prev_head_section.attr('id')).nextAll('.prehead').show().animate({opacity: '1'}, 100);
-
-        // Transition the tiles
-        var $tiles_section = $('#' + $prev_head_section.attr('data-partner'));
-        $tiles_section.nextAll('.dynamic-tiles').animate({height: '0px'}, 10, function() {$tiles_section.nextAll('.dynamic-tiles').hide()});
-        $tiles_section.show().animate({height: $tiles_section.scrollHeight}, 700, function() {$(this).height('auto')});
-
-        customGA('send', 'event', 'EditButton', 'click', step);
-    });
+    $('.edit').click(clickAtEditButton);
 
     $('.reset').click(function(e) {
         // Prevent the default click action
@@ -425,3 +342,111 @@ $(document).ready(function() {
         }
     });
 });
+
+function clickAtGetStarted(e) {
+    e.preventDefault();
+    startWizard();
+    localStorage.setItem('disclaimer','shown');
+    customGA('send', 'event', 'Button', 'click', 'get-started');
+};
+
+function startWizard() {
+    goToStep1(100);
+}
+
+function goToStep1(delay) {
+    $('#intro').animate({opacity: 0}, delay, function() {$('#intro').hide()} );
+    $('#prehead1').animate({opacity: 0}, delay, function() {$('#prehead1').hide()} );
+    $('#head1').show().animate({opacity: '1'}, delay);
+    $('#tiles1').show().animate({opacity: '1'}, 4*delay).animate({height: $('#tiles1').scrollHeight}, 4*delay, function() {$(this).height('auto')});
+}
+
+function clickAtObjective(e) {
+    e.preventDefault();
+
+    // Get the relevant elements
+    var $tile = $(this);
+    var $tiles_section = $tile.parents('.dynamic-tiles');
+    var $head_section = $('#' + $tiles_section.attr('data-partner'));
+
+    // Hide the current heading
+    $head_section.animate({opacity: 0}, 400, function() {
+        $head_section.hide()
+    });
+
+    // Collapse and hide the current tiles
+    $tiles_section.animate({height: '0px'}, 400, function() {
+        $tiles_section.hide();
+
+        // Update the new heading before showing it
+        $('h3[data-filler="' + $tiles_section.attr('data-partner') + '"]').html($tile.children('h3').html());
+
+        // Before showing them, hide new tiles that don't fall under the selected category
+        $nexttilesection = $tiles_section.nextAll('.dynamic-tiles').first();
+        $nexttilesection.find('.use-case').show(); // show all
+        $nexttilesection.find('.vendor').show(); // show all
+        if($tile.parents('.objective')[0]) {
+            var objectiveId = $tile.parents('.objective').first().attr('data-objective-id');
+            customGA('send', 'event', 'Objective', 'click', objectiveId);
+            $nexttilesection.find('.vendor').each(function(){
+                var objectiveIds = $(this).attr('data-objective-ids');
+                if (!objectiveIds || !objectiveIds.split(',').includes(objectiveId)) {
+                    $(this).hide();
+                }
+            });
+        }
+        $nexttilesection.find('.vendor.adder').show(); // show add section
+
+        // Hide the preheading
+        var $prehead_section = $('#pre' + $tiles_section.attr('data-partner'));
+        $nextpreheadsection = $prehead_section.nextAll('.prehead').first();
+        $nextpreheadsection.animate({opacity: 0}, 100, function() {
+            $nextpreheadsection.hide()} 
+        );
+
+        // Show the next heading
+        $head_section.nextAll('.dynamic-head').first().show().animate({opacity: '1'}, 100, function() {
+            // show the next section's tiles
+            //$nexttilesection.show().animate({height: $nexttilesection.scrollHeight}, 800, function() {$(this).height('auto')});
+            $nexttilesection.height('auto').slideToggle(600, function() {});
+        });
+    });
+    history.pushState(null, $(document).find("title").text(), '');
+}
+
+function clickAtEditButton(e) {
+    e.preventDefault();
+    resetToInitialState();
+    customGA('send', 'event', 'EditButton', 'click', step);
+};
+
+function resetToInitialState() {
+    var editButton = $('.edit');
+    if (!editButton) {
+        return;
+    }
+
+    // Transition the heading
+    var $head_section = editButton.parents('.dynamic-head');
+    var step = editButton.attr('data-step');
+    var $prev_head_section = $('#head' + step);
+    $prev_head_section.show().animate({opacity: '1'}, 100);
+    $head_section.animate({opacity: 0}, 100, function() {$head_section.hide()} );
+
+    // Transition the preheading
+    $('#pre' + $prev_head_section.attr('id')).nextAll('.prehead').show().animate({opacity: '1'}, 100);
+
+    // Transition the tiles
+    var $tiles_section = $('#' + $prev_head_section.attr('data-partner'));
+    $tiles_section.nextAll('.dynamic-tiles').animate({height: '0px'}, 10, function() {$tiles_section.nextAll('.dynamic-tiles').hide()});
+    $tiles_section.show().animate({height: $tiles_section.scrollHeight}, 700, function() {editButton.height('auto')});
+}
+
+$(window).bind('popstate', function(event) {
+    showInitialState();
+});
+
+function showInitialState() {
+    resetToInitialState();
+    goToStep1(100);
+}
