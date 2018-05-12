@@ -417,7 +417,8 @@ function clickAtObjective(e) {
 function clickAtEditButton(e) {
     e.preventDefault();
     resetToInitialState();
-    customGA('send', 'event', 'EditButton', 'click', step);
+    goToStep1(1);
+    customGA('send', 'event', 'EditButton', 'click', $(this).attr('data-step'));
 };
 
 function resetToInitialState() {
