@@ -46,13 +46,13 @@ function populatePersonas(json) {
     $('#persona-holder').append($('<div class="clear">&nbsp;</div>'));
 }
 
-function populateObjetives(json) {
+function populateObjectives(json) {
     var objectives = json.objectives;
     var useCases = json.use_cases;
 
-    var vendorsPerObjetive = [];
+    var vendorsPerObjective = [];
     for (var i in objectives) {
-        vendorsPerObjetive[i] = 0;
+        vendorsPerObjective[i] = 0;
     }
     for (var vendor of json.vendors) {
         if (vendor.full_only) {
@@ -60,7 +60,7 @@ function populateObjetives(json) {
         }
         for (var useCase of vendor.use_cases) {
             for (var objective of useCases[useCase].objectives) {
-                vendorsPerObjetive[objective] += 1;
+                vendorsPerObjective[objective] += 1;
             }
         }
     }
@@ -93,7 +93,7 @@ function populateObjetives(json) {
                         <div class="col sqs-col-12 span-12" id="yui_3_17_2_1_1509478945824_115">\
                             <div class="row sqs-row" id="yui_3_17_2_1_1509478945824_114">\
                                 <div class="tile col sqs-col-12 span-12">\
-                                        <h3>' + capitalizeFirstLetter(o.name) + ' (' + vendorsPerObjetive[i] + ')</h3>\
+                                        <h3>' + capitalizeFirstLetter(o.name) + ' (' + vendorsPerObjective[i] + ')</h3>\
                                         <ul class="tags">' + personasList + '</ul>\
                                         <p class="use_case clear">' + useCasesString + '</p>\
                                 </div>\
@@ -197,7 +197,7 @@ $(document).ready(function() {
 
     $.getJSON("db.json").done(function(json) { 
         populatePersonas(json);
-        populateObjetives(json);
+        populateObjectives(json);
         populateVendors(json);
     });
 
