@@ -43,6 +43,7 @@
         <link rel="stylesheet" type="text/css" href="static/css/vdb.css" />
         <link rel="stylesheet" type="text/css" href="static/css/responsive-tabs.css" />
         <link rel="stylesheet" type="text/css" href="static/css/tabs-style.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -360,14 +361,45 @@
                             <div class="col sqs-col-12 span-12">
                                 <div id="vendorFilters">
                                     <ul>
-                                        <li><a href="#objective"> Select category </a></li>
-                                        <li><a href="#use-case"> Select use case </a></li>
-                                        <li><a href="#technology"> Select technology </a></li>
-                                        <li><a href="#country"> Select country</a></li>
-                                        <li><a href="#vendors"> Vendors</a></li>
+                                        <li data-step="0"><a href="#objective">
+                                           <span class="tab-title"><i class="fa fa-filter mr-sm hidden filter-icon"></i>Category</span>
+                                           <br/>
+                                           <span class="filter-selected hidden"></span>
+                                        </a></li>
+                                        <li data-step="1"><a href="#use-case">
+                                           <span class="tab-title"><i id="objective-filter-icon" class="fa fa-filter mr-sm hidden"></i>Use case</span>
+                                           <br/>
+                                           <span id="objective-filter" class="selected-filter hidden"></span>
+                                        </a></li>
+                                        <li data-step="2"><a href="#technology">
+                                           <span class="tab-title"><i id="objective-filter-icon" class="fa fa-filter mr-sm hidden"></i>Technology</span>
+                                           <br/>
+                                           <span id="objective-filter" class="selected-filter hidden"></span>
+                                        </a></li>
+                                        <li data-step="3"><a href="#country">
+                                           <span class="tab-title"><i id="objective-filter-icon" class="fa fa-filter mr-sm hidden"></i>Country</span>
+                                           <br/>
+                                           <span id="objective-filter" class="selected-filter hidden"></span>
+                                        </a></li>
+                                        <li data-step="4"><a href="#vendors">
+                                           <span class="tab-title"><i id="objective-filter-icon" class="fa fa-filter mr-sm hidden"></i>Vendors</span>
+                                           <br/>
+                                           <span id="objective-filter" class="selected-filter hidden"></span>
+                                        </a></li>
                                     </ul>
-
-                                    <div id="objective"> Ender </div>
+                                    <div id="objective">
+                                        <div class="row sqs-row">
+                                            <div class="col sqs-col-12 span-12">
+                                                <div class="sqs-block image-block sqs-block-image sqs-text-ready">
+                                                    <div class="sqs-block-content">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="sqs-block html-block sqs-block-html list-container" id="block-577fc909ebbd1af4c46fa423">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div id="use-case"> Valentine </div>
                                     <div id="technology"> Peter </div>
                                     <div id="country"> Bean </div>
