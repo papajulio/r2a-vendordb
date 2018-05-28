@@ -139,9 +139,14 @@ button {
 }
 
 /* Custom */
-.mr-sm {
+.m-r-sm {
 	margin-right: 8px;
 }
+
+.m-r-xs {
+	margin-right: 4px;
+}
+
 
 .r-tabs-state-active .filter-selected {
 	color: #0a2d37 !important;
@@ -222,4 +227,8 @@ button {
 .choices-row h2, .choices-row h3, .choices-row p {
 	margin: 0;
 	padding: 12px 12px 0px 12px;
+}
+
+.clear-filter-icon:hover {
+	color: #00a69c;
 }

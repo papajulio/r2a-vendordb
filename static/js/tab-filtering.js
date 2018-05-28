@@ -45,16 +45,52 @@ function choiceWasClicked(e) {
     setFilteringStep(step, title);
 }
 
+function addClickListenerToClearFilter() {
+    $(".clear-filter-icon").off('click').click(clearFilteringStep);
+}
+
+function clearFilteringStep(e) {
+    e.preventDefault();
+    var step = $(this).attr("data-step");
+    var tab = $("#vendorFilters").find("li[data-step=" + step + "]");
+    var accordionTab = $(".r-tabs-accordion-title.r-tabs-state-active");
+
+    tab.find(".filter-icon").addClass("hidden");
+    accordionTab.find(".filter-icon").addClass("hidden");
+
+    tab.find(".filter-selected").attr("data-filter", "");
+    accordionTab.find(".filter-selected").attr("data-filter", "");
+
+    tab.find(".filter-selected").text("");
+    accordionTab.find(".filter-selected").text("");
+
+    tab.find(".filter-selected").addClass("hidden");
+    accordionTab.find(".filter-selected").addClass("hidden");
+
+    tab.find(".clear-filter-icon").addClass("hidden");
+    accordionTab.find(".clear-filter-icon").addClass("hidden");
+}
+
 function setFilteringStep(step, filter) {
     const FILTER_MAX_LENGTH = 20;
 
     var tab = $("#vendorFilters").find("li[data-step=" + step + "]");
+    var accordionTab = $(".r-tabs-accordion-title.r-tabs-state-active");
 
     tab.find(".filter-icon").removeClass("hidden");
+    accordionTab.find(".filter-icon").removeClass("hidden");
 
     tab.find(".filter-selected").attr("data-filter", filter);
+    accordionTab.find(".filter-selected").attr("data-filter", filter);
+
     tab.find(".filter-selected").text(filter.substring(0, FILTER_MAX_LENGTH - 3) + "...");
+    accordionTab.find(".filter-selected").text(filter);
+
     tab.find(".filter-selected").removeClass("hidden");
+    accordionTab.find(".filter-selected").removeClass("hidden");
+
+    tab.find(".clear-filter-icon").removeClass("hidden");
+    accordionTab.find(".clear-filter-icon").removeClass("hidden");
 
     activateNextStep(step);
 }
@@ -70,4 +106,5 @@ $(document).ready(function() {
     });
 
     addClickListenerToChoicesRow();
+    addClickListenerToClearFilter();
 });
