@@ -1,6 +1,9 @@
 function tabWasClicked(event, tab) {
     var loaderFunction = {
-        0: loadStep1
+        0: loadStep0,
+        1: loadStep1,
+        2: loadStep2,
+        3: loadStep3
     };
 
     var selectedStep = tab.tab.attr("data-step");
@@ -16,22 +19,6 @@ function tabWasClicked(event, tab) {
 
 function showSpinner(element) {
     element.html("<div class='center'><i class='fa fa-spin fa-refresh fa-3x'></i></div>");
-}
-
-function loadStep1(targetElement) {
-    targetElement.html("");
-    targetElement.append($('\
-        <div class="main-row row sqs-row objective" data-objective-id="0" data-categories="vaca">\
-            <div class="col sqs-col-12 span-12">\
-                <div class="row sqs-row">\
-                    <div class="choices-row col sqs-col-12 span-12" data-step="0">\
-                        <h3>I really have super cow powers</h3>\
-                        <ul class="tags"><li>One of those objectives</li></ul>\
-                        <p class="use_case clear">Manage queries on new regulations with a chatbot</p>\
-                    </div>\
-                </div>\
-            </div>\
-        </div>'));
 }
 
 function addClickListenerToChoicesRow() {
@@ -83,7 +70,11 @@ function setFilteringStep(step, filter) {
     tab.find(".filter-selected").attr("data-filter", filter);
     accordionTab.find(".filter-selected").attr("data-filter", filter);
 
-    tab.find(".filter-selected").text(filter.substring(0, FILTER_MAX_LENGTH - 3) + "...");
+    var trimmedFilter = filter;
+    if (filter.length >= FILTER_MAX_LENGTH) {
+        trimmedFilter = filter.substring(0, FILTER_MAX_LENGTH - 3) + "...";
+    }
+    tab.find(".filter-selected").text(trimmedFilter);
     accordionTab.find(".filter-selected").text(filter);
 
     tab.find(".filter-selected").removeClass("hidden");
