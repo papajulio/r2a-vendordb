@@ -32,6 +32,7 @@ function choiceWasClicked(e) {
     var title = $(this).find("h3").text();
     $(this).addClass("choice-selected");
     setFilteringStep(step, title);
+    updateResult(step, title);
 }
 
 function addClickListenerToClearFilter() {
@@ -43,6 +44,8 @@ function clearFilteringStep(e) {
     var step = $(this).attr("data-step");
     var tab = $("#vendorFilters").find("li[data-step=" + step + "]");
     var accordionTab = $(".r-tabs-accordion-title.r-tabs-state-active");
+
+    updateResult(step, "");
 
     $(tab.find("a").attr("href")).find(".choice-selected").each(function (){
         $(this).removeClass("choice-selected");
@@ -105,3 +108,7 @@ $(document).ready(function() {
     addClickListenerToChoicesRow();
     addClickListenerToClearFilter();
 });
+
+function updateResult(step, title) {
+    $(".vendors-number").html(parseInt(Math.random() * 100));
+}
