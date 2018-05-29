@@ -8,11 +8,12 @@ function tabWasClicked(event, tab) {
 
     var selectedStep = tab.tab.attr("data-step");
     var targetElement = tab.panel.find(".list-container");
+    var selectedItemTitle = tab.tab.find(".filter-selected").attr("data-filter");
 
     showSpinner(targetElement);
 
     if (loaderFunction[selectedStep]) {
-        loaderFunction[selectedStep](targetElement);
+        loaderFunction[selectedStep](targetElement, selectedItemTitle);
     }
     addClickListenerToChoicesRow();
 }
@@ -29,6 +30,7 @@ function choiceWasClicked(e) {
     e.preventDefault();
     var step = $(this).attr("data-step");
     var title = $(this).find("h3").text();
+    $(this).addClass("choice-selected");
     setFilteringStep(step, title);
 }
 
@@ -41,6 +43,10 @@ function clearFilteringStep(e) {
     var step = $(this).attr("data-step");
     var tab = $("#vendorFilters").find("li[data-step=" + step + "]");
     var accordionTab = $(".r-tabs-accordion-title.r-tabs-state-active");
+
+    $(tab.find("a").attr("href")).find(".choice-selected").each(function (){
+        $(this).removeClass("choice-selected");
+    })
 
     tab.find(".filter-icon").addClass("hidden");
     accordionTab.find(".filter-icon").addClass("hidden");
