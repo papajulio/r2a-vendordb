@@ -1,0 +1,126 @@
+{
+  "name": "technology",
+  "entries": [
+    {
+      "value": "1",
+      "synonyms": [
+        "Application Programming Interface"
+      ]
+    },
+    {
+      "value": "2",
+      "synonyms": [
+        "Artificial Intelligence",
+        "AI"
+      ]
+    },
+    {
+      "value": "3",
+      "synonyms": [
+        "Big Data"
+      ]
+    },
+    {
+      "value": "4",
+      "synonyms": [
+        "Biometrics"
+      ]
+    },
+    {
+      "value": "5",
+      "synonyms": [
+        "Chatbot"
+      ]
+    },
+    {
+      "value": "6",
+      "synonyms": [
+        "Cloud computing"
+      ]
+    },
+    {
+      "value": "7",
+      "synonyms": [
+        "Data Management"
+      ]
+    },
+    {
+      "value": "8",
+      "synonyms": [
+        "Data Visualization"
+      ]
+    },
+    {
+      "value": "9",
+      "synonyms": [
+        "Distributed Ledger Technology"
+      ]
+    },
+    {
+      "value": "10",
+      "synonyms": [
+        "Document Management"
+      ]
+    },
+    {
+      "value": "11",
+      "synonyms": [
+        "GIS"
+      ]
+    },
+    {
+      "value": "12",
+      "synonyms": [
+        "Machine Learning"
+      ]
+    },
+    {
+      "value": "13",
+      "synonyms": [
+        "Machine Reading"
+      ]
+    },
+    {
+      "value": "14",
+      "synonyms": [
+        "Mobile Applications"
+      ]
+    },
+    {
+      "value": "15",
+      "synonyms": [
+        "Natural Language Processing"
+      ]
+    },
+    {
+      "value": "16",
+      "synonyms": [
+        "Optical character recognition"
+      ]
+    },
+    {
+      "value": "17",
+      "synonyms": [
+        "Predictive Analysis"
+      ]
+    },
+    {
+      "value": "18",
+      "synonyms": [
+        "Robotic Process Automation"
+      ]
+    },
+    {
+      "value": "19",
+      "synonyms": [
+        "Smart contracts"
+      ]
+    },
+    {
+      "value": "20",
+      "synonyms": [
+        "Web-scraping"
+      ]
+    }
+  ]
+}
