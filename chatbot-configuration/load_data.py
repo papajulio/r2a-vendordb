@@ -196,4 +196,12 @@ if __name__ == '__main__':
     technology_entity_id = _get_entity_type_ids(args.project_id, technology_entity['name'])[0]
     create_or_update_entities(args.project_id, technology_entity_id, technology_entity['entries'])
 
+    with open('data/use_cases.json') as use_cases_entity_file:
+        use_case_entity = json.load(use_cases_entity_file)
+
+    if not _get_entity_type_ids(args.project_id, use_case_entity['name']):
+        create_entity_type(args.project_id, use_case_entity['name'])
+    use_case_entity_id = _get_entity_type_ids(args.project_id, use_case_entity['name'])[0]
+    create_or_update_entities(args.project_id, use_case_entity_id, use_case_entity['entries'])
+
     list_entity_types(args.project_id)
