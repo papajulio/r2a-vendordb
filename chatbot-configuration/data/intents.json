@@ -8,6 +8,180 @@
         }
       ],
       "is_fallback": true
+    },
+    {
+      "name": "search_vendor_2",
+      "messages": [
+        {
+          "text": "Perfect, now that we know what are you looking for. Let me help you to refine your search. Are you looking for any specific technology?"
+        }
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor-followup",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "data",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@use_cases",
+          "name": "use_case",
+          "value": "$use_case",
+          "prompts": [
+            "I didn't get for what you want to use the vendor, can you repeat?",
+            "Please, can you tell me for which purpouse are you searching the vendor?"
+          ],
+          "isList": false
+        }
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "can you help me find "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " vendors?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "can you tell me about "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "what about "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Yes, "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I'm looking for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "search vendor for "
+            },
+            {
+              "text": "licensing process",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Which vendors are good for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I'm looking for vendors that can help me with "
+            },
+            {
+              "text": "electronic regulation",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I'm searching for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            },
+            {
+              "text": " vendors"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

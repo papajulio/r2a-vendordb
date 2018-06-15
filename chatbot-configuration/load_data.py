@@ -90,27 +90,70 @@ def list_intents(project_id):
             print('\tName: {}'.format(output_context.name))
 
 
+def _get_message_from_json(intent):
+    messages = []
+    for message in intent['messages']:
+        messages.append(message['text'])
+
+    text = dialogflow.types.Intent.Message.Text(text=messages)
+    message = dialogflow.types.Intent.Message(text=text)
+    return message
+
+
+def _get_training_phrases_from_json(intent):
+    training_phrases = []
+    if 'training_phrases' in intent:
+        for training_phrase in intent['training_phrases']:
+            parts = []
+            for part in training_phrase['parts']:
+                part_object = dialogflow.types.Intent.TrainingPhrase.Part(
+                    text=part['text'],
+                    alias=part.get('alias', ''),
+                    entity_type=part.get('meta', ''),
+                    user_defined=part.get('userDefined', False))
+                parts.append(part_object)
+            training_phrase_object = dialogflow.types.Intent.TrainingPhrase(parts=parts)
+            training_phrases.append(training_phrase_object)
+    return training_phrases
+
+
+def _get_output_contexts_from_json(project_id, intent):
+    output_contexts = []
+    if 'outputContexts' in intent:
+        for context in intent['outputContexts']:
+            context_object = dialogflow.types.Context(
+                    name="projects/{project_id}/agent/sessions/-/contexts/{name}".format(
+                        project_id=project_id, name=context['name']),
+                    lifespan_count=context['lifespan'])
+            output_contexts.append(context_object)
+    return output_contexts
+
+
+def _get_parameters_from_json(intent):
+    parameters = []
+    if 'parameters' in intent:
+        for parameter in intent['parameters']:
+            parameter_object = dialogflow.types.Intent.Parameter(
+                    mandatory=parameter['required'],
+                    entity_type_display_name=parameter['dataType'],
+                    display_name=parameter['name'],
+                    value=parameter['value'],
+                    is_list=parameter['isList'],
+                    prompts=parameter['prompts'])
+            parameters.append(parameter_object)
+    return parameters
+
+
 def create_intent(project_id, intent):
     intents_client = dialogflow.IntentsClient()
     parent = intents_client.project_agent_path(project_id)
-    # training_phrases = []
-    # for training_phrases_part in training_phrases_parts:
-    #    part = dialogflow.types.Intent.TrainingPhrase.Part(
-    #        text=training_phrases_part)
-    #    # Here we create a new training phrase for each provided part.
-    #    training_phrase = dialogflow.types.Intent.TrainingPhrase(parts=[part])
-    #    training_phrases.append(training_phrase)
-
-    for message in intent['messages']:
-        text = dialogflow.types.Intent.Message.Text(text=message['text'])
-        message = dialogflow.types.Intent.Message(text=text)
-
     intent = dialogflow.types.Intent(
         display_name=intent['name'],
-        # training_phrases=training_phrases,
-        messages=[message],
-        is_fallback=intent['is_fallback'])
-
+        training_phrases=_get_training_phrases_from_json(intent),
+        messages=[_get_message_from_json(intent)],
+        output_contexts=_get_output_contexts_from_json(project_id, intent),
+        parameters=_get_parameters_from_json(intent),
+        is_fallback=intent.get('is_fallback', False))
     response = intents_client.create_intent(parent, intent)
 
     print('Intent created: {}'.format(response))
@@ -118,28 +161,14 @@ def create_intent(project_id, intent):
 
 def update_intent(project_id, intent):
     intents_client = dialogflow.IntentsClient()
-    # training_phrases = []
-    # for training_phrases_part in training_phrases_parts:
-    #    part = dialogflow.types.Intent.TrainingPhrase.Part(
-    #        text=training_phrases_part)
-    #    # Here we create a new training phrase for each provided part.
-    #    training_phrase = dialogflow.types.Intent.TrainingPhrase(parts=[part])
-    #    training_phrases.append(training_phrase)
-
-    messages = []
-    for message in intent['messages']:
-        messages.append(message['text'])
-
-    text = dialogflow.types.Intent.Message.Text(text=messages)
-    message = dialogflow.types.Intent.Message(text=text)
-
     intent = dialogflow.types.Intent(
         name=_get_intent_name(project_id, intent['name']),
         display_name=intent['name'],
-        # training_phrases=training_phrases,
-        messages=[message],
-        is_fallback=intent['is_fallback'])
-
+        training_phrases=_get_training_phrases_from_json(intent),
+        messages=[_get_message_from_json(intent)],
+        output_contexts=_get_output_contexts_from_json(project_id, intent),
+        parameters=_get_parameters_from_json(intent),
+        is_fallback=intent.get('is_fallback', False))
     response = intents_client.update_intent(intent, '')
 
     print('Intent updated: {}'.format(response))
