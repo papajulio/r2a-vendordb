@@ -242,11 +242,11 @@ if __name__ == '__main__':
         if _get_intent_ids(args.project_id, intent['name']):
             if _get_parent_followup_intent_name_from_json(args.project_id, intent):
                 delete_intent(args.project_id, _get_intent_ids(args.project_id, intent['name'])[0])
+                create_intent(args.project_id, intent)
             else:
                 update_intent(args.project_id, intent)
         else:
             create_intent(args.project_id, intent)
-    list_intents(args.project_id)
 
     with open('data/technology.json') as technology_entity_file:
         technology_entity = json.load(technology_entity_file)
