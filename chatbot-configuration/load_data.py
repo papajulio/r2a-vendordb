@@ -3,19 +3,7 @@
 import argparse
 import dialogflow
 import json
-
-
-def list_entity_types(project_id):
-    entity_types_client = dialogflow.EntityTypesClient()
-
-    parent = entity_types_client.project_agent_path(project_id)
-
-    entity_types = entity_types_client.list_entity_types(parent)
-
-    for entity_type in entity_types:
-        print('Entity type name: {}'.format(entity_type.name))
-        print('Entity type display name: {}'.format(entity_type.display_name))
-        print('Number of entities: {}\n'.format(len(entity_type.entities)))
+import logging
 
 
 def create_entity_type(project_id, display_name, kind=dialogflow.enums.EntityType.Kind.KIND_MAP):
@@ -26,8 +14,7 @@ def create_entity_type(project_id, display_name, kind=dialogflow.enums.EntityTyp
         display_name=display_name, kind=kind)
 
     response = entity_types_client.create_entity_type(parent, entity_type)
-
-    print('Entity type created: \n{}'.format(response))
+    logger.debug('Entity type created: \n{}'.format(response))
 
 
 def _get_entity_type_ids(project_id, display_name):
@@ -63,31 +50,8 @@ def create_or_update_entities(project_id, entity_type_id, entities_json):
 
         entities.append(entity)
 
-    entity_types_client.batch_update_entities(entity_type_path, entities)
-
-
-def list_intents(project_id):
-    intents_client = dialogflow.IntentsClient()
-    parent = intents_client.project_agent_path(project_id)
-    intents = intents_client.list_intents(parent)
-
-    for intent in intents:
-        print('=' * 20)
-        print('Intent name: {}'.format(intent.name))
-        print('Intent display_name: {}'.format(intent.display_name))
-        print('Action: {}\n'.format(intent.action))
-        print('Root followup intent: {}'.format(
-            intent.root_followup_intent_name))
-        print('Parent followup intent: {}\n'.format(
-            intent.parent_followup_intent_name))
-
-        print('Input contexts:')
-        for input_context_name in intent.input_context_names:
-            print('\tName: {}'.format(input_context_name))
-
-        print('Output contexts:')
-        for output_context in intent.output_contexts:
-            print('\tName: {}'.format(output_context.name))
+    response = entity_types_client.batch_update_entities(entity_type_path, entities)
+    logger.debug('Entities batch created or updated: \n{}'.format(response))
 
 
 def _get_message_from_json(intent):
@@ -174,9 +138,9 @@ def create_intent(project_id, intent):
         parameters=_get_parameters_from_json(intent),
         is_fallback=intent.get('is_fallback', False),
         parent_followup_intent_name=_get_parent_followup_intent_name_from_json(project_id, intent))
-    response = intents_client.create_intent(parent, intent)
 
-    print('Intent created: {}'.format(response))
+    response = intents_client.create_intent(parent, intent)
+    logger.debug('Intent created: {}'.format(response))
 
 
 def update_intent(project_id, intent):
@@ -191,9 +155,9 @@ def update_intent(project_id, intent):
         output_contexts=_get_output_contexts_from_json(project_id, intent),
         parameters=_get_parameters_from_json(intent),
         is_fallback=intent.get('is_fallback', False))
-    response = intents_client.update_intent(intent, '')
 
-    print('Intent updated: {}'.format(response))
+    response = intents_client.update_intent(intent, '')
+    logger.debug('Intent updated: {}'.format(response))
 
 
 def _get_intent_name(project_id, display_name):
@@ -228,40 +192,50 @@ def delete_intent(project_id, intent_id):
     intents_client = dialogflow.IntentsClient()
     intent_path = intents_client.intent_path(project_id, intent_id)
     intents_client.delete_intent(intent_path)
+    logger.debug('Intent deleted with id: {}'.format(intent_id))
+
+
+def create_or_update_intent(project_id, intent):
+    logger.info("Creating or updating intent {}...".format(intent['name']))
+    if _get_intent_ids(project_id, intent['name']):
+        if _get_parent_followup_intent_name_from_json(project_id, intent):
+            delete_intent(project_id, _get_intent_ids(project_id, intent['name'])[0])
+            create_intent(project_id, intent)
+        else:
+            update_intent(project_id, intent)
+    else:
+        create_intent(project_id, intent)
+
+
+def create_entity(project_id, entity_name):
+    logger.info("Creating entity {}...".format(entity_name))
+    with open("data/{}.json".format(entity_name)) as entity_file:
+        entity = json.load(entity_file)
+
+    if not _get_entity_type_ids(project_id, entity['name']):
+        create_entity_type(project_id, entity['name'])
+    entity_id = _get_entity_type_ids(project_id, entity['name'])[0]
+    create_or_update_entities(project_id, entity_id, entity['entries'])
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--project-id', help='Project/agent id.  Required.', required=True)
+    parser.add_argument('--verbose', dest='verbose', action='store_true')
+    parser.set_defaults(verbose=False)
     args = parser.parse_args()
+
+    if args.verbose:
+        logging.basicConfig(level=logging.DEBUG)
+    else:
+        logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
 
     with open('data/intents.json') as intents_file:
         intents = json.load(intents_file)
     for intent in intents['intents']:
-        if _get_intent_ids(args.project_id, intent['name']):
-            if _get_parent_followup_intent_name_from_json(args.project_id, intent):
-                delete_intent(args.project_id, _get_intent_ids(args.project_id, intent['name'])[0])
-                create_intent(args.project_id, intent)
-            else:
-                update_intent(args.project_id, intent)
-        else:
-            create_intent(args.project_id, intent)
+        create_or_update_intent(args.project_id, intent)
 
-    with open('data/technology.json') as technology_entity_file:
-        technology_entity = json.load(technology_entity_file)
-
-    if not _get_entity_type_ids(args.project_id, technology_entity['name']):
-        create_entity_type(args.project_id, technology_entity['name'])
-    technology_entity_id = _get_entity_type_ids(args.project_id, technology_entity['name'])[0]
-    create_or_update_entities(args.project_id, technology_entity_id, technology_entity['entries'])
-
-    with open('data/use_cases.json') as use_cases_entity_file:
-        use_case_entity = json.load(use_cases_entity_file)
-
-    if not _get_entity_type_ids(args.project_id, use_case_entity['name']):
-        create_entity_type(args.project_id, use_case_entity['name'])
-    use_case_entity_id = _get_entity_type_ids(args.project_id, use_case_entity['name'])[0]
-    create_or_update_entities(args.project_id, use_case_entity_id, use_case_entity['entries'])
-
-    list_entity_types(args.project_id)
+    create_entity(args.project_id, 'technology')
+    create_entity(args.project_id, 'use_cases')
