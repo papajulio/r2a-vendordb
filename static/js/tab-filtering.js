@@ -47,9 +47,6 @@ function clearFilteringStep(e) {
         $(this).removeClass("choice-selected");
     })
 
-    tab.find(".filter-icon").addClass("hidden");
-    accordionTab.find(".filter-icon").addClass("hidden");
-
     tab.find(".filter-selected").attr("data-filter", "");
     accordionTab.find(".filter-selected").attr("data-filter", "");
 
@@ -68,9 +65,6 @@ function setFilteringStep(step, filter) {
 
     var tab = $("#vendorFilters").find("li[data-step=" + step + "]");
     var accordionTab = $(".r-tabs-accordion-title.r-tabs-state-active");
-
-    tab.find(".filter-icon").removeClass("hidden");
-    accordionTab.find(".filter-icon").removeClass("hidden");
 
     tab.find(".filter-selected").attr("data-filter", filter);
     accordionTab.find(".filter-selected").attr("data-filter", filter);
