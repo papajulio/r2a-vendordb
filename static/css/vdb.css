@@ -595,6 +595,7 @@ p.link:hover {
 }
 
 #google_translate_element {
+    background-color: #0a2d37;
     text-align: right;
     padding: 0.2em 0.2em 0 0;
 }
