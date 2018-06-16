@@ -90,6 +90,7 @@ function loadStep1(targetElement, selectedItemTitle) {
                     <div class="row sqs-row">\
                         <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
                             <h3>' + objectives[objectiveId]["n"] + '</h3>\
+                            <p class="use_case clear">' + objectives[objectiveId]["d"] + '</p>\
                         </div>\
                     </div>\
                 </div>\
@@ -195,6 +196,7 @@ function loadVendors(targetElement, selectedItemTitle) {
                     <div class="row sqs-row">\
                         <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '">\
                             <h3>' + vendorsToShow[vendorId]["n"] + '</h3>\
+                            <p class="use_case clear">' + trimText(vendorsToShow[vendorId]["d"], 180) + '</p>\
                         </div>\
                     </div>\
                 </div>\
