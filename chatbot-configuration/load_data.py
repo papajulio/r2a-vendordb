@@ -117,6 +117,16 @@ def _get_training_phrases_from_json(intent):
     return training_phrases
 
 
+def _get_input_context_names_from_json(project_id, intent):
+    input_context_names = []
+    if 'inputContextNames' in intent:
+        for input_context_name in intent['inputContextNames']:
+            input_context_name = "projects/{project_id}/agent/sessions/-/contexts/{name}".format(
+                        project_id=project_id, name=input_context_name)
+            input_context_names.append(input_context_name)
+    return input_context_names
+
+
 def _get_output_contexts_from_json(project_id, intent):
     output_contexts = []
     if 'outputContexts' in intent:
@@ -144,16 +154,26 @@ def _get_parameters_from_json(intent):
     return parameters
 
 
+def _get_parent_followup_intent_name_from_json(project_id, intent):
+    if 'parent_followup_intent_name' in intent:
+        return _get_intent_name(project_id, intent['parent_followup_intent_name'])
+    else:
+        return ''
+
+
 def create_intent(project_id, intent):
     intents_client = dialogflow.IntentsClient()
     parent = intents_client.project_agent_path(project_id)
     intent = dialogflow.types.Intent(
         display_name=intent['name'],
+        action=intent.get('action_name', ''),
         training_phrases=_get_training_phrases_from_json(intent),
         messages=[_get_message_from_json(intent)],
+        input_context_names=_get_input_context_names_from_json(project_id, intent),
         output_contexts=_get_output_contexts_from_json(project_id, intent),
         parameters=_get_parameters_from_json(intent),
-        is_fallback=intent.get('is_fallback', False))
+        is_fallback=intent.get('is_fallback', False),
+        parent_followup_intent_name=_get_parent_followup_intent_name_from_json(project_id, intent))
     response = intents_client.create_intent(parent, intent)
 
     print('Intent created: {}'.format(response))
@@ -164,8 +184,10 @@ def update_intent(project_id, intent):
     intent = dialogflow.types.Intent(
         name=_get_intent_name(project_id, intent['name']),
         display_name=intent['name'],
+        action=intent.get('action_name', ''),
         training_phrases=_get_training_phrases_from_json(intent),
         messages=[_get_message_from_json(intent)],
+        input_context_names=_get_input_context_names_from_json(project_id, intent),
         output_contexts=_get_output_contexts_from_json(project_id, intent),
         parameters=_get_parameters_from_json(intent),
         is_fallback=intent.get('is_fallback', False))
@@ -202,6 +224,12 @@ def _get_intent_ids(project_id, display_name):
     return intent_ids
 
 
+def delete_intent(project_id, intent_id):
+    intents_client = dialogflow.IntentsClient()
+    intent_path = intents_client.intent_path(project_id, intent_id)
+    intents_client.delete_intent(intent_path)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -212,7 +240,10 @@ if __name__ == '__main__':
         intents = json.load(intents_file)
     for intent in intents['intents']:
         if _get_intent_ids(args.project_id, intent['name']):
-            update_intent(args.project_id, intent)
+            if _get_parent_followup_intent_name_from_json(args.project_id, intent):
+                delete_intent(args.project_id, _get_intent_ids(args.project_id, intent['name'])[0])
+            else:
+                update_intent(args.project_id, intent)
         else:
             create_intent(args.project_id, intent)
     list_intents(args.project_id)
