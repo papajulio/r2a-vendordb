@@ -115,6 +115,7 @@ def create_intent(project_id, intent):
     parent = intents_client.project_agent_path(project_id)
     intent = dialogflow.types.Intent(
         display_name=intent['name'],
+        priority=intent.get('priority', 3),
         action=intent.get('action_name', ''),
         training_phrases=_get_training_phrases_from_json(intent),
         messages=[_get_message_from_json(intent)],
@@ -133,6 +134,7 @@ def update_intent(project_id, intent):
     intent = dialogflow.types.Intent(
         name=_get_intent_name(project_id, intent['name']),
         display_name=intent['name'],
+        priority=intent.get('priority', 3),
         action=intent.get('action_name', ''),
         training_phrases=_get_training_phrases_from_json(intent),
         messages=[_get_message_from_json(intent)],
