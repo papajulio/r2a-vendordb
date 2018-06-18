@@ -1,0 +1,164 @@
+{
+  "name": "use_cases",
+  "entries": [
+    {
+      "value": "1",
+      "synonyms": [
+        "licensing",
+        "Streamline licensing process",
+        "licensing process",
+        "electronic machine readable regulation",
+        "electronic machine searchable regulation",
+        "electronic regulation"
+      ]
+    },
+    {
+      "value": "2",
+      "synonyms": [
+        "Clarify compliance requirements",
+        "Compliance chatbot"
+      ]
+    },
+    {
+      "value": "3",
+      "synonyms": [
+        "Clarify license application procedures",
+        "Licensing chatbot"
+      ]
+    },
+    {
+      "value": "4",
+      "synonyms": [
+        "Automate regulatory data reporting",
+        "Automated submission and validation of regulatory data"
+      ]
+    },
+    {
+      "value": "5",
+      "synonyms": [
+        "Ecosystem and policy simulation",
+        "Regulatory impact assessment"
+      ]
+    },
+    {
+      "value": "6",
+      "synonyms": [
+        "Real-time supervisory oversight",
+        "Dynamic diagnostic and early warning systems"
+      ]
+    },
+    {
+      "value": "7",
+      "synonyms": [
+        "Manage regulatory data",
+        "Big Data architecture for regulatory data"
+      ]
+    },
+    {
+      "value": "8",
+      "synonyms": [
+        "Facilitate remote data access",
+        "Mobile and web tools"
+      ]
+    },
+    {
+      "value": "9",
+      "synonyms": [
+        "Generate richer data insights",
+        "Integrate and stack multiple data sources"
+      ]
+    },
+    {
+      "value": "10",
+      "synonyms": [
+        "Facilitate complaints handling",
+        "Complaints chatbot"
+      ]
+    },
+    {
+      "value": "11",
+      "synonyms": [
+        "Detect fraud and AML",
+        "Real-time screening of financial transactions",
+        "Anti-money laundering"
+      ]
+    },
+    {
+      "value": "12",
+      "synonyms": [
+        "Streamline AML/CFT audits",
+        "Automated auditing of AML/CFT compliance reports"
+      ]
+    },
+    {
+      "value": "13",
+      "synonyms": [
+        "Streamline know your customer KYC",
+        "Digital and biometric identify verification"
+      ]
+    },
+    {
+      "value": "14",
+      "synonyms": [
+        "Map financial access",
+        "Analytical overlays of financial and geo-spatial data"
+      ]
+    },
+    {
+      "value": "15",
+      "synonyms": [
+        "Monitor competition dynamics",
+        "Big Data analytics for market data"
+      ]
+    },
+    {
+      "value": "16",
+      "synonyms": [
+        "Manage financial markets data",
+        "Big Data architecture for financial markets data"
+      ]
+    },
+    {
+      "value": "17",
+      "synonyms": [
+        "Monitor market conduct",
+        "Big Data analytics for complaints data"
+      ]
+    },
+    {
+      "value": "18",
+      "synonyms": [
+        "Manage complaints data",
+        "Big Data architecture for complaints data"
+      ]
+    },
+    {
+      "value": "19",
+      "synonyms": [
+        "Automate compliance auditing",
+        "Mine web-scraped data on market conduct"
+      ]
+    },
+    {
+      "value": "20",
+      "synonyms": [
+        "Monitor network performance",
+        "Big Data analytics for payments data"
+      ]
+    },
+    {
+      "value": "21",
+      "synonyms": [
+        "Automate compliance reporting",
+        "Machine executable regulatory reporting"
+      ]
+    },
+    {
+      "value": "22",
+      "synonyms": [
+        "Detect algorithmic bias/error",
+        "Auditing algorithms"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,860 @@
+{
+  "intents": [
+    {
+      "name": "Default Fallback Intent",
+      "priority": 1,
+      "messages": [
+        {
+          "text": "Hello. I'm a chatbot that helps to search vendors for different regulator scenarios. Please try asking me for information about your vendor regulator needs, with something like: I'm looking for licensing vendors"
+        }
+      ],
+      "is_fallback": true
+    },
+    {
+      "name": "search_vendor",
+      "messages": [
+        {
+          "text": "Perfect, now that we know what are you looking for. Let me help you to refine your search. Are you looking for any specific technology?"
+        }
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor-followup",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "data",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@use_cases",
+          "name": "use_case",
+          "value": "$use_case",
+          "prompts": [
+            "I didn't get for what you want to use the vendor, can you repeat?",
+            "Please, can you tell me for which purpouse are you searching the vendor?"
+          ],
+          "isList": false
+        }
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "can you help me find "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " vendors?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "can you tell me about "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "what about "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Yes, "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": "?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I'm looking for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "search vendor for "
+            },
+            {
+              "text": "licensing process",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Which vendors are good for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I'm looking for vendors that can help me with "
+            },
+            {
+              "text": "electronic regulation",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I'm searching for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            },
+            {
+              "text": " vendors"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search_vendor - yes",
+      "parent_followup_intent_name": "search_vendor",
+      "action_name": "search_vendor.search_vendor-yes",
+      "messages": [
+        {
+          "text": "Nice, now do you want me to give you vendor information  based on your location?"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-followup",
+        "data"
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor-yes-followup",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "data",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@technology",
+          "name": "technology",
+          "value": "$technology",
+          "prompts": [
+            "Ok, can you tell me which technology are you interested on?"
+          ],
+          "isList": false
+        }
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "I agree"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "sounds good"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "of course"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "do it"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "confirm"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Sounds good, "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "sure"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't mind"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "ok"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "that's correct"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Yes, "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "okay"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "exactly"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Big Data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "yes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search_vendor - yes - yes",
+      "parent_followup_intent_name": "search_vendor - yes",
+      "action_name": "search_vendor.search_vendor-yes.search_vendor-yes-yes",
+      "messages": [
+        {
+          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=#data.use_case&technology=#data.technology&country=$location"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-yes-followup",
+        "data"
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@sys.geo-country",
+          "name": "location",
+          "value": "$location",
+          "prompts": [
+            "Can you tell from which country do you want information?"
+          ],
+          "isList": false
+        }
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "do it"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "confirm"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Sure, "
+            },
+            {
+              "text": "Spain",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "sure"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Spain",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "okay"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "of course"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "exactly"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "ok"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't mind"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "yes"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I agree"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "sounds good"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "that's correct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search_vendor - yes - no",
+      "parent_followup_intent_name": "search_vendor - yes",
+      "action_name": "search_vendor.search_vendor-yes.search_vendor-yes-no",
+      "messages": [
+        {
+          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=#data.use_case&technology=#data.technology"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-yes-followup",
+        "data"
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "no"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not really"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't think so"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I disagree"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not interested"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "definitely not"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't want that"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "don't do it"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search_vendor - no",
+      "parent_followup_intent_name": "search_vendor",
+      "action_name": "search_vendor.search_vendor-no",
+      "messages": [
+        {
+          "text": "Ok no problem, and what about give you information based on your location?"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-followup",
+        "data"
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor-no-followup",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "data",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "no"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not really"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't think so"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I disagree"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not interested"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "definitely not"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't want that"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "don't do it"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search_vendor - no - yes",
+      "parent_followup_intent_name": "search_vendor - no",
+      "action_name": "search_vendor.search_vendor-no.search_vendor-no-yes",
+      "messages": [
+        {
+          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=#data.use_case&country=$location"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-no-followup",
+        "data"
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@sys.geo-country",
+          "name": "location",
+          "value": "$location",
+          "prompts": [
+            "Can you tell from which country do you want information?",
+            "Ok nice, can you tell me for what country are you looking information?"
+          ],
+          "isList": false
+        }
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "do it"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "confirm"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Yes, "
+            },
+            {
+              "text": "Spain",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Sure, "
+            },
+            {
+              "text": "Spain",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "sure"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Spain",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "okay"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "of course"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "exactly"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "ok"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't mind"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "yes"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I agree"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "sounds good"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "that's correct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search_vendor - no - no",
+      "parent_followup_intent_name": "search_vendor - no",
+      "action_name": "search_vendor.search_vendor-no.search_vendor-no-no",
+      "messages": [
+        {
+          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=#data.use_case"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-no-followup",
+        "data"
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "no"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not really"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't think so"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I disagree"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not interested"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "definitely not"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't want that"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "don't do it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
