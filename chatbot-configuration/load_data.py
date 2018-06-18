@@ -10,8 +10,7 @@ def create_entity_type(project_id, display_name, kind=dialogflow.enums.EntityTyp
     entity_types_client = dialogflow.EntityTypesClient()
 
     parent = entity_types_client.project_agent_path(project_id)
-    entity_type = dialogflow.types.EntityType(
-        display_name=display_name, kind=kind)
+    entity_type = dialogflow.types.EntityType(display_name=display_name, kind=kind)
 
     response = entity_types_client.create_entity_type(parent, entity_type)
     logger.debug('Entity type created: \n{}'.format(response))
@@ -26,11 +25,7 @@ def _get_entity_type_ids(project_id, display_name):
         entity_type.name for entity_type in entity_types
         if entity_type.display_name == display_name]
 
-    entity_type_ids = [
-        entity_type_name.split('/')[-1] for entity_type_name
-        in entity_type_names]
-
-    return entity_type_ids
+    return [entity_type_name.split('/')[-1] for entity_type_name in entity_type_names]
 
 
 def create_or_update_entities(project_id, entity_type_id, entities_json):
@@ -66,63 +61,53 @@ def _get_message_from_json(intent):
 
 def _get_training_phrases_from_json(intent):
     training_phrases = []
-    if 'training_phrases' in intent:
-        for training_phrase in intent['training_phrases']:
-            parts = []
-            for part in training_phrase['parts']:
-                part_object = dialogflow.types.Intent.TrainingPhrase.Part(
-                    text=part['text'],
-                    alias=part.get('alias', ''),
-                    entity_type=part.get('meta', ''),
-                    user_defined=part.get('userDefined', False))
-                parts.append(part_object)
-            training_phrase_object = dialogflow.types.Intent.TrainingPhrase(parts=parts)
-            training_phrases.append(training_phrase_object)
+    for training_phrase in intent.get('training_phrases', []):
+        parts = []
+        for part in training_phrase['parts']:
+            parts.append(dialogflow.types.Intent.TrainingPhrase.Part(
+                text=part['text'],
+                alias=part.get('alias', ''),
+                entity_type=part.get('meta', ''),
+                user_defined=part.get('userDefined', False)))
+        training_phrases.append(dialogflow.types.Intent.TrainingPhrase(parts=parts))
     return training_phrases
 
 
 def _get_input_context_names_from_json(project_id, intent):
     input_context_names = []
-    if 'inputContextNames' in intent:
-        for input_context_name in intent['inputContextNames']:
-            input_context_name = "projects/{project_id}/agent/sessions/-/contexts/{name}".format(
-                        project_id=project_id, name=input_context_name)
-            input_context_names.append(input_context_name)
+    for input_context_name in intent.get('inputContextNames', []):
+        input_context_names.append("projects/{project_id}/agent/sessions/-/contexts/{name}".format(
+                    project_id=project_id, name=input_context_name))
     return input_context_names
 
 
 def _get_output_contexts_from_json(project_id, intent):
     output_contexts = []
-    if 'outputContexts' in intent:
-        for context in intent['outputContexts']:
-            context_object = dialogflow.types.Context(
-                    name="projects/{project_id}/agent/sessions/-/contexts/{name}".format(
-                        project_id=project_id, name=context['name']),
-                    lifespan_count=context['lifespan'])
-            output_contexts.append(context_object)
+    for context in intent.get('outputContexts', []):
+        output_contexts.append(dialogflow.types.Context(
+                name="projects/{project_id}/agent/sessions/-/contexts/{name}".format(
+                    project_id=project_id, name=context['name']),
+                lifespan_count=context['lifespan']))
     return output_contexts
 
 
 def _get_parameters_from_json(intent):
     parameters = []
-    if 'parameters' in intent:
-        for parameter in intent['parameters']:
-            parameter_object = dialogflow.types.Intent.Parameter(
-                    mandatory=parameter['required'],
-                    entity_type_display_name=parameter['dataType'],
-                    display_name=parameter['name'],
-                    value=parameter['value'],
-                    is_list=parameter['isList'],
-                    prompts=parameter['prompts'])
-            parameters.append(parameter_object)
+    for parameter in intent.get('parameters', []):
+        parameters.append(dialogflow.types.Intent.Parameter(
+                mandatory=parameter['required'],
+                entity_type_display_name=parameter['dataType'],
+                display_name=parameter['name'],
+                value=parameter['value'],
+                is_list=parameter['isList'],
+                prompts=parameter['prompts']))
     return parameters
 
 
 def _get_parent_followup_intent_name_from_json(project_id, intent):
     if 'parent_followup_intent_name' in intent:
         return _get_intent_name(project_id, intent['parent_followup_intent_name'])
-    else:
-        return ''
+    return ''
 
 
 def create_intent(project_id, intent):
@@ -165,9 +150,7 @@ def _get_intent_name(project_id, display_name):
 
     parent = intents_client.project_agent_path(project_id)
     intents = intents_client.list_intents(parent)
-    intent_names = [
-        intent.name for intent in intents
-        if intent.display_name == display_name]
+    intent_names = [intent.name for intent in intents if intent.display_name == display_name]
 
     return intent_names[0]
 
@@ -181,11 +164,7 @@ def _get_intent_ids(project_id, display_name):
         intent.name for intent in intents
         if intent.display_name == display_name]
 
-    intent_ids = [
-        intent_name.split('/')[-1] for intent_name
-        in intent_names]
-
-    return intent_ids
+    return [intent_name.split('/')[-1] for intent_name in intent_names]
 
 
 def delete_intent(project_id, intent_id):
@@ -197,13 +176,13 @@ def delete_intent(project_id, intent_id):
 
 def create_or_update_intent(project_id, intent):
     logger.info("Creating or updating intent {}...".format(intent['name']))
-    if _get_intent_ids(project_id, intent['name']):
-        if _get_parent_followup_intent_name_from_json(project_id, intent):
-            delete_intent(project_id, _get_intent_ids(project_id, intent['name'])[0])
-            create_intent(project_id, intent)
-        else:
-            update_intent(project_id, intent)
+    if not _get_intent_ids(project_id, intent['name']):
+        create_intent(project_id, intent)
+    elif (_get_intent_ids(project_id, intent['name'])
+            and _get_parent_followup_intent_name_from_json(project_id, intent)):
+        update_intent(project_id, intent)
     else:
+        delete_intent(project_id, _get_intent_ids(project_id, intent['name'])[0])
         create_intent(project_id, intent)
 
 
@@ -218,19 +197,26 @@ def create_entity(project_id, entity_name):
     create_or_update_entities(project_id, entity_id, entity['entries'])
 
 
-if __name__ == '__main__':
+def parse_args():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--project-id', help='Project/agent id.  Required.', required=True)
     parser.add_argument('--verbose', dest='verbose', action='store_true')
     parser.set_defaults(verbose=False)
-    args = parser.parse_args()
+    return parser.parse_args()
 
+
+def configure_logging(verbose):
     if args.verbose:
         logging.basicConfig(level=logging.DEBUG)
     else:
         logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger(__name__)
+    return logging.getLogger(__name__)
+
+
+if __name__ == '__main__':
+    args = parse_args()
+    logger = configure_logging(args.verbose)
 
     with open('data/intents.json') as intents_file:
         intents = json.load(intents_file)
