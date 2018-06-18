@@ -85,11 +85,12 @@ function loadStep1(targetElement, selectedItemTitle) {
             rowSelectedClass = " choice-selected ";
         }
         targetElement.append($('\
-            <div class="main-row row sqs-row objective" data-objective-id="0" data-categories="vaca">\
+            <div class="main-row row sqs-row objective">\
                 <div class="col sqs-col-12 span-12">\
                     <div class="row sqs-row">\
                         <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
                             <h3>' + objectives[objectiveId]["n"] + '</h3>\
+                            <p class="use_case clear">' + objectives[objectiveId]["d"] + '</p>\
                         </div>\
                     </div>\
                 </div>\
@@ -118,7 +119,7 @@ function loadStep2(targetElement, selectedItemTitle) {
             rowSelectedClass = " choice-selected ";
         }
         targetElement.append($('\
-            <div class="main-row row sqs-row objective" data-objective-id="0" data-categories="vaca">\
+            <div class="main-row row sqs-row objective">\
                 <div class="col sqs-col-12 span-12">\
                     <div class="row sqs-row">\
                         <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '" data-choice-id="' + technologyId + '">\
@@ -151,7 +152,7 @@ function loadStep3(targetElement, selectedItemTitle) {
             rowSelectedClass = " choice-selected ";
         }
         targetElement.append($('\
-            <div class="main-row row sqs-row location" data-location-id="0" data-categories="vaca">\
+            <div class="main-row row sqs-row location">\
                 <div class="col sqs-col-12 span-12">\
                     <div class="row sqs-row">\
                         <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '" data-choice-id="' + locations[locationId] + '">\
@@ -189,13 +190,18 @@ function loadVendors(targetElement, selectedItemTitle) {
         if (vendorsToShow[vendorId]["n"] == selectedItemTitle) {
             rowSelectedClass = " choice-selected ";
         }
+
         targetElement.append($('\
-            <div class="main-row row sqs-row vendor" data-vendor-id="0" data-categories="vaca">\
-                <div class="col sqs-col-12 span-12">\
-                    <div class="row sqs-row">\
-                        <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '">\
-                            <h3>' + vendorsToShow[vendorId]["n"] + '</h3>\
-                        </div>\
+            <div class="main-row row sqs-row vendor-row">\
+                <div class="vtile col sqs-col-1-0-0 span-1-0-0">\
+                    <div class="vlogo col sqs-col-1-5 span-1-5">\
+                        <img src="' + vendorsToShow[vendorId]["lu"] + '" />\
+                    </div>\
+                    <div class="col sqs-col-8-5 span-8-5 vcontent">\
+                        <h4 id="vname">' + vendorsToShow[vendorId]["n"] + '</h4>\
+                        <p class="location">' + vendorsToShow[vendorId]["l"] + '</p>\
+                        <p id="vdesc">' + trimText(vendorsToShow[vendorId]["d"], 180) + '</p>\
+                        <p id="vurl">' + vendorsToShow[vendorId]["u"] + '</p>\
                     </div>\
                 </div>\
             </div>'));

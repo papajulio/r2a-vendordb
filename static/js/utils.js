@@ -42,3 +42,10 @@ function arrayUnique(array) {
 
     return result;
 }
+
+function trimText(text, maxSize) {
+    if (text.length > maxSize) {
+        return text.substring(0, maxSize - 3)  + "...";
+    }
+    return text;
+}

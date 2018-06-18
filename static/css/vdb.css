@@ -345,7 +345,7 @@ i.material-icons {
 	height: 0.03px;
 }
 
-.bggrey .vtile {
+.vendor-row .vtile {
 	box-shadow: 1px 2px 2px #aaa;
 	margin-top: 8px;
 	cursor: pointer;
@@ -358,7 +358,7 @@ i.material-icons {
     display:flex;
     background-color: white;
 }
-.bggrey .vtile:hover {
+.vendor-row .vtile:hover {
 	box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
 	transition: .35s;
 }
@@ -370,31 +370,31 @@ i.material-icons {
 	width: 85% !important;
 	float: left !important;
 }
-.bggrey .vtile .vlogo {
+.vendor-row .vtile .vlogo {
 	background-color: #00a69c11;
 }
-.bggrey .vtile .vlogo .helper {
+.vendor-row .vtile .vlogo .helper {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
 }
-.bggrey .vtile .vlogo img {
+.vendor-row .vtile .vlogo img {
 	width: 80%;
     margin: 0 10%;
 	object-fit: contain;
 	object-position: center;
 	min-height: 100%;
 }
-.bggrey .vtile .vcontent {
+.vendor-row .vtile .vcontent {
 	background: white;
 	height: 100%;
 }
-.bggrey .vtile .vcontent h4,
-.bggrey .vtile .vcontent p {
+.vendor-row .vtile .vcontent h4,
+.vendor-row .vtile .vcontent p {
 	padding: 0 0 0 16px;
 	margin: 6px;
 }
-.bggrey .vtile .vcontent h4 {
+.vendor-row .vtile .vcontent h4 {
   font-family: Europa;
   font-size: 24px;
   font-weight: bold;
@@ -407,7 +407,7 @@ i.material-icons {
   margin-bottom: 8px;
   margin-top: 12px;
 }
-.bggrey .vtile .vcontent p.location {
+.vendor-row .vtile .vcontent p.location {
   height: 19px;
   font-family: Lato;
   font-size: 16px;
@@ -419,7 +419,7 @@ i.material-icons {
   text-align: left;
   color: #888888;
 }
-.bggrey .vtile .vcontent p.technologies {
+.vendor-row .vtile .vcontent p.technologies {
   font-family: Lato;
   font-size: 16px;
   font-weight: normal;
@@ -595,6 +595,7 @@ p.link:hover {
 }
 
 #google_translate_element {
+    background-color: #0a2d37;
     text-align: right;
     padding: 0.2em 0.2em 0 0;
 }
