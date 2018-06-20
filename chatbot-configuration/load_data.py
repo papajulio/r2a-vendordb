@@ -183,10 +183,10 @@ def create_or_update_intent(project_id, intent):
         create_intent(project_id, intent)
     elif (_get_intent_ids(project_id, intent['name'])
             and _get_parent_followup_intent_name_from_json(project_id, intent)):
-        update_intent(project_id, intent)
-    else:
         delete_intent(project_id, _get_intent_ids(project_id, intent['name'])[0])
         create_intent(project_id, intent)
+    else:
+        update_intent(project_id, intent)
 
 
 def create_entity(project_id, entity_name):
