@@ -4,6 +4,7 @@
     {
       "value": "1",
       "synonyms": [
+        "Streamline",
         "licensing",
         "Streamline licensing process",
         "licensing process",
@@ -30,6 +31,7 @@
       "value": "4",
       "synonyms": [
         "Automate regulatory data reporting",
+        "regulatory reporting",
         "Automated submission and validation of regulatory data"
       ]
     },
@@ -37,13 +39,16 @@
       "value": "5",
       "synonyms": [
         "Ecosystem and policy simulation",
-        "Regulatory impact assessment"
+        "policy simulation",
+        "Regulatory impact assessment",
+        "Regulatory impact"
       ]
     },
     {
       "value": "6",
       "synonyms": [
         "Real-time supervisory oversight",
+        "supervisory oversight",
         "Dynamic diagnostic and early warning systems"
       ]
     },
@@ -51,6 +56,7 @@
       "value": "7",
       "synonyms": [
         "Manage regulatory data",
+        "Manage regulatory",
         "Big Data architecture for regulatory data"
       ]
     },
@@ -58,6 +64,9 @@
       "value": "8",
       "synonyms": [
         "Facilitate remote data access",
+        "remote data access",
+        "remote data",
+        "remote access",
         "Mobile and web tools"
       ]
     },
@@ -65,6 +74,8 @@
       "value": "9",
       "synonyms": [
         "Generate richer data insights",
+        "richer data insights",
+        "data insights",
         "Integrate and stack multiple data sources"
       ]
     },
@@ -72,6 +83,7 @@
       "value": "10",
       "synonyms": [
         "Facilitate complaints handling",
+        "complaints handling",
         "Complaints chatbot"
       ]
     },
@@ -79,28 +91,45 @@
       "value": "11",
       "synonyms": [
         "Detect fraud and AML",
+        "fraud",
+        "Detect fraud",
+        "Detect AML",
         "Real-time screening of financial transactions",
-        "Anti-money laundering"
+        "screening of financial transactions",
+        "Anti-money laundering",
+        "AML",
+        "Anti money laundering"
       ]
     },
     {
       "value": "12",
       "synonyms": [
         "Streamline AML/CFT audits",
-        "Automated auditing of AML/CFT compliance reports"
+        "Streamline CFT",
+        "Streamline AML",
+        "AML audits",
+        "CFT audits",
+        "Automated auditing of AML/CFT compliance reports",
+        "AML compliance reports",
+        "CFT compliance reports"
       ]
     },
     {
       "value": "13",
       "synonyms": [
         "Streamline know your customer KYC",
-        "Digital and biometric identify verification"
+        "know your customer",
+        "KYC",
+        "Digital and biometric identify verification",
+        "Digital identify verification",
+        "biometric identify verification"
       ]
     },
     {
       "value": "14",
       "synonyms": [
         "Map financial access",
+        "Map financial",
         "Analytical overlays of financial and geo-spatial data"
       ]
     },
@@ -108,6 +137,8 @@
       "value": "15",
       "synonyms": [
         "Monitor competition dynamics",
+        "competition dynamics",
+        "Monitor competition",
         "Big Data analytics for market data"
       ]
     },
@@ -115,6 +146,9 @@
       "value": "16",
       "synonyms": [
         "Manage financial markets data",
+        "financial markets data",
+        "financial markets",
+        "Manage financial markets",
         "Big Data architecture for financial markets data"
       ]
     },
@@ -122,6 +156,8 @@
       "value": "17",
       "synonyms": [
         "Monitor market conduct",
+        "Monitor market",
+        "market conduct",
         "Big Data analytics for complaints data"
       ]
     },
@@ -129,6 +165,7 @@
       "value": "18",
       "synonyms": [
         "Manage complaints data",
+        "Manage complaints",
         "Big Data architecture for complaints data"
       ]
     },
@@ -136,6 +173,7 @@
       "value": "19",
       "synonyms": [
         "Automate compliance auditing",
+        "compliance auditing",
         "Mine web-scraped data on market conduct"
       ]
     },
@@ -143,6 +181,9 @@
       "value": "20",
       "synonyms": [
         "Monitor network performance",
+        "Monitor network",
+        "network",
+        "network performance",
         "Big Data analytics for payments data"
       ]
     },
@@ -150,13 +191,23 @@
       "value": "21",
       "synonyms": [
         "Automate compliance reporting",
+        "compliance reporting",
         "Machine executable regulatory reporting"
       ]
     },
     {
       "value": "22",
       "synonyms": [
+        "Detect bias/error",
+        "Detect bias",
+        "Detect error",
         "Detect algorithmic bias/error",
+        "Detect algorithmic bias",
+        "Detect algorithmic error",
+        "Detect algorithmic",
+        "algorithmic bias/error",
+        "algorithmic bias",
+        "algorithmic error",
         "Auditing algorithms"
       ]
     }

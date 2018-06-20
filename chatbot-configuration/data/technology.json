@@ -4,13 +4,18 @@
     {
       "value": "1",
       "synonyms": [
-        "Application Programming Interface"
+        "Application Programming Interface",
+        "Application Programming",
+        "Application Interface",
+        "Interface programming"
       ]
     },
     {
       "value": "2",
       "synonyms": [
+        "Artificial",
         "Artificial Intelligence",
+        "Intelligence",
         "AI"
       ]
     },
@@ -29,97 +34,121 @@
     {
       "value": "5",
       "synonyms": [
-        "Chatbot"
+        "Chatbot",
+        "bot"
       ]
     },
     {
       "value": "6",
       "synonyms": [
-        "Cloud computing"
+        "Cloud computing",
+        "computing cloud"
       ]
     },
     {
       "value": "7",
       "synonyms": [
-        "Data Management"
+        "Data Management",
+        "Management data"
       ]
     },
     {
       "value": "8",
       "synonyms": [
-        "Data Visualization"
+        "Data Visualization",
+        "Visualization data"
       ]
     },
     {
       "value": "9",
       "synonyms": [
-        "Distributed Ledger Technology"
+        "Distributed Ledger Technology",
+        "Distributed Ledger",
+        "Ledger Technology",
+        "Distributed Technology"
       ]
     },
     {
       "value": "10",
       "synonyms": [
-        "Document Management"
+        "Document Management",
+        "Management Document "
       ]
     },
     {
       "value": "11",
       "synonyms": [
-        "GIS"
+        "GIS",
+        "geographic information system",
+        "geographic system"
       ]
     },
     {
       "value": "12",
       "synonyms": [
-        "Machine Learning"
+        "Machine Learning",
+        "ML",
+        "Learning Machine"
       ]
     },
     {
       "value": "13",
       "synonyms": [
-        "Machine Reading"
+        "Machine Reading",
+        "MR"
       ]
     },
     {
       "value": "14",
       "synonyms": [
-        "Mobile Applications"
+        "Mobile Applications",
+        "Mobile"
       ]
     },
     {
       "value": "15",
       "synonyms": [
-        "Natural Language Processing"
+        "Natural Language Processing",
+        "Language Processing",
+        "NLP"
       ]
     },
     {
       "value": "16",
       "synonyms": [
-        "Optical character recognition"
+        "Optical character recognition",
+        "character recognition",
+        "OCR"
       ]
     },
     {
       "value": "17",
       "synonyms": [
-        "Predictive Analysis"
+        "Predictive Analysis",
+        "Predictive"
       ]
     },
     {
       "value": "18",
       "synonyms": [
-        "Robotic Process Automation"
+        "Robotic Process Automation",
+        "Robotic Automation",
+        "Robotic",
+        "Automation"
       ]
     },
     {
       "value": "19",
       "synonyms": [
-        "Smart contracts"
+        "Smart contracts",
+        "contracts"
       ]
     },
     {
       "value": "20",
       "synonyms": [
-        "Web-scraping"
+        "Web-scraping",
+        "web scraping"
       ]
     }
   ]

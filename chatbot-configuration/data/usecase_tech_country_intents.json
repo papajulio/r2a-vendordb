@@ -11,7 +11,7 @@
         {
           "name": "search_vendor-followup",
           "parameters": {},
-          "lifespan": 5
+          "lifespan": 1
         },
         {
           "name": "data",
@@ -175,12 +175,31 @@
       ]
     },
     {
+      "name": "search_vendor - fallback",
+      "messages": [
+        {
+          "text": "I didn't get that. Are you looking for any specific technology?"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-followup"
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor-followup",
+          "parameters": {},
+          "lifespan": 1
+        }
+      ],
+      "is_fallback": true
+    },
+    {
       "name": "search_vendor - yes",
       "parent_followup_intent_name": "search_vendor",
       "action_name": "search_vendor.search_vendor-yes",
       "messages": [
         {
-          "text": "Nice, now do you want me to give you vendor information  based on your location?"
+          "text": "Nice, now do you want me to give you vendor information  based on your country?"
         }
       ],
       "inputContextNames": [
@@ -191,7 +210,7 @@
         {
           "name": "search_vendor-yes-followup",
           "parameters": {},
-          "lifespan": 5
+          "lifespan": 1
         },
         {
           "name": "data",
@@ -333,6 +352,25 @@
           ]
         }
       ]
+    },
+    {
+      "name": "search_vendor - yes - fallback",
+      "messages": [
+        {
+          "text": "I didn't get that, do you want me to give you vendor information  based on your country?"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-yes-followup"
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor-yes-followup",
+          "parameters": {},
+          "lifespan": 1
+        }
+      ],
+      "is_fallback": true
     },
     {
       "name": "search_vendor - yes - yes",
@@ -547,7 +585,7 @@
       "action_name": "search_vendor.search_vendor-no",
       "messages": [
         {
-          "text": "Ok no problem, and what about give you information based on your location?"
+          "text": "Ok no problem, and what about give you information based on your country?"
         }
       ],
       "inputContextNames": [
@@ -558,7 +596,7 @@
         {
           "name": "search_vendor-no-followup",
           "parameters": {},
-          "lifespan": 5
+          "lifespan": 1
         },
         {
           "name": "data",
@@ -624,6 +662,25 @@
           ]
         }
       ]
+    },
+    {
+      "name": "search_vendor - no - fallback",
+      "messages": [
+        {
+          "text": "I didn't get that, do you want me to give you vendor information  based on your country?"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor-no-followup"
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor-no-followup",
+          "parameters": {},
+          "lifespan": 1
+        }
+      ],
+      "is_fallback": true
     },
     {
       "name": "search_vendor - no - yes",

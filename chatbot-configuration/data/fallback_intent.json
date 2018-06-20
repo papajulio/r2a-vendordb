@@ -3,7 +3,7 @@
   "priority": 1,
   "messages": [
     {
-      "text": "Hello. I'm a chatbot that helps to search vendors for different regulator scenarios. Please try asking me for information about your vendor regulator needs, with something like: I'm looking for licensing vendors"
+      "text": "Hello. I'm a chatbot that helps to search vendors for different regulator scenarios. Please try asking me for information about your vendor regulator needs, with something like: I'm looking for licensing vendors or Can you help me find fraud vendors that use AI ?"
     }
   ],
   "is_fallback": true
