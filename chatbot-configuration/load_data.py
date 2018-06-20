@@ -4,6 +4,7 @@ import argparse
 import dialogflow
 import json
 import logging
+import os
 
 
 def create_entity_type(project_id, display_name, kind=dialogflow.enums.EntityType.Kind.KIND_MAP):
@@ -220,10 +221,15 @@ if __name__ == '__main__':
     args = parse_args()
     logger = configure_logging(args.verbose)
 
-    with open('data/intents.json') as intents_file:
-        intents = json.load(intents_file)
-    for intent in intents['intents']:
-        create_or_update_intent(args.project_id, intent)
+    for filename in os.listdir('data'):
+        if filename.endswith("intent.json"):
+            with open('data/' + filename) as intent_file:
+                create_or_update_intent(args.project_id, json.load(intent_file))
+        elif filename.endswith("intents.json"):
+            with open('data/' + filename) as intents_file:
+                intents = json.load(intents_file)
+                for intent in intents['intents']:
+                    create_or_update_intent(args.project_id, intent)
 
     create_entity(args.project_id, 'technology')
     create_entity(args.project_id, 'use_cases')
