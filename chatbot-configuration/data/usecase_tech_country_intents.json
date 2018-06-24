@@ -524,6 +524,27 @@
         {
           "parts": [
             {
+              "text": "not in particular"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "anything"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "all countries"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
               "text": "no"
             }
           ]
@@ -605,6 +626,27 @@
         }
       ],
       "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "not in particular"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "anything"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "all technologies"
+            }
+          ]
+        },
         {
           "parts": [
             {
@@ -845,6 +887,27 @@
         "data"
       ],
       "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "not in particular"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "anything"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "all countries"
+            }
+          ]
+        },
         {
           "parts": [
             {

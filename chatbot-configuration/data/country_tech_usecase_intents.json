@@ -35,6 +35,35 @@
         {
           "parts": [
             {
+              "text": "what other vendors are based in "
+            },
+            {
+              "text": "Australia",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": false
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I am looking for a vendor in "
+            },
+            {
+              "text": "Australia",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
               "text": "can you help me find "
             },
             {
@@ -559,6 +588,27 @@
         {
           "parts": [
             {
+              "text": "not in particular"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "anything"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "all use cases"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
               "text": "don't do it"
             }
           ]
@@ -630,6 +680,27 @@
           "parts": [
             {
               "text": "definitely not"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not in particular"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "anything"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "all technologies"
             }
           ]
         },
@@ -869,6 +940,27 @@
           "parts": [
             {
               "text": "definitely not"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not in particular"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "anything"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "all use cases"
             }
           ]
         },
