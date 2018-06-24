@@ -4,7 +4,7 @@
       "name": "search_vendor_start_country",
       "messages": [
         {
-          "text": "Perfect, now that we know for where you are looking vendors. Let me help you to refine your search. Are you looking for any specific technology?"
+          "text": "Perfect, now that we know where you are looking vendors, let me help you to refine your search. Are you looking for a specific technology?"
         }
       ],
       "outputContexts": [
@@ -26,7 +26,7 @@
           "name": "location",
           "value": "$location",
           "prompts": [
-            "Please, can you tell me for which country are you searching the vendor?"
+            "Can you please tell me which country you are you searching for vendors in?"
           ],
           "isList": false
         }
@@ -164,7 +164,7 @@
       "name": "search_vendor_start_country - fallback",
       "messages": [
         {
-          "text": "I didn't get that. Are you looking for any specific technology?"
+          "text": "I didn't get that. Are you looking for a specific technology?"
         }
       ],
       "inputContextNames": [
@@ -211,7 +211,7 @@
           "name": "technology",
           "value": "$technology",
           "prompts": [
-            "Ok, can you tell me which technology are you interested on?"
+            "Ok, can you tell me which technology you are interested in?"
           ],
           "isList": false
         }
@@ -343,7 +343,7 @@
       "name": "search_vendor_start_country - yes - fallback",
       "messages": [
         {
-          "text": "I didn't get that, do you want me to give you vendor information based on your use case?"
+          "text": "I didn't catch that, do you want me to give you vendor information based on your use case?"
         }
       ],
       "inputContextNames": [
@@ -364,7 +364,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-yes.search_vendor_start_country-yes-yes",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=$use_case&technology=#data-country.technology&country=#data-country.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?use-case=$use_case&technology=#data-country.technology&country=#data-country.location"
         }
       ],
       "inputContextNames": [
@@ -499,7 +499,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-yes.search_vendor_start_country-yes-no",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?country=#data-country.location&technology=#data-country.technology"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?country=#data-country.location&technology=#data-country.technology"
         }
       ],
       "inputContextNames": [
@@ -571,7 +571,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-no",
       "messages": [
         {
-          "text": "Ok no problem, and what about give you information based on your use case?"
+          "text": "Ok no problem, can I give you information based on your use case?"
         }
       ],
       "inputContextNames": [
@@ -653,7 +653,7 @@
       "name": "search_vendor_start_country - no - fallback",
       "messages": [
         {
-          "text": "I didn't get that, do you want me to give you vendor information based on your use case?"
+          "text": "I didn't catch that, do you want me to give you vendor information based on your use case?"
         }
       ],
       "inputContextNames": [
@@ -674,7 +674,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-no.search_vendor_start_country-no-yes",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=$use_case&country=#data-country.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?use-case=$use_case&country=#data-country.location"
         }
       ],
       "inputContextNames": [
@@ -822,7 +822,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-no.search_vendor_start_country-no-no",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?country=#data-country.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?country=#data-country.location"
         }
       ],
       "inputContextNames": [

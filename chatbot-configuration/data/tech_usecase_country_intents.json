@@ -4,7 +4,7 @@
       "name": "search_vendor_start_tech",
       "messages": [
         {
-          "text": "Perfect, now that we know the technology that are you looking for. Let me help you to refine your search. What is your expected use of this technology?"
+          "text": "Perfect, now that we know the technology that are you looking for, let me help you to refine your search. What do you plan to use this technology for?"
         }
       ],
       "outputContexts": [
@@ -26,7 +26,7 @@
           "name": "technology",
           "value": "$technology",
           "prompts": [
-            "I didn't get which technology do you want to use, can you repeat?"
+            "I didn't catch which technology do you want to use, can you please rephrase?"
           ],
           "isList": false
         }
@@ -174,7 +174,7 @@
       "name": "search_vendor_start_tech - fallback",
       "messages": [
         {
-          "text": "I didn't get that. Are you looking for any specific use case?"
+          "text": "I didn't catch that. Are you looking for a specific use case?"
         }
       ],
       "inputContextNames": [
@@ -195,7 +195,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-yes",
       "messages": [
         {
-          "text": "Nice, now do you want me to give you vendor information based on your country?"
+          "text": "Great. Now do you want me to give you vendor information based on your country?"
         }
       ],
       "inputContextNames": [
@@ -221,7 +221,7 @@
           "name": "use_case",
           "value": "$use_case",
           "prompts": [
-            "Ok, can you tell me which use do you plan for the technology?"
+            "Ok, can you tell me how you plan to use the technology?"
           ],
           "isList": false
         }
@@ -366,7 +366,7 @@
       "name": "search_vendor_start_tech - yes - fallback",
       "messages": [
         {
-          "text": "I didn't get that, do you want me to give you vendor information based on your country?"
+          "text": "I didn't catch that, do you want to find vendor information by country?"
         }
       ],
       "inputContextNames": [
@@ -387,7 +387,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-yes.search_vendor_start_tech-yes-yes",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=#data-tech.use_case&technology=#data-tech.technology&country=$location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?use-case=#data-tech.use_case&technology=#data-tech.technology&country=$location"
         }
       ],
       "inputContextNames": [
@@ -401,7 +401,7 @@
           "name": "location",
           "value": "$location",
           "prompts": [
-            "Can you tell from which country do you want information?"
+            "Can you tell me which country you want information for?"
           ],
           "isList": false
         }
@@ -522,7 +522,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-yes.search_vendor_start_tech-yes-no",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=#data-tech.use_case&technology=#data-tech.technology"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?use-case=#data-tech.use_case&technology=#data-tech.technology"
         }
       ],
       "inputContextNames": [
@@ -594,7 +594,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-no",
       "messages": [
         {
-          "text": "Ok no problem, and what about give you information based on your country?"
+          "text": "Ok no problem, and what about giving you information based on your country?"
         }
       ],
       "inputContextNames": [
@@ -676,7 +676,7 @@
       "name": "search_vendor_start_tech - no - fallback",
       "messages": [
         {
-          "text": "I didn't get that, do you want me to give you vendor information based on your country?"
+          "text": "I didn't catch that, do you want to find vendor information by country?"
         }
       ],
       "inputContextNames": [
@@ -697,7 +697,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-no.search_vendor_start_tech-no-yes",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?technology=#data-tech.technology&country=$location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?technology=#data-tech.technology&country=$location"
         }
       ],
       "inputContextNames": [
@@ -711,8 +711,8 @@
           "name": "location",
           "value": "$location",
           "prompts": [
-            "Can you tell from which country do you want information?",
-            "Ok nice, can you tell me for what country are you looking information?"
+            "Can you tell me which country you want information for?",
+            "Ok great, can you tell me what country you are looking for information from?"
           ],
           "isList": false
         }
@@ -846,7 +846,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-no.search_vendor_start_tech-no-no",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?technology=#data-tech.technology"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?technology=#data-tech.technology"
         }
       ],
       "inputContextNames": [

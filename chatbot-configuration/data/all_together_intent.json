@@ -2,7 +2,7 @@
   "name": "search_vendor_all_all",
   "messages": [
     {
-        "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=$use_case&technology=$technology&country=$location"
+        "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?use-case=$use_case&technology=$technology&country=$location"
     }
   ],
   "parameters": [
@@ -12,7 +12,7 @@
       "name": "use_case",
       "value": "$use_case",
       "prompts": [
-        "I didn't get for what you want to use the vendor, can you repeat?"
+        "I didn't catch what you want to use the vendor for, can you please rephrase?"
       ],
       "isList": false
     },
@@ -22,7 +22,7 @@
       "name": "technology",
       "value": "$technology",
       "prompts": [
-        "I didn't get which technology do you want to use, can you repeat?"
+        "I didn't catch which technology do you want to use, can you please rephrase?"
       ],
       "isList": false
     },
@@ -32,7 +32,7 @@
       "name": "location",
       "value": "$location",
       "prompts": [
-        "I didn't get from which country do you want the vendors, can you repeat?"
+        "I didn't catch which country you want to search for vendors in, can you please rephrase?"
       ],
       "isList": false
     }

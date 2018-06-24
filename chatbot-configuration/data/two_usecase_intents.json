@@ -26,7 +26,7 @@
           "name": "location",
           "value": "$location",
           "prompts": [
-            "I didn't get for where you want to use the vendor, can you repeat?"
+            "I didn't catch where you want to use the vendor, can you please rephrase?"
           ],
           "isList": false
         },
@@ -36,7 +36,7 @@
           "name": "technology",
           "value": "$technology",
           "prompts": [
-            "I didn't get which technology do you want to use, can you repeat?"
+            "I didn't catch which technology do you want to use, can you please rephrase?"
           ],
           "isList": false
         }
@@ -236,7 +236,7 @@
       "name": "search_vendor_two_usecase - fallback",
       "messages": [
         {
-          "text": "I didn't get that, do you want me to give you vendor information based on your use case?"
+          "text": "I didn't catch that, do you want me to give you vendor information based on your use case?"
         }
       ],
       "inputContextNames": [
@@ -257,7 +257,7 @@
       "action_name": "search_vendor_two_usecase.search_vendor_two_usecase-yes",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?use-case=$use_case&technology=#data-two-usecase.technology&country=#data-two-usecase.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?use-case=$use_case&technology=#data-two-usecase.technology&country=#data-two-usecase.location"
         }
       ],
       "inputContextNames": [
@@ -392,7 +392,7 @@
       "action_name": "search_vendor_two_usecase.search_vendor_two_usecase-no",
       "messages": [
         {
-          "text": "OK, perfect with all that info please visit this url and you will see the vendors that better fit you: https://vendors.r2accelerator.org/vendors?technology=#data-two-usecase.technology&country=#data-two-usecase.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/vendors?technology=#data-two-usecase.technology&country=#data-two-usecase.location"
         }
       ],
       "inputContextNames": [
