@@ -5,6 +5,7 @@ import dialogflow
 import json
 import logging
 import os
+import time
 
 
 def create_entity_type(project_id, display_name, kind=dialogflow.enums.EntityType.Kind.KIND_MAP):
@@ -187,6 +188,7 @@ def create_or_update_intent(project_id, intent):
         create_intent(project_id, intent)
     else:
         update_intent(project_id, intent)
+    time.sleep(15)
 
 
 def create_entity(project_id, entity_name):

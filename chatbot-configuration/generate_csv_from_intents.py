@@ -32,6 +32,20 @@ def print_intent(intent):
         intents_file.write("\n\n")
 
 
+def print_entity(entity_name):
+    logger.info("Generating Info for entity {}...".format(entity_name))
+    with open("data/{}.json".format(entity_name)) as entity_file:
+        entity = json.load(entity_file)
+        with open('entities.txt', 'a') as entities_file:
+            entities_file.write(entity['name'])
+            entities_file.write("\n\n")
+            for entry in entity['entries']:
+                entities_file.write("\n")
+                for synonym in entry['synonyms']:
+                    entities_file.write(synonym)
+                    entities_file.write("\n")
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -61,3 +75,6 @@ if __name__ == '__main__':
                 intents = json.load(intents_file)
                 for intent in intents['intents']:
                     print_intent(intent)
+
+    print_entity('technology')
+    print_entity('use_cases')
