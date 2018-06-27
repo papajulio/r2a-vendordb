@@ -1,0 +1,31 @@
+{
+  "name": "country_question",
+  "messages": [
+    {
+        "text": "I can help you searching vendors by country. Please, let me know which country you are interested in with a phrase like: \"I am looking for a vendor in Spain\""
+    }
+  ],
+  "training_phrases": [
+    {
+      "parts": [
+        {
+          "text": "Can I search by countries?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "can we search by country?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "i'm looking for a country"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "usecase_question",
+  "messages": [
+    {
+        "text": "I can help you searching vendors by use case. Please, let me know which use case you are interested in with a phrase like: \"I am looking for licensing vendors\""
+    }
+  ],
+  "training_phrases": [
+    {
+      "parts": [
+        {
+          "text": "Can I search by use cases?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "can we search by use case?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "i'm looking for a use case"
+        }
+      ]
+    }
+  ]
+}

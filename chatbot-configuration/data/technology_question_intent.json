@@ -1,0 +1,31 @@
+{
+  "name": "technology_question",
+  "messages": [
+    {
+        "text": "I can help you searching vendors by technology. Please, let me know which technology you are interested in with a phrase like: \"I am looking for big data\""
+    }
+  ],
+  "training_phrases": [
+    {
+      "parts": [
+        {
+          "text": "Can I search by technologies?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "can we search by technology?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "i'm looking for a technology"
+        }
+      ]
+    }
+  ]
+}

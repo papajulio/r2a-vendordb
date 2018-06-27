@@ -67,7 +67,7 @@
               "text": "can you help me find "
             },
             {
-              "text": "Spain",
+              "text": "Spanish",
               "alias": "location",
               "meta": "@sys.geo-country",
               "userDefined": false

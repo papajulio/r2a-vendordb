@@ -91,6 +91,8 @@
     {
       "value": "11",
       "synonyms": [
+        "Detect fraud and anti-money laundering",
+        "Detect anti-money laundering",
         "Detect fraud and AML",
         "fraud",
         "Detect fraud",
@@ -106,13 +108,29 @@
       "value": "12",
       "synonyms": [
         "Streamline AML/CFT audits",
+        "Streamline AML/CTF audits",
+        "Streamline anti-money laundering/countering the finance of terror audits",
+        "Streamline anti-money laundering/counter-terrorist financing",
         "Streamline CFT",
+        "Streamline countering the finance of terror",
+        "Streamline CTF",
+        "Streamline counter-terrorist financing",
         "Streamline AML",
+        "Streamline anti-money laundering",
         "AML audits",
+        "Anti-money laundering audits",
         "CFT audits",
+        "CTF audits",
+        "Countering the finance of terror audits",
+        "Counter-terrorist financing audits",
         "Automated auditing of AML/CFT compliance reports",
+        "Automated auditing of AML/CTF compliance reports",
         "AML compliance reports",
-        "CFT compliance reports"
+        "Anti-money laundering reports",
+        "CFT compliance reports",
+        "CTF compliance reports",
+        "Countering the finance of terror reports",
+        "Counter-terrorist financing reports"
       ]
     },
     {
