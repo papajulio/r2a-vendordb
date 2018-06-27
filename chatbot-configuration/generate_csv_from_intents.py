@@ -13,7 +13,7 @@ def print_intent(intent):
         intents_file.write(intent['name'])
         intents_file.write("\n\n")
         for message in intent['messages']:
-            intents_file.write(message['text'])
+            intents_file.write(message['text'].encode('utf-8'))
             intents_file.write("\n")
 
         intents_file.write("\n")
