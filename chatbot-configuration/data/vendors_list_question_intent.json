@@ -1,0 +1,31 @@
+{
+  "name": "vendors_list_question",
+  "messages": [
+    {
+        "text": "You can check a full list of vendors in here: https://vendors.r2accelerator.org/vendors or you can ask me about your technology, country or use case so I can help you to refine your search."
+    }
+  ],
+  "training_phrases": [
+    {
+      "parts": [
+        {
+          "text": "Is there a list of vendors?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "Where can I find a list of vendors?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "list of vendors"
+        }
+      ]
+    }
+  ]
+}

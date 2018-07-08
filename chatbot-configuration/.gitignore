@@ -1,2 +1,4 @@
 venv
 bfa-test-*.json
+intents.txt
+entities.txt
