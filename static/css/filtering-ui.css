@@ -99,6 +99,11 @@ body {
 	text-decoration: underline;
 }
 
+/* Custom tooltip */
+.custom-tooltip {
+	font-size: 1.3em;
+}
+
 /* Custom */
 .m-r-sm {
 	margin-right: 8px;
@@ -108,6 +113,6 @@ body {
 	margin-right: 4px;
 }
 
-.m-l-l {
+.m-l-sm {
 	margin-left: 8px;
 }

@@ -94,6 +94,14 @@ function refreshUI() {
     addClickListenerToChoices();
     addClickListenerToFiltersClean();
     addClickListenerToVendorRows();
+
+    new jBox('Tooltip', {
+        attach: '.tooltip',
+        width: 500,
+        closeOnMouseleave: true,
+        addClass: 'custom-tooltip',
+        delayOpen: 200
+    });
 }
 
 function showNumberOfVendors() {
