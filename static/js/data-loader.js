@@ -174,9 +174,8 @@ function loadVendors() {
                     </div>\
                     <div class="col sqs-col-8-5 span-8-5 vcontent">\
                         <h4 id="vname">' + vendorsToShow[vendorId]["n"] + '</h4>\
-                        <p class="location">' + vendorsToShow[vendorId]["l"] + '</p>\
+                        <p class="location">' + vendorsToShow[vendorId]["l"] + '<a class="vendor-url" href="http://' + vendorsToShow[vendorId]["u"] + '">' + vendorsToShow[vendorId]["u"] + '</a></p>\
                         <p id="vdesc">' + trimText(vendorsToShow[vendorId]["d"], 180) + '</p>\
-                        <p id="vurl">' + vendorsToShow[vendorId]["u"] + '</p>\
                     </div>\
                 </div>\
             </div>'));

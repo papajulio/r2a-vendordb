@@ -91,6 +91,14 @@ body {
 	padding: 0 10px;
 }
 
+.vendor-url {
+	margin-left: 15px;
+}
+
+.vendor-url:hover {
+	text-decoration: underline;
+}
+
 /* Custom */
 .m-r-sm {
 	margin-right: 8px;

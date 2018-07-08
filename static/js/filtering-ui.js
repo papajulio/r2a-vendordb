@@ -1,5 +1,4 @@
 function vendorWasClicked(e) {
-    e.preventDefault();
     var vendorId = $(this).attr("data-vendor-id");
     console.log("Vendor was clicked: " + vendorId);
 }
