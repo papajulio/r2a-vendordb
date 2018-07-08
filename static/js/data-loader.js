@@ -20,10 +20,46 @@ $.getJSON("db.json").done(function(json) {
     personas = json.personas;
     technologies = json.technologies;
     vendors = json.vendors;
-
     jsonLoaded = true;
+    use_case = findGetParameter('use-case')
+    if (use_case != null) {
+        setFilteringStep(1, objectives[use_case]["n"]);
+        stepWasChanged(1, use_case)
+    }
+    technology = findGetParameter('technology')
+    if (technology != null) {
+        setFilteringStep(2, technologies[use_case]["n"]);
+        stepWasChanged(2, technology)
+    }
+    country = findGetParameter('country')
+    if (country != null) {
+        var locations = getLocations();
+        locationIdToSet = 0
+        for (var locationId in locations) {
+            if (locations[locationId] == country) {
+                locationIdToSet = locationId
+            }
+        }
+        setFilteringStep(3, locations[locationIdToSet]);
+        stepWasChanged(3, locations[locationIdToSet])
+    }
     refreshUI();
 });
+
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+            parameter = item.split("=");
+            if (parameter[0] === parameterName) {
+                result = decodeURIComponent(parameter[1]);
+            }
+        });
+    return result;
+}
 
 function stepWasChanged(step, choiceId) {
     step = parseInt(step);
