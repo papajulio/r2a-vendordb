@@ -22,6 +22,7 @@ $.getJSON("db.json").done(function(json) {
     vendors = json.vendors;
 
     jsonLoaded = true;
+    refreshUI();
 });
 
 function stepWasChanged(step, choiceId) {
@@ -31,24 +32,20 @@ function stepWasChanged(step, choiceId) {
     showNumberOfVendors();
 }
 
-function loadStep0(targetElement, selectedItemTitle) {
+function loadStep0() {
     var personaIdsToShow = getPersonaIdsFromVendors();
+    var targetElement = $(".choices-step-0");
     targetElement.html("");
     var step = 0;
+
     for (var personaId of personaIdsToShow) {
         var rowSelectedClass = "";
-        if (personas[personaId]["n"] == selectedItemTitle) {
+        if (personas[personaId]["id"] == filters[0]) {
             rowSelectedClass = " choice-selected ";
         }
         targetElement.append($('\
-            <div class="main-row row sqs-row">\
-                <div class="col sqs-col-12 span-12">\
-                    <div class="row sqs-row">\
-                        <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '" data-choice-id="' + personaId + '">\
-                            <h3>' + personas[personaId]["n"] + '</h3>\
-                        </div>\
-                    </div>\
-                </div>\
+            <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + personaId + '">\
+                <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + personas[personaId]["n"] + '</span></span>\
             </div>'));
     }
 }
@@ -73,27 +70,21 @@ function getPersonaIdsFromVendors() {
     return result.sort();
 }
 
-function loadStep1(targetElement, selectedItemTitle) {
-
+function loadStep1() {
+    var targetElement = $(".choices-step-1");
     var objectiveIdsToShow = getObjectiveIdsFromVendors();
     targetElement.html("");
 
     var step = 1;
     for (var objectiveId of objectiveIdsToShow) {
         var rowSelectedClass = "";
-        if (objectives[objectiveId]["n"] == selectedItemTitle) {
+        if (objectives[objectiveId]["id"] == filters[1]) {
             rowSelectedClass = " choice-selected ";
         }
         targetElement.append($('\
-            <div class="main-row row sqs-row objective">\
-                <div class="col sqs-col-12 span-12">\
-                    <div class="row sqs-row">\
-                        <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
-                            <h3>' + objectives[objectiveId]["n"] + '</h3>\
-                            <p class="use_case clear">' + objectives[objectiveId]["d"] + '</p>\
-                        </div>\
-                    </div>\
-                </div>\
+            <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
+                <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + objectives[objectiveId]["n"] + '</span>\
+                <i class="fa fa-info-circle tooltip m-l-sm" title="' + objectives[objectiveId]["d"] + '"></i></span>\
             </div>'));
     }
 }
@@ -108,25 +99,20 @@ function getObjectiveIdsFromVendors() {
     return objectiveIds.sort();
 }
 
-function loadStep2(targetElement, selectedItemTitle) {
+function loadStep2() {
+    var targetElement = $(".choices-step-2");
     var technologyIdsToShow = getTechonologyIdsFromVendors();
     targetElement.html("");
 
     var step = 2;
     for (var technologyId of technologyIdsToShow) {
         var rowSelectedClass = "";
-        if (technologies[technologyId]["n"] == selectedItemTitle) {
+        if (technologies[technologyId]["id"] == filters[2]) {
             rowSelectedClass = " choice-selected ";
         }
         targetElement.append($('\
-            <div class="main-row row sqs-row objective">\
-                <div class="col sqs-col-12 span-12">\
-                    <div class="row sqs-row">\
-                        <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '" data-choice-id="' + technologyId + '">\
-                            <h3>' + technologies[technologyId]["n"] + '</h3>\
-                        </div>\
-                    </div>\
-                </div>\
+            <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + technologyId + '">\
+                <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + technologies[technologyId]["n"] + '</span></span>\
             </div>'));
     }
 }
@@ -141,25 +127,20 @@ function getTechonologyIdsFromVendors() {
     return technologyIds.sort();
 }
 
-function loadStep3(targetElement, selectedItemTitle) {
+function loadStep3() {
+    var targetElement = $(".choices-step-3");
     var locations = getLocations();
     targetElement.html("");
 
     var step = 3;
     for (var locationId in locations) {
         var rowSelectedClass = "";
-        if (locations[locationId] == selectedItemTitle) {
+        if (locations[locationId] == filters[3]) {
             rowSelectedClass = " choice-selected ";
         }
         targetElement.append($('\
-            <div class="main-row row sqs-row location">\
-                <div class="col sqs-col-12 span-12">\
-                    <div class="row sqs-row">\
-                        <div class="choices-row ' + rowSelectedClass + 'col sqs-col-12 span-12" data-step="' + step + '" data-choice-id="' + locations[locationId] + '">\
-                            <h3>' + locations[locationId] + '</h3>\
-                        </div>\
-                    </div>\
-                </div>\
+            <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + locations[locationId] + '">\
+                <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + locations[locationId] + '</span></span>\
             </div>'));
     }
 }
@@ -178,30 +159,23 @@ function getLocations() {
     return locations;
 }
 
-function loadVendors(targetElement, selectedItemTitle) {
-    var step = 4;
-
+function loadVendors() {
+    var targetElement = $(".vendors-list");
     targetElement.html("");
 
     vendorsToShow = getVendorsToShow();
 
     for (var vendorId in getVendorsToShow()) {
-        var rowSelectedClass = "";
-        if (vendorsToShow[vendorId]["n"] == selectedItemTitle) {
-            rowSelectedClass = " choice-selected ";
-        }
-
         targetElement.append($('\
-            <div class="main-row row sqs-row vendor-row">\
+            <div class="main-row row sqs-row vendor-row vendor" data-vendor-id="' + vendorsToShow[vendorId]["id"] + '">\
                 <div class="vtile col sqs-col-1-0-0 span-1-0-0">\
                     <div class="vlogo col sqs-col-1-5 span-1-5">\
                         <img src="' + vendorsToShow[vendorId]["lu"] + '" />\
                     </div>\
                     <div class="col sqs-col-8-5 span-8-5 vcontent">\
                         <h4 id="vname">' + vendorsToShow[vendorId]["n"] + '</h4>\
-                        <p class="location">' + vendorsToShow[vendorId]["l"] + '</p>\
+                        <p class="location">' + vendorsToShow[vendorId]["l"] + '<a class="vendor-url" href="http://' + vendorsToShow[vendorId]["u"] + '">' + vendorsToShow[vendorId]["u"] + '</a></p>\
                         <p id="vdesc">' + trimText(vendorsToShow[vendorId]["d"], 180) + '</p>\
-                        <p id="vurl">' + vendorsToShow[vendorId]["u"] + '</p>\
                     </div>\
                 </div>\
             </div>'));
