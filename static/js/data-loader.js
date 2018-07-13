@@ -72,18 +72,22 @@ function loadStep0() {
     var personaIdsToShow = getPersonaIdsFromVendors();
     var targetElement = $(".choices-step-0");
     targetElement.html("");
-    var step = 0;
 
+    var selectedItem = null;
+    var step = 0;
     for (var personaId of personaIdsToShow) {
         var rowSelectedClass = "";
         if (personas[personaId]["id"] == filters[0]) {
             rowSelectedClass = " choice-selected ";
+            selectedItem = personas[personaId];
         }
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + personaId + '">\
                 <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + personas[personaId]["n"] + '</span></span>\
             </div>'));
     }
+
+    showSelectedItemFilter(0, selectedItem == null ? "" : selectedItem["n"]);
 }
 
 function getPersonaIdsFromVendors() {
@@ -112,10 +116,12 @@ function loadStep1() {
     targetElement.html("");
 
     var step = 1;
+    var selectedItem = null;
     for (var objectiveId of objectiveIdsToShow) {
         var rowSelectedClass = "";
         if (objectives[objectiveId]["id"] == filters[1]) {
             rowSelectedClass = " choice-selected ";
+            selectedItem = objectives[objectiveId];
         }
         targetElement.append($('\
             <div title="' + objectives[objectiveId]["d"] + '" class="col sqs-col-12 choice tooltip' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
@@ -123,6 +129,8 @@ function loadStep1() {
                 <i class="fa fa-info-circle m-l-sm"></i>\
             </div>'));
     }
+
+    showSelectedItemFilter(1, selectedItem == null ? "" : selectedItem["n"]);
 }
 
 function getObjectiveIdsFromVendors() {
@@ -141,16 +149,20 @@ function loadStep2() {
     targetElement.html("");
 
     var step = 2;
+    var selectedItem = null;
     for (var technologyId of technologyIdsToShow) {
         var rowSelectedClass = "";
         if (technologies[technologyId]["id"] == filters[2]) {
             rowSelectedClass = " choice-selected ";
+            selectedItem = technologies[technologyId];
         }
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + technologyId + '">\
                 <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + technologies[technologyId]["n"] + '</span></span>\
             </div>'));
     }
+
+    showSelectedItemFilter(2, selectedItem == null ? "" : selectedItem["n"]);
 }
 
 function getTechonologyIdsFromVendors() {
@@ -169,16 +181,20 @@ function loadStep3() {
     targetElement.html("");
 
     var step = 3;
+    var selectedItem = null;
     for (var locationId in locations) {
         var rowSelectedClass = "";
         if (locations[locationId] == filters[3]) {
             rowSelectedClass = " choice-selected ";
+            selectedItem = locations[locationId];
         }
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + locations[locationId] + '">\
                 <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + locations[locationId] + '</span></span>\
             </div>'));
     }
+
+    showSelectedItemFilter(3, selectedItem == null ? "" : selectedItem);
 }
 
 function getLocations() {
@@ -193,6 +209,12 @@ function getLocations() {
         locations.splice(0, 0, "Global");
     }
     return locations;
+}
+
+function showSelectedItemFilter(step, title) {
+    if (title != "") {
+        showCurrentFilterStep(step, title);
+    }
 }
 
 function loadVendors() {

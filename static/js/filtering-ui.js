@@ -19,12 +19,17 @@ function choiceWasClicked(e) {
 
     var title = $(this).find(".title").text();
     var step = $(this).attr("data-step");
-    $(".selected-filter-" + step).find("span").html(title);
-    $(".selected-filter-" + step).removeClass("hidden");
+
+    showSelectedFilter(step, title);
 
     var choiceId = $(this).attr("data-choice-id");
     setFilteringStep(step, choiceId);
     refreshUI();
+}
+
+function showSelectedFilter(step, title) {
+    $(".selected-filter-" + step).find("span").html(title);
+    $(".selected-filter-" + step).removeClass("hidden");
 }
 
 function clearFilterWasClicked(e) {
@@ -91,7 +96,14 @@ function refreshUI() {
     addClickListenerToChoices();
     addClickListenerToFiltersClean();
     addClickListenerToVendorRows();
+    attachTooltipPlugin();
+}
 
+function showNumberOfVendors() {
+    $(".vendors-number").html(": " + parseInt(vendorsToShow.length));
+}
+
+function attachTooltipPlugin() {
     new jBox('Tooltip', {
         attach: '.tooltip',
         width: 500,
@@ -107,6 +119,8 @@ function refreshUI() {
     });
 }
 
-function showNumberOfVendors() {
-    $(".vendors-number").html(": " + parseInt(vendorsToShow.length));
+function showCurrentFilterStep(step, title) {
+    if (filters[step] != "") {
+        showSelectedFilter(step, title);
+    }
 }
