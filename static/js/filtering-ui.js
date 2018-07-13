@@ -22,11 +22,8 @@ function choiceWasClicked(e) {
     $(".selected-filter-" + step).find("span").html(title);
     $(".selected-filter-" + step).removeClass("hidden");
 
-    toggleFilterBox($(this).parent().parent());
-
     var choiceId = $(this).attr("data-choice-id");
     setFilteringStep(step, choiceId);
-    scrollToTableHeader();
     refreshUI();
 }
 
@@ -35,7 +32,6 @@ function clearFilterWasClicked(e) {
     var step = $(this).attr("data-step");
     filters[step] = "";
     $(this).toggleClass("hidden");
-    toggleFilterBox($(this).parent());
     refreshUI();
 }
 
