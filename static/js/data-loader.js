@@ -118,9 +118,9 @@ function loadStep1() {
             rowSelectedClass = " choice-selected ";
         }
         targetElement.append($('\
-            <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
-                <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + objectives[objectiveId]["n"] + '</span>\
-                <i class="fa fa-info-circle tooltip m-l-sm" title="' + objectives[objectiveId]["d"] + '"></i></span>\
+            <div title="' + objectives[objectiveId]["d"] + '" class="col sqs-col-12 choice tooltip' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
+                <i class="fa fa-angle-right m-r-sm"></i><span class="title">' + objectives[objectiveId]["n"] + '</span>\
+                <i class="fa fa-info-circle m-l-sm"></i>\
             </div>'));
     }
 }

@@ -79,6 +79,7 @@ $(document).ready(function() {
 });
 
 function refreshUI() {
+    $(".custom-tooltip").hide();
     loadStep0();
     loadStep1();
     loadStep2();
@@ -94,8 +95,14 @@ function refreshUI() {
     new jBox('Tooltip', {
         attach: '.tooltip',
         width: 500,
+        preventDefault: true,
         closeOnMouseleave: true,
         addClass: 'custom-tooltip',
+        position: {
+            x: 'right',
+            y: 'center'
+        },
+        outside: 'x',
         delayOpen: 200
     });
 }
