@@ -75,15 +75,18 @@ function loadStep0() {
 
     var selectedItem = null;
     var step = 0;
+    var vendorCount = 0;
     for (var personaId of personaIdsToShow) {
         var rowSelectedClass = "";
         if (personas[personaId]["id"] == filters[0]) {
             rowSelectedClass = " choice-selected ";
             selectedItem = personas[personaId];
         }
+        vendorCount = getVendorCountIfChoiceSelected(0, personaId);
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + personaId + '">\
                 <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + personas[personaId]["n"] + '</span></span>\
+                <span title="Vendor number if filter is selected" class="custom-badge m-l-xs">' + vendorCount + '</span>\
             </div>'));
     }
 
@@ -94,6 +97,7 @@ function getPersonaIdsFromVendors() {
     vendorsToShow = getVendorsToShow();
 
     var objectiveIds = [];
+    var vendorCount = 0;
     for (var vendorId in vendorsToShow) {
         objectiveIds = mergeArrays(objectiveIds, vendorsToShow[vendorId].o);
     }
@@ -117,16 +121,19 @@ function loadStep1() {
 
     var step = 1;
     var selectedItem = null;
+    var vendorCount = 0;
     for (var objectiveId of objectiveIdsToShow) {
         var rowSelectedClass = "";
         if (objectives[objectiveId]["id"] == filters[1]) {
             rowSelectedClass = " choice-selected ";
             selectedItem = objectives[objectiveId];
         }
+        vendorCount = getVendorCountIfChoiceSelected(1, objectiveId);
         targetElement.append($('\
-            <div title="' + objectives[objectiveId]["d"] + '" class="col sqs-col-12 choice tooltip' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
+            <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
                 <i class="fa fa-angle-right m-r-sm"></i><span class="title">' + objectives[objectiveId]["n"] + '</span>\
-                <i class="fa fa-info-circle m-l-sm"></i>\
+                <span title="Vendor number if filter is selected" class="custom-badge m-l-xs">' + vendorCount + '</span>\
+                <i title="' + objectives[objectiveId]["d"] + '" class="fa fa-info-circle m-l-xs tooltip badge"></i>\
             </div>'));
     }
 
@@ -150,15 +157,18 @@ function loadStep2() {
 
     var step = 2;
     var selectedItem = null;
+    var vendorCount = 0;
     for (var technologyId of technologyIdsToShow) {
         var rowSelectedClass = "";
         if (technologies[technologyId]["id"] == filters[2]) {
             rowSelectedClass = " choice-selected ";
             selectedItem = technologies[technologyId];
         }
+        vendorCount = getVendorCountIfChoiceSelected(2, technologyId);
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + technologyId + '">\
                 <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + technologies[technologyId]["n"] + '</span></span>\
+                <span title="Vendor number if filter is selected" class="custom-badge m-l-xs">' + vendorCount + '</span>\
             </div>'));
     }
 
@@ -182,15 +192,18 @@ function loadStep3() {
 
     var step = 3;
     var selectedItem = null;
+    var vendorCount = 0;
     for (var locationId in locations) {
         var rowSelectedClass = "";
         if (locations[locationId] == filters[3]) {
             rowSelectedClass = " choice-selected ";
             selectedItem = locations[locationId];
         }
+        vendorCount = getVendorCountIfChoiceSelected(3, locations[locationId]);
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + locations[locationId] + '">\
                 <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + locations[locationId] + '</span></span>\
+                <span title="Vendor number if filter is selected" class="custom-badge m-l-xs">' + vendorCount + '</span>\
             </div>'));
     }
 
@@ -243,21 +256,33 @@ function loadVendors() {
 function getVendorsToShow() {
     var result = [];
     for (var vendorId in vendors) {
-        if (shouldShowVendor(vendors[vendorId])) {
+        if (shouldShowVendor(vendors[vendorId], filters)) {
             result.push(vendors[vendorId]);
         }
     }
     return result;
 }
 
-function shouldShowVendor(vendor) {
-    return step0ShouldShowVendor(vendor)
-        && step1ShouldShowVendor(vendor)
-        && step2ShouldShowVendor(vendor)
-        && step3ShouldShowVendor(vendor);
+function getVendorCountIfChoiceSelected(step, choice) {
+    var new_filters = jQuery.extend({}, filters);
+    new_filters[step] = choice;
+    var count = 0;
+    for (var vendorId in vendors) {
+        if (shouldShowVendor(vendors[vendorId], new_filters)) {
+            count += 1;
+        }
+    }
+    return count;
 }
 
-function step0ShouldShowVendor(vendor) {
+function shouldShowVendor(vendor, filters) {
+    return step0ShouldShowVendor(vendor, filters)
+        && step1ShouldShowVendor(vendor, filters)
+        && step2ShouldShowVendor(vendor, filters)
+        && step3ShouldShowVendor(vendor, filters);
+}
+
+function step0ShouldShowVendor(vendor, filters) {
     var stepFilter = filters[0];
     if (stepFilter == "") {
         return true;
@@ -272,7 +297,7 @@ function step0ShouldShowVendor(vendor) {
     return false;
 }
 
-function step1ShouldShowVendor(vendor) {
+function step1ShouldShowVendor(vendor, filters) {
     var stepFilter = filters[1];
     if (stepFilter == "") {
         return true;
@@ -285,7 +310,7 @@ function step1ShouldShowVendor(vendor) {
     return false;
 }
 
-function step2ShouldShowVendor(vendor) {
+function step2ShouldShowVendor(vendor, filters) {
     var stepFilter = filters[2];
     if (stepFilter == "") {
         return true;
@@ -298,7 +323,7 @@ function step2ShouldShowVendor(vendor) {
     return false;
 }
 
-function step3ShouldShowVendor(vendor) {
+function step3ShouldShowVendor(vendor, filters) {
     var stepFilter = filters[3];
     if (stepFilter == "") {
         return true;

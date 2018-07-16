@@ -76,7 +76,6 @@ function addClickListenerToVendorRows() {
 }
 
 $(document).ready(function() {
-    refreshUI();
     addClickListenerToFilters();
     addClickListenerToChoices();
     addClickListenerToVendorRows();

@@ -74,6 +74,13 @@ body {
 	display: initial;
 }
 
+.choice > .custom-badge {
+	display: none;
+}
+.choice:hover > .custom-badge {
+	display: initial;
+}
+
 .choices-box {
 }
 
@@ -112,6 +119,20 @@ body {
     text-align: justify !important;
 }
 
+.badge {
+	color: #00a69c;
+}
+
+.custom-badge {
+    background-color: #00a69c;
+    color: white;
+    border-radius: 25%;
+    text-align: center;
+    padding: 3px 5px;
+    font-size: 0.7em;
+    font-weight: 700;
+}
+
 /* Custom */
 .m-r-sm {
 	margin-right: 8px;
@@ -123,4 +144,8 @@ body {
 
 .m-l-sm {
 	margin-left: 8px;
+}
+
+.m-l-xs {
+	margin-left: 4px;
 }
