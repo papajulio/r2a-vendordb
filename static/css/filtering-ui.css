@@ -63,8 +63,14 @@ body {
 .selected-filter > .fa + .fa, .selected-filter:hover > .fa {
 	display: none;
 }
-
 .selected-filter:hover > .fa + .fa {
+	display: initial;
+}
+
+.choice > .fa-info-circle {
+	display: none;
+}
+.choice:hover > .fa-info-circle {
 	display: initial;
 }
 
@@ -102,6 +108,8 @@ body {
 /* Custom tooltip */
 .custom-tooltip {
 	font-size: 1.3em;
+    line-height: 1.3em;
+    text-align: justify !important;
 }
 
 /* Custom */
