@@ -1,0 +1,45 @@
+{
+  "name": "continent",
+  "entries": [
+    {
+      "value": "Africa",
+      "synonyms": [
+        "Africa"
+      ]
+    },
+    {
+      "value": "Asia",
+      "synonyms": [
+        "Asia"
+      ]
+    },
+    {
+      "value": "Europe",
+      "synonyms": [
+        "Europe"
+      ]
+    },
+    {
+      "value": "America",
+      "synonyms": [
+        "America",
+        "North America",
+        "Souch America",
+        "Centre America"
+      ]
+    },
+    {
+      "value": "Australia",
+      "synonyms": [
+        "Australia",
+        "Oceania"
+      ]
+    },
+    {
+      "value": "Antarctica",
+      "synonyms": [
+        "Antarctica"
+      ]
+    }
+  ]
+}
