@@ -1,0 +1,38 @@
+{
+  "name": "negative_use_cases",
+  "messages": [
+    {
+        "text": "The use case you are searching for it's not supported, please try another one like licensing or compliance chatbot"
+    }
+  ],
+  "training_phrases": [
+    {
+      "parts": [
+        {
+          "text": "market supervision"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "sentiment analysis"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "customer complaints"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "user complaints"
+        }
+      ]
+    }
+  ]
+}

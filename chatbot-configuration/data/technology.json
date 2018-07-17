@@ -1,0 +1,156 @@
+{
+  "name": "technology",
+  "entries": [
+    {
+      "value": "1",
+      "synonyms": [
+        "Application Programming Interface",
+        "Application Programming",
+        "Application Interface",
+        "Interface programming",
+        "API"
+      ]
+    },
+    {
+      "value": "2",
+      "synonyms": [
+        "Artificial",
+        "Artificial Intelligence",
+        "Intelligence",
+        "AI"
+      ]
+    },
+    {
+      "value": "3",
+      "synonyms": [
+        "Big Data"
+      ]
+    },
+    {
+      "value": "4",
+      "synonyms": [
+        "Biometrics"
+      ]
+    },
+    {
+      "value": "5",
+      "synonyms": [
+        "Chatbot",
+        "bot"
+      ]
+    },
+    {
+      "value": "6",
+      "synonyms": [
+        "Cloud computing",
+        "computing cloud"
+      ]
+    },
+    {
+      "value": "7",
+      "synonyms": [
+        "Data Management",
+        "Management data"
+      ]
+    },
+    {
+      "value": "8",
+      "synonyms": [
+        "Data Visualization",
+        "Visualization data"
+      ]
+    },
+    {
+      "value": "9",
+      "synonyms": [
+        "Distributed Ledger Technology",
+        "Distributed Ledger",
+        "Ledger Technology",
+        "Distributed Technology"
+      ]
+    },
+    {
+      "value": "10",
+      "synonyms": [
+        "Document Management",
+        "Management Document "
+      ]
+    },
+    {
+      "value": "11",
+      "synonyms": [
+        "GIS",
+        "geographic information system",
+        "geographic system"
+      ]
+    },
+    {
+      "value": "12",
+      "synonyms": [
+        "Machine Learning",
+        "ML",
+        "Learning Machine"
+      ]
+    },
+    {
+      "value": "13",
+      "synonyms": [
+        "Machine Reading",
+        "MR"
+      ]
+    },
+    {
+      "value": "14",
+      "synonyms": [
+        "Mobile Applications",
+        "Mobile"
+      ]
+    },
+    {
+      "value": "15",
+      "synonyms": [
+        "Natural Language Processing",
+        "Language Processing",
+        "NLP"
+      ]
+    },
+    {
+      "value": "16",
+      "synonyms": [
+        "Optical character recognition",
+        "character recognition",
+        "OCR"
+      ]
+    },
+    {
+      "value": "17",
+      "synonyms": [
+        "Predictive Analysis",
+        "Predictive"
+      ]
+    },
+    {
+      "value": "18",
+      "synonyms": [
+        "Robotic Process Automation",
+        "Robotic Automation",
+        "Robotic",
+        "Automation"
+      ]
+    },
+    {
+      "value": "19",
+      "synonyms": [
+        "Smart contracts",
+        "contracts"
+      ]
+    },
+    {
+      "value": "20",
+      "synonyms": [
+        "Web-scraping",
+        "web scraping"
+      ]
+    }
+  ]
+}

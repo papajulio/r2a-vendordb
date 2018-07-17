@@ -1,0 +1,268 @@
+{
+  "name": "search_vendor_all_all",
+  "messages": [
+    {
+        "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=$use_case&technology=$technology&country=$location"
+    }
+  ],
+  "parameters": [
+    {
+      "required": true,
+      "dataType": "@use_cases",
+      "name": "use_case",
+      "value": "$use_case",
+      "prompts": [
+        "I didn't catch what you want to use the vendor for, can you please rephrase?"
+      ],
+      "isList": false
+    },
+    {
+      "required": true,
+      "dataType": "@technology",
+      "name": "technology",
+      "value": "$technology",
+      "prompts": [
+        "I didn't catch which technology do you want to use, can you please rephrase?"
+      ],
+      "isList": false
+    },
+    {
+      "required": true,
+      "dataType": "@sys.geo-country",
+      "name": "location",
+      "value": "$location",
+      "prompts": [
+        "I didn't catch which country you want to search for vendors in, can you please rephrase?"
+      ],
+      "isList": false
+    }
+  ],
+  "training_phrases": [
+    {
+      "parts": [
+        {
+          "text": "can you help me find a vendor in "
+        },
+        {
+          "text": "Spain",
+          "alias": "location",
+          "meta": "@sys.geo-country",
+          "userDefined": false
+        },
+        {
+          "text": " for "
+        },
+        {
+          "text": "licensing",
+          "alias": "use_case",
+          "meta": "@use_cases",
+          "userDefined": false
+        },
+        {
+          "text": " that use "
+        },
+        {
+          "text": "big data",
+          "alias": "technology",
+          "meta": "@technology",
+          "userDefined": false
+        },
+        {
+          "text": " ?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "can you tell me about vendors in "
+        },
+        {
+          "text": "Spain",
+          "alias": "location",
+          "meta": "@sys.geo-country",
+          "userDefined": false
+        },
+        {
+          "text": " for "
+        },
+        {
+          "text": "licensing",
+          "alias": "use_case",
+          "meta": "@use_cases",
+          "userDefined": false
+        },
+        {
+          "text": " that use "
+        },
+        {
+          "text": "big data",
+          "alias": "technology",
+          "meta": "@technology",
+          "userDefined": false
+        },
+        {
+          "text": " ?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "what about vendors in "
+        },
+        {
+          "text": "Spain",
+          "alias": "location",
+          "meta": "@sys.geo-country",
+          "userDefined": false
+        },
+        {
+          "text": " for "
+        },
+        {
+          "text": "licensing",
+          "alias": "use_case",
+          "meta": "@use_cases",
+          "userDefined": false
+        },
+        {
+          "text": " that use "
+        },
+        {
+          "text": "big data",
+          "alias": "technology",
+          "meta": "@technology",
+          "userDefined": false
+        },
+        {
+          "text": " ?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "I'm looking for vendors in "
+        },
+        {
+          "text": "Spain",
+          "alias": "location",
+          "meta": "@sys.geo-country",
+          "userDefined": false
+        },
+        {
+          "text": " for "
+        },
+        {
+          "text": "licensing",
+          "alias": "use_case",
+          "meta": "@use_cases",
+          "userDefined": false
+        },
+        {
+          "text": " that use "
+        },
+        {
+          "text": "big data",
+          "alias": "technology",
+          "meta": "@technology",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "Search vendors in "
+        },
+        {
+          "text": "Spain",
+          "alias": "location",
+          "meta": "@sys.geo-country",
+          "userDefined": false
+        },
+        {
+          "text": " for "
+        },
+        {
+          "text": "licensing",
+          "alias": "use_case",
+          "meta": "@use_cases",
+          "userDefined": false
+        },
+        {
+          "text": " that use "
+        },
+        {
+          "text": "big data",
+          "alias": "technology",
+          "meta": "@technology",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "Which vendors are good for "
+        },
+        {
+          "text": "licensing",
+          "alias": "use_case",
+          "meta": "@use_cases",
+          "userDefined": false
+        },
+        {
+          "text": " in "
+        },
+        {
+          "text": "Spain",
+          "alias": "location",
+          "meta": "@sys.geo-country",
+          "userDefined": false
+        },
+        {
+          "text": " and that use "
+        },
+        {
+          "text": "big data",
+          "alias": "technology",
+          "meta": "@technology",
+          "userDefined": false
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "I'm looking for vendors that can help me with "
+        },
+        {
+          "text": "licensing",
+          "alias": "use_case",
+          "meta": "@use_cases",
+          "userDefined": false
+        },
+        {
+          "text": " in "
+        },
+        {
+          "text": "Spain",
+          "alias": "location",
+          "meta": "@sys.geo-country",
+          "userDefined": false
+        },
+        {
+          "text": " and that use "
+        },
+        {
+          "text": "big data",
+          "alias": "technology",
+          "meta": "@technology",
+          "userDefined": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Default Fallback Intent",
+  "priority": 1,
+  "messages": [
+    {
+      "text": "Hi there, and welcome to R²A's vendor database! My name's Artu Ay, and I'm a chatbot here to help guide you in bringing innovative products and services to the regulatory space. Please try asking me for information about your vendor needs, with something like: \"I'm looking for licensing vendors\" or \"Can you help me find fraud vendors that use AI?\""
+    }
+  ],
+  "is_fallback": true
+}

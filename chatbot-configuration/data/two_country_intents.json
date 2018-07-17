@@ -1,0 +1,486 @@
+{
+  "intents": [
+    {
+      "name": "search_vendor_two_country",
+      "messages": [
+        {
+          "text": "Great. Now do you want me to give you vendor information based on your country?"
+        }
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor_two_country-followup",
+          "parameters": {},
+          "lifespan": 1
+        },
+        {
+          "name": "data-two-country",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@use_cases",
+          "name": "use_case",
+          "value": "$use_case",
+          "prompts": [
+            "I didn't catch what you want to use the vendor for, can you please rephrase?"
+          ],
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@technology",
+          "name": "technology",
+          "value": "$technology",
+          "prompts": [
+            "I didn't catch which technology do you want to use, can you please rephrase?"
+          ],
+          "isList": false
+        }
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "can you help me find "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " vendors that use "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "can you tell me about "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " vendors that use "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "what about "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " vendors that use "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Yes, "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " vendors that use "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I'm looking for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " vendors that use "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Search vendors for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " that use "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "which vendors are good for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " and use "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            },
+            {
+              "text": " ?"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I'm looking for vendors that can help me with "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": false
+            },
+            {
+              "text": " and use "
+            },
+            {
+              "text": "big data",
+              "alias": "technology",
+              "meta": "@technology",
+              "userDefined": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search_vendor_two_country - fallback",
+      "messages": [
+        {
+          "text": "I didn't catch that, do you want to find vendor information by country?"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor_two_country-followup"
+      ],
+      "outputContexts": [
+        {
+          "name": "search_vendor_two_country-followup",
+          "parameters": {},
+          "lifespan": 1
+        }
+      ],
+      "is_fallback": true
+    },
+    {
+      "name": "search_vendor_two_country - yes",
+      "parent_followup_intent_name": "search_vendor_two_country",
+      "action_name": "search_vendor_two_country.search_vendor_two_country-yes",
+      "messages": [
+        {
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data-two-country.use_case&technology=#data-two-country.technology&country=$location"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor_two_country-followup",
+        "data-two-country"
+      ],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@sys.geo-country",
+          "name": "location",
+          "value": "$location",
+          "prompts": [
+            "Can you tell me which country you want information for?"
+          ],
+          "isList": false
+        }
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "do it"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "confirm"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Sure, "
+            },
+            {
+              "text": "Spain",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "sure"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "Spain",
+              "alias": "location",
+              "meta": "@sys.geo-country",
+              "userDefined": true
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "okay"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "of course"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "exactly"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "ok"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't mind"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "yes"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I agree"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "sounds good"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "that's correct"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "search_vendor_two_country - no",
+      "parent_followup_intent_name": "search_vendor_two_country",
+      "action_name": "search_vendor_two_country.search_vendor_two_country-no",
+      "messages": [
+        {
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data-two-country.use_case&technology=#data-two-country.technology"
+        }
+      ],
+      "inputContextNames": [
+        "search_vendor_two_country-followup",
+        "data-two-country"
+      ],
+      "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "not in particular"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "anything"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "all countries"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "no"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not really"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't think so"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I disagree"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "not interested"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "definitely not"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "I don't want that"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "text": "don't do it"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
