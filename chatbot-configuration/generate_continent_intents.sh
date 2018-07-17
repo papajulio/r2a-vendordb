@@ -22,8 +22,8 @@ replace_strings data/continent_tech_usecase_intents.json
 cp data/all_together_intent.json data/all_together_intent_continent.json
 replace_strings data/all_together_intent_continent.json
 
-cp data/two_technology_intents.json data/two_technology_intents_continent.json
-replace_strings data/two_technology_intents_continent.json
+cp data/two_technology_intents.json data/two_technology_continent_intents.json
+replace_strings data/two_technology_continent_intents.json
 
-cp data/two_usecase_intents.json data/two_usecase_intents_continent.json
-replace_strings data/two_usecase_intents_continent.json
+cp data/two_usecase_intents.json data/two_usecase_continent_intents.json
+replace_strings data/two_usecase_continent_intents.json
