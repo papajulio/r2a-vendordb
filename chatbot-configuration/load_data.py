@@ -223,6 +223,10 @@ if __name__ == '__main__':
     args = parse_args()
     logger = configure_logging(args.verbose)
 
+    create_entity(args.project_id, 'technology')
+    create_entity(args.project_id, 'use_cases')
+    create_entity(args.project_id, 'continent')
+
     for filename in os.listdir('data'):
         if filename.endswith("intent.json"):
             with open('data/' + filename) as intent_file:
@@ -232,6 +236,3 @@ if __name__ == '__main__':
                 intents = json.load(intents_file)
                 for intent in intents['intents']:
                     create_or_update_intent(args.project_id, intent)
-
-    create_entity(args.project_id, 'technology')
-    create_entity(args.project_id, 'use_cases')
