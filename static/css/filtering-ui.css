@@ -58,6 +58,10 @@ body {
 	font-weight: 400;
     color: #0a2d37;
 	cursor: pointer;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .selected-filter > .fa + .fa, .selected-filter:hover > .fa {
@@ -67,9 +71,23 @@ body {
 	display: initial;
 }
 
-.choice > .fa-info-circle {
+.choice {
+	margin-bottom: 4px;
+    padding: 4px 0px 4px 35px;
+	cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.choice:hover {
+    background-color: #f3f3f3;
+}
+
+.choice > .fa-info-circle, .choice > span .fa-times {
 	display: none;
 }
+
 .choice:hover > .fa-info-circle {
 	display: initial;
 }
@@ -81,19 +99,25 @@ body {
 	display: initial;
 }
 
-.choices-box {
+.choice-selected {
+    background-color: #00a69c42;
 }
 
-.choice {
-    padding: 4px 0px 4px 35px;
-	cursor: pointer;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+.choice-selected:hover {
+    background-color: #00a69c42;
+	box-shadow: 2px 2px 4px #aaa;
 }
 
-.choice:hover, .choice-selected {
-    background-color: #f3f3f3;
+.choice-selected > span .fa-times {
+	display: initial;
+}
+
+.choice-selected > span .fa-angle-right {
+	display: none;
+}
+
+.choice-selected:hover > .custom-badge {
+	display: none !important;
 }
 
 .vendors-list {
