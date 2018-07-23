@@ -17,7 +17,7 @@ function setFilteringStep(step, filter) {
     filter = filter.toString();
     var filterPosition = filters[step].indexOf(filter);
     if (filterPosition >= 0) {
-        filters[step].pop(filterPosition);
+        filters[step].splice(filterPosition, 1);
     } else {
         filters[step].push(filter);
     }
