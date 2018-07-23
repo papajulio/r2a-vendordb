@@ -8,15 +8,15 @@ body {
 .content {
     max-width: 1500px;
 	margin: auto;
-	background-color: #f9f9fb;
+	background-color: #f3f3f3;
 	border-radius: 10px 10px 0px 0px;
     margin-bottom: 40px;
     padding-bottom: 20px;
 }
 
 .vendors-header {
-    background-color: #0a2d37;
-	color: white;
+    background-color: #f3f3f3;
+	color: #1f1f1f;
 	font-size: 1.5em;
     padding: 10px 10px 10px 30px;
     font-weight: 600;
@@ -26,7 +26,7 @@ body {
 }
 
 .filtering-column-content {
-	background-color: #f9f9fb;
+	background-color: #f3f3f3;
 	padding: 10px;
 }
 
@@ -58,20 +58,21 @@ body {
 	font-weight: 400;
     color: #0a2d37;
 	cursor: pointer;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .selected-filter > .fa + .fa, .selected-filter:hover > .fa {
 	display: none;
 }
-
 .selected-filter:hover > .fa + .fa {
 	display: initial;
 }
 
-.choices-box {
-}
-
 .choice {
+	margin-bottom: 4px;
     padding: 4px 0px 4px 35px;
 	cursor: pointer;
     box-sizing: border-box;
@@ -79,29 +80,91 @@ body {
     -webkit-box-sizing: border-box;
 }
 
-.choice:hover, .choice-selected {
-    background-color: #f9f9fb;
+.choice:hover {
+    background-color: #f3f3f3;
+}
+
+.choice > .fa-info-circle, .choice > span .fa-times {
+	display: none;
+}
+
+.choice:hover > .fa-info-circle {
+	display: initial;
+}
+
+.choice > .custom-badge {
+	display: none;
+}
+.choice:hover > .custom-badge {
+	display: initial;
+}
+
+.choice-selected {
+    background-color: #00a69c42;
+}
+
+.choice-selected:hover {
+    background-color: #00a69c42;
+	box-shadow: 2px 2px 4px #aaa;
+}
+
+.choice-selected > span .fa-times {
+	display: initial;
+    font-size: .6em;
+}
+
+.choice-selected > span .fa-angle-right {
+	display: none;
+}
+
+.choice-selected:hover > .custom-badge {
+	display: none !important;
 }
 
 .vendors-list {
-	padding-top: 10px;
+	margin-top: 5px;
 }
 
-.vendor {
-	padding: 0 10px;
+/* A nice aspect ratio for a logo image would be 2/3: 300x200 */
+.new-vendor {
+	width: 180px;
+    height: 120px;
+    float: left;
+    margin: 10px 1%;
+	background-color: white;
+	box-shadow: 2px 2px 4px #aaa;
+}
+.new-vendor:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
+    transition: .35s;
+	cursor: pointer;
 }
 
-.vendor-url {
-	margin-left: 15px;
+.vendor-image {
+    width: 95%;
+    height: 95%;
+    padding: 5px;
 }
 
-.vendor-url:hover {
-	text-decoration: underline;
+.badge {
+	color: #00a69c;
+}
+
+.custom-badge {
+    background-color: #00a69c;
+    color: white;
+    border-radius: 25%;
+    text-align: center;
+    padding: 3px 5px;
+    font-size: 0.7em;
+    font-weight: 700;
 }
 
 /* Custom tooltip */
 .custom-tooltip {
 	font-size: 1.3em;
+    line-height: 1.3em;
+    text-align: justify !important;
 }
 
 /* Custom */
@@ -115,4 +178,8 @@ body {
 
 .m-l-sm {
 	margin-left: 8px;
+}
+
+.m-l-xs {
+	margin-left: 4px;
 }
