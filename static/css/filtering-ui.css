@@ -8,15 +8,15 @@ body {
 .content {
     max-width: 1500px;
 	margin: auto;
-	background-color: #f9f9fb;
+	background-color: #f3f3f3;
 	border-radius: 10px 10px 0px 0px;
     margin-bottom: 40px;
     padding-bottom: 20px;
 }
 
 .vendors-header {
-    background-color: #0a2d37;
-	color: white;
+    background-color: #f3f3f3;
+	color: #1f1f1f;
 	font-size: 1.5em;
     padding: 10px 10px 10px 30px;
     font-weight: 600;
@@ -26,7 +26,7 @@ body {
 }
 
 .filtering-column-content {
-	background-color: #f9f9fb;
+	background-color: #f3f3f3;
 	padding: 10px;
 }
 
@@ -93,30 +93,32 @@ body {
 }
 
 .choice:hover, .choice-selected {
-    background-color: #f9f9fb;
+    background-color: #f3f3f3;
 }
 
 .vendors-list {
-	padding-top: 10px;
+	margin-top: 5px;
 }
 
-.vendor {
-	padding: 0 10px;
+/* A nice aspect ratio for a logo image would be 2/3: 300x200 */
+.new-vendor {
+	width: 180px;
+    height: 120px;
+    float: left;
+    margin: 10px 1%;
+	background-color: white;
+	box-shadow: 2px 2px 4px #aaa;
+}
+.new-vendor:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.25);
+    transition: .35s;
+	cursor: pointer;
 }
 
-.vendor-url {
-	margin-left: 15px;
-}
-
-.vendor-url:hover {
-	text-decoration: underline;
-}
-
-/* Custom tooltip */
-.custom-tooltip {
-	font-size: 1.3em;
-    line-height: 1.3em;
-    text-align: justify !important;
+.vendor-image {
+    width: 95%;
+    height: 95%;
+    padding: 5px;
 }
 
 .badge {
@@ -131,6 +133,13 @@ body {
     padding: 3px 5px;
     font-size: 0.7em;
     font-weight: 700;
+}
+
+/* Custom tooltip */
+.custom-tooltip {
+	font-size: 1.3em;
+    line-height: 1.3em;
+    text-align: justify !important;
 }
 
 /* Custom */

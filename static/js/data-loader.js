@@ -238,17 +238,8 @@ function loadVendors() {
 
     for (var vendorId in getVendorsToShow()) {
         targetElement.append($('\
-            <div class="main-row row sqs-row vendor-row vendor" data-vendor-id="' + vendorsToShow[vendorId]["id"] + '">\
-                <div class="vtile col sqs-col-1-0-0 span-1-0-0">\
-                    <div class="vlogo col sqs-col-1-5 span-1-5">\
-                        <img src="' + vendorsToShow[vendorId]["lu"] + '" />\
-                    </div>\
-                    <div class="col sqs-col-8-5 span-8-5 vcontent">\
-                        <h4 id="vname">' + vendorsToShow[vendorId]["n"] + '</h4>\
-                        <p class="location">' + vendorsToShow[vendorId]["l"] + '<a class="vendor-url" href="http://' + vendorsToShow[vendorId]["u"] + '">' + vendorsToShow[vendorId]["u"] + '</a></p>\
-                        <p id="vdesc">' + trimText(vendorsToShow[vendorId]["d"], 180) + '</p>\
-                    </div>\
-                </div>\
+            <div class="new-vendor" data-vendor-id="' + vendorsToShow[vendorId]["id"] + '">\
+                <img class="vendor-image" src="' + vendorsToShow[vendorId]["lu"] + '" />\
             </div>'));
     }
 }

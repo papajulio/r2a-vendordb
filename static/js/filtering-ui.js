@@ -72,7 +72,7 @@ function addClickListenerToFiltersClean() {
 }
 
 function addClickListenerToVendorRows() {
-    $(".vendor-row").off('click').click(vendorWasClicked);
+    $(".new-vendor").off('click').click(vendorWasClicked);
 }
 
 $(document).ready(function() {
