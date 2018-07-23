@@ -87,14 +87,13 @@ function findGetParameter(parameterName) {
 }
 
 function loadStep0() {
-    var personaIdsToShow = getPersonaIdsFromVendors();
     var targetElement = $(".choices-step-0");
     targetElement.html("");
 
     var selectedItems = [];
     var step = 0;
     var vendorCount = 0;
-    for (var personaId of personaIdsToShow) {
+    for (var personaId in personas) {
         var rowSelectedClass = "";
         if (isFilterPresent(0, personas[personaId]["id"])) {
             rowSelectedClass = " choice-selected ";
@@ -111,36 +110,14 @@ function loadStep0() {
     showCurrentFilterStep(0, selectedItems);
 }
 
-function getPersonaIdsFromVendors() {
-    vendorsToShow = getVendorsToShow();
-
-    var objectiveIds = [];
-    var vendorCount = 0;
-    for (var vendorId in vendorsToShow) {
-        objectiveIds = mergeArrays(objectiveIds, vendorsToShow[vendorId].o);
-    }
-
-    var result = [];
-    for (var personaId in personas) {
-        for (var personaObjective of personas[personaId].o) {
-            if (objectiveIds.indexOf(personaObjective) != -1) {
-                result = mergeArrays(result, [personaId]);
-                break;
-            }
-        }
-    }
-    return result.sort();
-}
-
 function loadStep1() {
     var targetElement = $(".choices-step-1");
-    var objectiveIdsToShow = getObjectiveIdsFromVendors();
     targetElement.html("");
 
     var step = 1;
     var selectedItems = [];
     var vendorCount = 0;
-    for (var objectiveId of objectiveIdsToShow) {
+    for (var objectiveId in objectives) {
         var rowSelectedClass = "";
         if (isFilterPresent(1, objectives[objectiveId]["id"])) {
             rowSelectedClass = " choice-selected ";
@@ -159,25 +136,14 @@ function loadStep1() {
     showCurrentFilterStep(1, selectedItems);
 }
 
-function getObjectiveIdsFromVendors() {
-    vendorsToShow = getVendorsToShow();
-
-    var objectiveIds = [];
-    for (var vendorId in vendorsToShow) {
-        objectiveIds = mergeArrays(objectiveIds, vendorsToShow[vendorId].o);
-    }
-    return objectiveIds.sort();
-}
-
 function loadStep2() {
     var targetElement = $(".choices-step-2");
-    var technologyIdsToShow = getTechonologyIdsFromVendors();
     targetElement.html("");
 
     var step = 2;
     var selectedItems = [];
     var vendorCount = 0;
-    for (var technologyId of technologyIdsToShow) {
+    for (var technologyId in technologies) {
         var rowSelectedClass = "";
         if (isFilterPresent(2, technologies[technologyId]["id"])) {
             rowSelectedClass = " choice-selected ";
@@ -192,16 +158,6 @@ function loadStep2() {
     }
 
     showCurrentFilterStep(2, selectedItems);
-}
-
-function getTechonologyIdsFromVendors() {
-    vendorsToShow = getVendorsToShow();
-
-    var technologyIds = [];
-    for (var vendorId in vendorsToShow) {
-        technologyIds = mergeArrays(technologyIds, vendorsToShow[vendorId].t);
-    }
-    return technologyIds.sort();
 }
 
 function loadStep3() {
@@ -230,10 +186,9 @@ function loadStep3() {
 }
 
 function getLocations() {
-    vendorsToShow = getVendorsToShow();
     var locations = [];
-    for (var vendorId in vendorsToShow) {
-        locations = mergeArrays(locations, vendorsToShow[vendorId].g);
+    for (var vendorId in vendors) {
+        locations = mergeArrays(locations, vendors[parseInt(vendorId)]["g"]);
     }
     locations.sort();
     if (locations.indexOf("Global") != -1) {

@@ -110,6 +110,7 @@ body {
 
 .choice-selected > span .fa-times {
 	display: initial;
+    font-size: .6em;
 }
 
 .choice-selected > span .fa-angle-right {
