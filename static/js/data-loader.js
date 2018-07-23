@@ -7,10 +7,38 @@ var vendors;
 
 // Global variables containing filtering
 var filters = {
-    0: "",
-    1: "",
-    2: "",
-    3: ""
+    0: [],
+    1: [],
+    2: [],
+    3: []
+};
+
+function setFilteringStep(step, filter) {
+    filter = filter.toString();
+    var filterPosition = filters[step].indexOf(filter);
+    if (filterPosition >= 0) {
+        filters[step].splice(filterPosition, 1);
+    } else {
+        filters[step].push(filter);
+    }
+}
+
+function clearFilterStep(step, filter) {
+    if (filter == null) {
+        filters[step] = [];
+    } else {
+        var filterPosition = filters[step].indexOf(filter);
+        filters[step].pop(filterPosition);
+    }
+}
+
+function isFilterStepEmpty(step) {
+    return filters[step].length == 0;
+}
+
+function isFilterPresent(step, filter) {
+    filter = filter.toString();
+    return filters[step].indexOf(filter) >= 0;
 }
 
 var vendorsToShow = getVendorsToShow();
@@ -23,13 +51,11 @@ $.getJSON("db.json").done(function(json) {
     jsonLoaded = true;
     use_case = findGetParameter('use-case')
     if (use_case != null) {
-        setFilteringStep(1, objectives[use_case]["n"]);
-        stepWasChanged(1, use_case)
+        setFilteringStep(1, objectives[use_case]["n"].toString());
     }
     technology = findGetParameter('technology')
     if (technology != null) {
-        setFilteringStep(2, technologies[use_case]["n"]);
-        stepWasChanged(2, technology)
+        setFilteringStep(2, technologies[use_case]["n"].toString());
     }
     country = findGetParameter('country')
     if (country != null) {
@@ -40,8 +66,7 @@ $.getJSON("db.json").done(function(json) {
                 locationIdToSet = locationId
             }
         }
-        setFilteringStep(3, locations[locationIdToSet]);
-        stepWasChanged(3, locations[locationIdToSet])
+        setFilteringStep(3, locations[locationIdToSet].toString());
     }
     refreshUI();
 });
@@ -61,128 +86,78 @@ function findGetParameter(parameterName) {
     return result;
 }
 
-function stepWasChanged(step, choiceId) {
-    step = parseInt(step);
-    filters[step] = choiceId;
-    vendorsToShow = getVendorsToShow();
-    showNumberOfVendors();
-}
-
 function loadStep0() {
-    var personaIdsToShow = getPersonaIdsFromVendors();
     var targetElement = $(".choices-step-0");
     targetElement.html("");
 
-    var selectedItem = null;
+    var selectedItems = [];
     var step = 0;
     var vendorCount = 0;
-    for (var personaId of personaIdsToShow) {
+    for (var personaId in personas) {
         var rowSelectedClass = "";
-        if (personas[personaId]["id"] == filters[0]) {
+        if (isFilterPresent(0, personas[personaId]["id"])) {
             rowSelectedClass = " choice-selected ";
-            selectedItem = personas[personaId];
+            selectedItems.push(personas[personaId]["n"]);
         }
         vendorCount = getVendorCountIfChoiceSelected(0, personaId);
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + personaId + '">\
-                <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + personas[personaId]["n"] + '</span></span>\
+                <span><i class="fa fa-angle-right m-r-sm"></i><i class="fa fa-times m-r-sm"></i><span class="title">' + personas[personaId]["n"] + '</span></span>\
                 <span title="Vendor number if filter is selected" class="custom-badge m-l-xs">' + vendorCount + '</span>\
             </div>'));
     }
 
-    showSelectedItemFilter(0, selectedItem == null ? "" : selectedItem["n"]);
-}
-
-function getPersonaIdsFromVendors() {
-    vendorsToShow = getVendorsToShow();
-
-    var objectiveIds = [];
-    var vendorCount = 0;
-    for (var vendorId in vendorsToShow) {
-        objectiveIds = mergeArrays(objectiveIds, vendorsToShow[vendorId].o);
-    }
-
-    var result = [];
-    for (var personaId in personas) {
-        for (var personaObjective of personas[personaId].o) {
-            if (objectiveIds.indexOf(personaObjective) != -1) {
-                result = mergeArrays(result, [personaId]);
-                break;
-            }
-        }
-    }
-    return result.sort();
+    showCurrentFilterStep(0, selectedItems);
 }
 
 function loadStep1() {
     var targetElement = $(".choices-step-1");
-    var objectiveIdsToShow = getObjectiveIdsFromVendors();
     targetElement.html("");
 
     var step = 1;
-    var selectedItem = null;
+    var selectedItems = [];
     var vendorCount = 0;
-    for (var objectiveId of objectiveIdsToShow) {
+    for (var objectiveId in objectives) {
         var rowSelectedClass = "";
-        if (objectives[objectiveId]["id"] == filters[1]) {
+        if (isFilterPresent(1, objectives[objectiveId]["id"])) {
             rowSelectedClass = " choice-selected ";
-            selectedItem = objectives[objectiveId];
+            selectedItems.push(objectives[objectiveId]["n"]);
         }
         vendorCount = getVendorCountIfChoiceSelected(1, objectiveId);
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + objectiveId + '">\
-                <i class="fa fa-angle-right m-r-sm"></i><span class="title">' + objectives[objectiveId]["n"] + '</span>\
+                <span><i class="fa fa-angle-right m-r-sm"></i><i class="fa fa-times m-r-sm"></i></span>\
+                <span class="title">' + objectives[objectiveId]["n"] + '</span>\
                 <span title="Vendor number if filter is selected" class="custom-badge m-l-xs">' + vendorCount + '</span>\
                 <i title="' + objectives[objectiveId]["d"] + '" class="fa fa-info-circle m-l-xs tooltip badge"></i>\
             </div>'));
     }
 
-    showSelectedItemFilter(1, selectedItem == null ? "" : selectedItem["n"]);
-}
-
-function getObjectiveIdsFromVendors() {
-    vendorsToShow = getVendorsToShow();
-
-    var objectiveIds = [];
-    for (var vendorId in vendorsToShow) {
-        objectiveIds = mergeArrays(objectiveIds, vendorsToShow[vendorId].o);
-    }
-    return objectiveIds.sort();
+    showCurrentFilterStep(1, selectedItems);
 }
 
 function loadStep2() {
     var targetElement = $(".choices-step-2");
-    var technologyIdsToShow = getTechonologyIdsFromVendors();
     targetElement.html("");
 
     var step = 2;
-    var selectedItem = null;
+    var selectedItems = [];
     var vendorCount = 0;
-    for (var technologyId of technologyIdsToShow) {
+    for (var technologyId in technologies) {
         var rowSelectedClass = "";
-        if (technologies[technologyId]["id"] == filters[2]) {
+        if (isFilterPresent(2, technologies[technologyId]["id"])) {
             rowSelectedClass = " choice-selected ";
-            selectedItem = technologies[technologyId];
+            selectedItems.push(technologies[technologyId]["n"]);
         }
         vendorCount = getVendorCountIfChoiceSelected(2, technologyId);
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + technologyId + '">\
-                <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + technologies[technologyId]["n"] + '</span></span>\
+                <span><i class="fa fa-angle-right m-r-sm"></i><i class="fa fa-times m-r-sm"></i><span class="title">' + technologies[technologyId]["n"] + '</span></span>\
                 <span title="Vendor number if filter is selected" class="custom-badge m-l-xs">' + vendorCount + '</span>\
             </div>'));
     }
 
-    showSelectedItemFilter(2, selectedItem == null ? "" : selectedItem["n"]);
-}
-
-function getTechonologyIdsFromVendors() {
-    vendorsToShow = getVendorsToShow();
-
-    var technologyIds = [];
-    for (var vendorId in vendorsToShow) {
-        technologyIds = mergeArrays(technologyIds, vendorsToShow[vendorId].t);
-    }
-    return technologyIds.sort();
+    showCurrentFilterStep(2, selectedItems);
 }
 
 function loadStep3() {
@@ -191,30 +166,29 @@ function loadStep3() {
     targetElement.html("");
 
     var step = 3;
-    var selectedItem = null;
+    var selectedItems = [];
     var vendorCount = 0;
     for (var locationId in locations) {
         var rowSelectedClass = "";
-        if (locations[locationId] == filters[3]) {
+        if (isFilterPresent(3, locations[locationId])) {
             rowSelectedClass = " choice-selected ";
-            selectedItem = locations[locationId];
+            selectedItems.push(locations[locationId]);
         }
         vendorCount = getVendorCountIfChoiceSelected(3, locations[locationId]);
         targetElement.append($('\
             <div class="col sqs-col-12 choice' + rowSelectedClass + '" data-step="' + step + '" data-choice-id="' + locations[locationId] + '">\
-                <span><i class="fa fa-angle-right m-r-sm"></i><span class="title">' + locations[locationId] + '</span></span>\
+                <span><i class="fa fa-angle-right m-r-sm"></i><i class="fa fa-times m-r-sm"></i><span class="title">' + locations[locationId] + '</span></span>\
                 <span title="Vendor number if filter is selected" class="custom-badge m-l-xs">' + vendorCount + '</span>\
             </div>'));
     }
 
-    showSelectedItemFilter(3, selectedItem == null ? "" : selectedItem);
+    showCurrentFilterStep(3, selectedItems);
 }
 
 function getLocations() {
-    vendorsToShow = getVendorsToShow();
     var locations = [];
-    for (var vendorId in vendorsToShow) {
-        locations = mergeArrays(locations, vendorsToShow[vendorId].g);
+    for (var vendorId in vendors) {
+        locations = mergeArrays(locations, vendors[parseInt(vendorId)]["g"]);
     }
     locations.sort();
     if (locations.indexOf("Global") != -1) {
@@ -222,12 +196,6 @@ function getLocations() {
         locations.splice(0, 0, "Global");
     }
     return locations;
-}
-
-function showSelectedItemFilter(step, title) {
-    if (title != "") {
-        showCurrentFilterStep(step, title);
-    }
 }
 
 function loadVendors() {
@@ -255,13 +223,11 @@ function getVendorsToShow() {
 }
 
 function getVendorCountIfChoiceSelected(step, choice) {
-    var new_filters = jQuery.extend({}, filters);
-    new_filters[step] = choice;
+    var new_filters = jQuery.extend(true, {}, filters);
+    new_filters[step].push(choice);
     var count = 0;
     for (var vendorId in vendors) {
-        if (shouldShowVendor(vendors[vendorId], new_filters)) {
-            count += 1;
-        }
+        count += shouldShowVendor(vendors[vendorId], new_filters) ? 1 : 0;
     }
     return count;
 }
@@ -274,14 +240,16 @@ function shouldShowVendor(vendor, filters) {
 }
 
 function step0ShouldShowVendor(vendor, filters) {
-    var stepFilter = filters[0];
-    if (stepFilter == "") {
+    var stepFilters = filters[0];
+    if (!stepFilters.length) {
         return true;
     }
 
-    for (var objectiveId of personas[parseInt(stepFilter)].o) {
-        if (vendor.o.indexOf(parseInt(objectiveId)) != -1) {
-            return true;
+    for (var stepFilter of stepFilters) {
+        for (var objectiveId of personas[parseInt(stepFilter)].o) {
+            if (vendor.o.indexOf(parseInt(objectiveId)) != -1) {
+                return true;
+            }
         }
     }
 
@@ -289,39 +257,45 @@ function step0ShouldShowVendor(vendor, filters) {
 }
 
 function step1ShouldShowVendor(vendor, filters) {
-    var stepFilter = filters[1];
-    if (stepFilter == "") {
+    var stepFilters = filters[1];
+    if (!stepFilters.length) {
         return true;
     }
 
-    if (vendor.o.indexOf(parseInt(stepFilter)) != -1) {
-        return true;
+    for (var stepFilter of stepFilters) {
+        if (vendor.o.indexOf(parseInt(stepFilter)) != -1) {
+            return true;
+        }
     }
 
     return false;
 }
 
 function step2ShouldShowVendor(vendor, filters) {
-    var stepFilter = filters[2];
-    if (stepFilter == "") {
+    var stepFilters = filters[2];
+    if (!stepFilters.length) {
         return true;
     }
 
-    if (vendor.t.indexOf(parseInt(stepFilter)) != -1) {
-        return true;
+    for (var stepFilter of stepFilters) {
+        if (vendor.t.indexOf(parseInt(stepFilter)) != -1) {
+            return true;
+        }
     }
 
     return false;
 }
 
 function step3ShouldShowVendor(vendor, filters) {
-    var stepFilter = filters[3];
-    if (stepFilter == "") {
+    var stepFilters = filters[3];
+    if (!stepFilters.length) {
         return true;
     }
 
-    if (vendor.g.indexOf(stepFilter) != -1) {
-        return true;
+    for (var stepFilter of stepFilters) {
+        if (vendor.g.indexOf(stepFilter) != -1) {
+            return true;
+        }
     }
 
     return false;

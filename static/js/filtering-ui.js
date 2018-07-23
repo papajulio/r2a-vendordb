@@ -20,23 +20,33 @@ function choiceWasClicked(e) {
     var title = $(this).find(".title").text();
     var step = $(this).attr("data-step");
 
-    showSelectedFilter(step, title);
-
     var choiceId = $(this).attr("data-choice-id");
-    setFilteringStep(step, choiceId);
+    setFilteringStep(step, choiceId.toString());
     refreshUI();
 }
 
-function showSelectedFilter(step, title) {
-    $(".selected-filter-" + step).find("span").html(title);
-    $(".selected-filter-" + step).removeClass("hidden");
+function showCurrentFilterStep(step, titles) {
+    var titleElement = $(".selected-filter-" + step).find("span");
+    titleElement.html("");
+    if (!isFilterStepEmpty(step)) {
+        for (var title of titles) {
+            if (titleElement.html()) {
+                titleElement.html(titleElement.html() + ", ");
+            }
+            titleElement.html(titleElement.html() + title);
+        }
+        $(".selected-filter-" + step).removeClass("hidden");
+    } else {
+        $(".selected-filter-" + step).addClass("hidden");
+    }
 }
 
 function clearFilterWasClicked(e) {
     e.preventDefault();
     var step = $(this).attr("data-step");
-    filters[step] = "";
+    clearFilterStep(step);
     $(this).toggleClass("hidden");
+    $(".selected-filter-" + step).find("span").html("");
     refreshUI();
 }
 
@@ -44,15 +54,6 @@ function scrollToTableHeader() {
     $('html, body').animate({
         scrollTop: $("#page").offset().top
     }, 500);
-}
-
-function setFilteringStep(step, filter) {
-    if (filters[step] == filter) {
-        $(".selected-filter-" + step).addClass("hidden");
-        filters[step] = "";
-    } else {
-        filters[step] = filter;
-    }
 }
 
 function showSpinner(element) {
@@ -116,10 +117,4 @@ function attachTooltipPlugin() {
         outside: 'x',
         delayOpen: 200
     });
-}
-
-function showCurrentFilterStep(step, title) {
-    if (filters[step] != "") {
-        showSelectedFilter(step, title);
-    }
 }
