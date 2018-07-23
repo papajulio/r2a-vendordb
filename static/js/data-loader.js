@@ -51,22 +51,22 @@ $.getJSON("db.json").done(function(json) {
     jsonLoaded = true;
     use_case = findGetParameter('use-case')
     if (use_case != null) {
-        setFilteringStep(1, objectives[use_case]["n"].toString());
+        setFilteringStep(1, use_case);
     }
     technology = findGetParameter('technology')
     if (technology != null) {
-        setFilteringStep(2, technologies[use_case]["n"].toString());
+        setFilteringStep(2, technology);
     }
     country = findGetParameter('country')
     if (country != null) {
         var locations = getLocations();
-        locationIdToSet = 0
+        var locationIdToSet = 0;
         for (var locationId in locations) {
             if (locations[locationId] == country) {
-                locationIdToSet = locationId
+                locationIdToSet = locationId;
             }
         }
-        setFilteringStep(3, locations[locationIdToSet].toString());
+        setFilteringStep(3, locations[locationIdToSet]);
     }
     refreshUI();
 });
