@@ -270,7 +270,7 @@
       "parameters": [
         {
           "required": true,
-          "dataType": "@sys.geo-country",
+          "dataType": "@location",
           "name": "location",
           "value": "$location",
           "prompts": [
@@ -302,7 +302,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": true
             }
           ]
@@ -319,7 +319,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": true
             }
           ]

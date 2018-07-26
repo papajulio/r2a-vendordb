@@ -225,7 +225,7 @@ if __name__ == '__main__':
 
     create_entity(args.project_id, 'technology')
     create_entity(args.project_id, 'use_cases')
-    create_entity(args.project_id, 'continent')
+    create_entity(args.project_id, 'location')
 
     for filename in os.listdir('data'):
         if filename.endswith("intent.json"):

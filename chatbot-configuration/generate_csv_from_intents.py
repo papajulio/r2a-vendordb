@@ -78,4 +78,4 @@ if __name__ == '__main__':
 
     print_entity('technology')
     print_entity('use_cases')
-    print_entity('continent')
+    print_entity('location')
