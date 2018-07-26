@@ -615,7 +615,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-no",
       "messages": [
         {
-          "text": "Ok no problem, and what about giving you information based on your country?"
+          "text": "Would you like information specifically about vendors in your country?"
         }
       ],
       "inputContextNames": [

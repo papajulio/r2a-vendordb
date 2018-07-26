@@ -16,7 +16,9 @@
     {
       "value": "Europe",
       "synonyms": [
-        "Europe"
+        "Europe",
+        "European Union",
+        "EU"
       ]
     },
     {
@@ -40,6 +42,13 @@
       "synonyms": [
         "Antarctica"
       ]
-    }
+    },
+    {
+      "value": "Global",
+      "synonyms": [
+        "global",
+        "anywhere"
+      ]
+    },
   ]
 }
