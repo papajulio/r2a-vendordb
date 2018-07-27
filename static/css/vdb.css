@@ -81,12 +81,6 @@ i.material-icons {
 	font-weight: 400;
 }
 
-#chatbot {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	z-index: 9999;
-}
 
 #overlay {
 	position: fixed;

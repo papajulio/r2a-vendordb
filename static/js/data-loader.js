@@ -1,3 +1,11 @@
+// Trigger event when window resize has ended
+$(window).resize(function() {
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 100);
+});
+
 // Global variables containing JSON information
 var jsonLoaded = false;
 var objectives;
