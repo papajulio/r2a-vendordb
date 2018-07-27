@@ -76,11 +76,62 @@ function addClickListenerToVendorRows() {
     $(".new-vendor").off('click').click(vendorWasClicked);
 }
 
+function addClickListenerToChatbotHeader() {
+    $(".chatbot-header").off('click').click(function(e) {
+        if (isChatbotVisible()) {
+            hideChatbot();
+        } else {
+            showChatbot();
+        }
+    });
+}
+
+var MINIMIZED = 'minimized';
+var MAXIMIZED= 'maximized';
+var CHATSTATE = 'chatbotstate';
+
+function hideChatbot() {
+    $(".chatbot-main").hide(400, function() {
+        $(".chatbot-collapse-arrow").removeClass('fa-angle-down').addClass('fa-angle-up');
+        $(".chatbot-title").show();
+    });
+    localStorage.setItem(CHATSTATE, MINIMIZED);
+}
+
+function showChatbot() {
+    $(".chatbot-main").show(400, function() {
+        $(".chatbot-collapse-arrow").addClass('fa-angle-down').removeClass('fa-angle-up');
+        $(".chatbot-title").hide();
+    });
+    localStorage.setItem(CHATSTATE, MAXIMIZED);
+}
+
+function isChatbotVisible() {
+    return $(".chatbot-collapse-arrow").hasClass('fa-angle-down');
+}
+
+function hideChatbotIfNeeded() {
+    var height = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    if (height < 1000) {
+        hideChatbot();
+    }
+
+    if (localStorage.getItem(CHATSTATE) == MINIMIZED) {
+        hideChatbot();
+    }
+}
+
 $(document).ready(function() {
     addClickListenerToFilters();
     addClickListenerToChoices();
     addClickListenerToVendorRows();
     addClickListenerToFiltersClean();
+    addClickListenerToChatbotHeader();
+
+    hideChatbotIfNeeded();
+    $(window).bind('resizeEnd', function() {
+        hideChatbotIfNeeded();
+    });
 });
 
 function refreshUI() {
@@ -96,7 +147,10 @@ function refreshUI() {
     addClickListenerToChoices();
     addClickListenerToFiltersClean();
     addClickListenerToVendorRows();
+    addClickListenerToChatbotHeader();
+
     attachTooltipPlugin();
+    attachTooltipFeedback();
 }
 
 function showNumberOfVendors() {
@@ -115,6 +169,23 @@ function attachTooltipPlugin() {
             y: 'center'
         },
         outside: 'x',
+        delayOpen: 200
+    });
+}
+
+function attachTooltipFeedback() {
+    new jBox('Tooltip', {
+        attach: '.tooltip-left',
+        preventDefault: true,
+        closeOnMouseleave: true,
+        addClass: 'custom-tooltip',
+        position: {
+            x: 'left',
+            y: 'center'
+        },
+        outside: 'x',
+        adjustPosition: true,
+        adjustTracker: true,
         delayOpen: 200
     });
 }
