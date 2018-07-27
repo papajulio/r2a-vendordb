@@ -160,6 +160,58 @@ body {
     font-weight: 700;
 }
 
+/* chatbot */
+#chatbot {
+	position: fixed;
+	bottom: -10px;
+	right: 20px;
+	z-index: 9999;
+    background: #ebebeb;
+    color: white;
+    border-radius: 16px 16px 0 0;
+	min-width: 350px;
+}
+
+.chatbot-header {
+    padding: 10px 10px 10px 16px;
+    cursor: pointer;
+	font-size: 1.4em;
+	line-height: 1.4em;
+    font-weight: 400;
+    background: #622269;
+    background: #00a69c;
+    color: white;
+    border-radius: 16px 16px 0 0;
+}
+
+.chatbot-title {
+	display: none;
+}
+
+.chatbot-header-buttons {
+	float: right;
+}
+
+.chatbot-feedback {
+	font-size: .7em;
+	color: white;
+}
+
+.feedback-text {
+	display: none;
+}
+.chatbot-feedback:hover > .feedback-text {
+	display: initial;
+}
+
+.chatbot-main {
+	padding: 5px;
+}
+
+.chatbot-footer {
+	background-color: white;
+}
+
 /* Custom tooltip */
 .custom-tooltip {
 	font-size: 1.3em;
