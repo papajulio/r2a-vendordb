@@ -36,7 +36,7 @@ function clearFilterStep(step, filter) {
         filters[step] = [];
     } else {
         var filterPosition = filters[step].indexOf(filter);
-        filters[step].pop(filterPosition);
+        filters[step].splice(filterPosition, 1);
     }
 }
 
