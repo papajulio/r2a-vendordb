@@ -35,6 +35,7 @@ function vendorWasClicked(e) {
             </div>\
         </div>';
     myModal.setTitle(title).setContent(content).open();
+    customGA('send', 'event', 'vendor', 'details', vendorData['n']);
 }
 
 function filterWasClicked(e) {
@@ -114,8 +115,10 @@ function addClickListenerToChatbotHeader() {
     $(".chatbot-header").off('click').click(function(e) {
         if (isChatbotVisible()) {
             hideChatbot();
+            customGA('send', 'event', 'chatbot', 'click', 'hide');
         } else {
             showChatbot();
+            customGA('send', 'event', 'chatbot', 'click', 'show');
         }
     });
 }

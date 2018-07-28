@@ -26,17 +26,21 @@ function setFilteringStep(step, filter) {
     var filterPosition = filters[step].indexOf(filter);
     if (filterPosition >= 0) {
         filters[step].splice(filterPosition, 1);
+        customGA('send', 'event', 'step' + step, 'remove', filter);
     } else {
         filters[step].push(filter);
+        customGA('send', 'event', 'step' + step, 'add', filter);
     }
 }
 
 function clearFilterStep(step, filter) {
     if (filter == null) {
         filters[step] = [];
+        customGA('send', 'event', 'step' + step, 'clear', filter);
     } else {
         var filterPosition = filters[step].indexOf(filter);
         filters[step].splice(filterPosition, 1);
+        customGA('send', 'event', 'step' + step, 'remove', filter);
     }
 }
 
