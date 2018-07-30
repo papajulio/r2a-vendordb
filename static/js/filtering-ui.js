@@ -26,9 +26,13 @@ function vendorWasClicked(e) {
             </div>\
             <div class="sqs-row vendor-modal-details">';
     content += vendorData['l'] ? '<p><span><i class="fa fa-map-marker m-r-sm"></i><strong>Location:</strong> ' + vendorData['l'] + '</span></p>' : '';
-    content += vendorData['c'] ? '<p><span><i class="fa fa-at m-r-sm"></i><strong>contact:</strong> ' + vendorData['c'] + '</span></p>' : '';
+    if (vendorData['c'].indexOf('@') >= 0) {
+        content += vendorData['c'] ? '<p><span><i class="fa fa-envelope m-r-sm"></i><strong>Email:</strong><a class="vendor-modal-url" target="_blank" href="mailto:' + vendorData['c'] + '"> ' + vendorData['c'] + '</a></span></p>' : '';
+    } else {
+        content += vendorData['c'] ? '<p><span><i class="fa fa-phone m-r-sm"></i><strong>Contact:</strong> ' + vendorData['c'] + '</span></p>' : '';
+    }
     content += vendorData['u'] ? '\
-                <p><span><i class="fa fa-external-link-square-alt m-r-sm"></i><strong>Contact:</strong> \
+                <p><span><i class="fa fa-external-link-square-alt m-r-sm"></i><strong>Website:</strong> \
                     <span class="vendor-modal-url"><a target="_blank" href="http://' + vendorData['u'] + '">' + vendorData['u'] + '</a></span>\
                 </span></p>' : '';
     content += '\
