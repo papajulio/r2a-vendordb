@@ -212,6 +212,38 @@ body {
 	background-color: white;
 }
 
+/* Vendor modal */
+.vendor-modal-content {
+	max-height: 600px;
+	font-size: 1.4em;
+	line-height: 1.4em;
+}
+
+.vendor-modal-title-text {
+	font-size: 2em;
+	line-height: 1.5em;
+	font-weight: 600;
+}
+
+.vendor-modal-logo {
+	text-align: center;
+}
+
+.vendor-modal-logo-image {
+	max-width: 200px;
+}
+
+.vendor-modal-details {
+	margin: 20px 20px 10px 30px;
+}
+
+.vendor-modal-url {
+	text-decoration: none;
+}
+.vendor-modal-url:hover {
+	text-decoration: underline;
+}
+
 /* Custom tooltip */
 .custom-tooltip {
 	font-size: 1.3em;
@@ -234,4 +266,8 @@ body {
 
 .m-l-xs {
 	margin-left: 4px;
+}
+
+.justify {
+	text-align: justify;
 }
