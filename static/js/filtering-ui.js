@@ -32,7 +32,7 @@ function vendorWasClicked(e) {
                     <span class="vendor-modal-url"><a target="_blank" href="http://' + vendorData['u'] + '">' + vendorData['u'] + '</a></span>\
                 </span></p>' : '';
     content += '\
-                <p><span><i class="fa fa-cogs m-r-xs"></i><strong>Techonlogies:</strong> ' + vendorTechs + '</span></p>\
+                <p><span><i class="fa fa-cogs m-r-xs"></i><strong>Technologies:</strong> ' + vendorTechs + '</span></p>\
                 <p><span><i class="fa fa-globe m-r-xs"></i><strong>Availability:</strong> ' + vendorGeos + '</span></p>\
             </div>\
         </div>';

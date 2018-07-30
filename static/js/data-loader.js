@@ -213,8 +213,13 @@ function getLocations() {
 function loadVendors() {
     var targetElement = $(".vendors-list");
     targetElement.html("");
-
     vendorsToShow = getVendorsToShow();
+    if (!vendorsToShow.length) {
+        console.log("no vendors to show");
+        var noVendorsMessage = '<p class="no-vendors-message">There are no vendors available with the active filters.<br />\
+        Review current filters on the left-hand side.</p>';
+        targetElement.append(noVendorsMessage);
+    }
 
     for (var vendorId in getVendorsToShow()) {
         targetElement.append($('\

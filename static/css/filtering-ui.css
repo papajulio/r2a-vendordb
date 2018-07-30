@@ -125,6 +125,11 @@ body {
 	margin-top: 5px;
 }
 
+.no-vendors-message {
+	margin: 30px 0 0 50px;
+	font-weight: 600;
+}
+
 /* A nice aspect ratio for a logo image would be 2/3: 300x200 */
 .new-vendor {
 	width: 180px;
