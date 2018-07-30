@@ -13,7 +13,9 @@ function vendorWasClicked(e) {
         vendorGeos += vendorGeos ? ', ' : '';
         vendorGeos += geo;
     }
-    var title = '<span class="vendor-modal-title-text">' + vendorData['n'] + '</span>';
+    var title =
+        '<span class="vendor-modal-title-text">' + vendorData['n'] + '</span>\
+        <i class="fa fa-times vendor-modal-close-times" onclick="myModal.close();"></i>';
     var content =
         '<div class="vendor-modal-content">\
             <div class="sqs-row vendor-modal-logo">\
