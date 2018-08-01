@@ -129,6 +129,11 @@ function addClickListenerToChatbotHeader() {
     });
 }
 
+function resizeChatbot() {
+    var height = window.innerHeight > 700 ? 700 : window.innerHeight - 95;
+    $("#chatbot-iframe").css('height', height);
+}
+
 var MINIMIZED = 'minimized';
 var MAXIMIZED= 'maximized';
 var CHATSTATE = 'chatbotstate';
@@ -173,6 +178,7 @@ $(document).ready(function() {
 
     hideChatbotIfNeeded();
     $(window).bind('resizeEnd', function() {
+        resizeChatbot();
         hideChatbotIfNeeded();
     });
     attachVendorModal();
@@ -192,6 +198,7 @@ function refreshUI() {
     addClickListenerToFiltersClean();
     addClickListenerToVendorRows();
     addClickListenerToChatbotHeader();
+    resizeChatbot();
 
     attachTooltipPlugin();
     attachTooltipFeedback();
