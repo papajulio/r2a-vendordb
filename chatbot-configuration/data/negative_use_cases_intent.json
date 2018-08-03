@@ -9,28 +9,7 @@
     {
       "parts": [
         {
-          "text": "market supervision"
-        }
-      ]
-    },
-    {
-      "parts": [
-        {
           "text": "sentiment analysis"
-        }
-      ]
-    },
-    {
-      "parts": [
-        {
-          "text": "customer complaints"
-        }
-      ]
-    },
-    {
-      "parts": [
-        {
-          "text": "user complaints"
         }
       ]
     }

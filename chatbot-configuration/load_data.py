@@ -193,7 +193,7 @@ def create_or_update_intent(project_id, intent):
 
 def create_entity(project_id, entity_name):
     logger.info("Creating entity {}...".format(entity_name))
-    with open("data/{}.json".format(entity_name)) as entity_file:
+    with open("data/entities/{}".format(entity_name)) as entity_file:
         entity = json.load(entity_file)
 
     if not _get_entity_type_ids(project_id, entity['name']):
@@ -223,9 +223,8 @@ if __name__ == '__main__':
     args = parse_args()
     logger = configure_logging(args.verbose)
 
-    create_entity(args.project_id, 'technology')
-    create_entity(args.project_id, 'use_cases')
-    create_entity(args.project_id, 'continent')
+    for filename in os.listdir('data/entities'):
+        create_entity(args.project_id, filename)
 
     for filename in os.listdir('data'):
         if filename.endswith("intent.json"):

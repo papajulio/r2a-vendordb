@@ -9,6 +9,8 @@
         "Streamline licensing process",
         "licensing process",
         "electronic machine readable regulation",
+        "machine readable legislation",
+        "machine executable legislation",
         "electronic machine searchable regulation",
         "electronic regulation"
       ]
@@ -85,7 +87,9 @@
       "synonyms": [
         "Facilitate complaints handling",
         "complaints handling",
-        "Complaints chatbot"
+        "Complaints chatbot",
+        "customer complaints",
+        "user complaints"
       ]
     },
     {
@@ -177,7 +181,8 @@
         "Monitor market conduct",
         "Monitor market",
         "market conduct",
-        "Big Data analytics for complaints data"
+        "Big Data analytics for complaints data",
+        "market supervision"
       ]
     },
     {

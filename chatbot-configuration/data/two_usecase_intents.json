@@ -22,7 +22,7 @@
       "parameters": [
         {
           "required": true,
-          "dataType": "@sys.geo-country",
+          "dataType": "@location",
           "name": "location",
           "value": "$location",
           "prompts": [
@@ -59,7 +59,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": false
             },
             {
@@ -84,7 +84,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": false
             },
             {
@@ -109,7 +109,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": false
             },
             {
@@ -134,7 +134,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": false
             }
           ]
@@ -156,7 +156,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": false
             }
           ]
@@ -178,7 +178,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": false
             }
           ]
@@ -200,7 +200,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": false
             },
             {
@@ -225,7 +225,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": false
             }
           ]
@@ -271,12 +271,28 @@
           "name": "use_case",
           "value": "$use_case",
           "prompts": [
-            "Can you tell me for what do you want the information?"
+            "Please, let me know which use case you are interested in with a phrase like: \"I am looking for licensing vendors\" "
           ],
           "isList": false
         }
       ],
       "training_phrases": [
+        {
+          "parts": [
+            {
+              "text": "I am looking for "
+            },
+            {
+              "text": "licensing",
+              "alias": "use_case",
+              "meta": "@use_cases",
+              "userDefined": true
+            },
+            {
+              "text": " vendors"
+            }
+          ]
+        },
         {
           "parts": [
             {

@@ -397,7 +397,7 @@
       "parameters": [
         {
           "required": true,
-          "dataType": "@sys.geo-country",
+          "dataType": "@location",
           "name": "location",
           "value": "$location",
           "prompts": [
@@ -429,7 +429,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": true
             }
           ]
@@ -446,7 +446,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": true
             }
           ]
@@ -615,7 +615,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-no",
       "messages": [
         {
-          "text": "Ok no problem, and what about giving you information based on your country?"
+          "text": "Would you like information specifically about vendors in your country?"
         }
       ],
       "inputContextNames": [
@@ -749,7 +749,7 @@
       "parameters": [
         {
           "required": true,
-          "dataType": "@sys.geo-country",
+          "dataType": "@location",
           "name": "location",
           "value": "$location",
           "prompts": [
@@ -782,7 +782,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": true
             }
           ]
@@ -795,7 +795,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": true
             }
           ]
@@ -812,7 +812,7 @@
             {
               "text": "Spain",
               "alias": "location",
-              "meta": "@sys.geo-country",
+              "meta": "@location",
               "userDefined": true
             }
           ]

@@ -1,0 +1,31 @@
+{
+  "name": "continent_question",
+  "messages": [
+    {
+        "text": "I can help you searching vendors by continent. Please, let me know which continent you are interested in with a phrase like: \"I am looking for a vendor in Europe\""
+    }
+  ],
+  "training_phrases": [
+    {
+      "parts": [
+        {
+          "text": "Can I search by continents?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "can we search by continent?"
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "i'm looking for a continent"
+        }
+      ]
+    }
+  ]
+}
