@@ -118,15 +118,28 @@ function addClickListenerToVendorRows() {
 }
 
 function addClickListenerToChatbotHeader() {
-    $(".chatbot-header").off('click').click(function(e) {
-        if (isChatbotVisible()) {
-            hideChatbot();
-            customGA('send', 'event', 'chatbot', 'click', 'hide');
-        } else {
-            showChatbot();
-            customGA('send', 'event', 'chatbot', 'click', 'show');
-        }
+    $(".chatbot-refresh").off('click').click(function(e) {
+        var iframe = document.getElementById('chatbot-iframe');
+        iframe.src = iframe.src;
     });
+
+    $(".chatbot-toggle").off('click').click(function(e) {
+        toggleChatbot();
+    });
+
+    $(".chatbot-title").off('click').click(function(e) {
+        toggleChatbot();
+    });
+}
+
+function toggleChatbot() {
+    if (isChatbotVisible()) {
+        hideChatbot();
+        customGA('send', 'event', 'chatbot', 'click', 'hide');
+    } else {
+        showChatbot();
+        customGA('send', 'event', 'chatbot', 'click', 'show');
+    }
 }
 
 function resizeChatbot() {
