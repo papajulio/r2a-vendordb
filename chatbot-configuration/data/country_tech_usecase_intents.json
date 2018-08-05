@@ -393,7 +393,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-yes.search_vendor_start_country-yes-yes",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=$use_case&technology=#data-country.technology&country=#data-country.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=$use_case&technology=#data-country.technology&country=#data-country.location"
         }
       ],
       "inputContextNames": [
@@ -544,7 +544,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-yes.search_vendor_start_country-yes-no",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?country=#data-country.location&technology=#data-country.technology"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?country=#data-country.location&technology=#data-country.technology"
         }
       ],
       "inputContextNames": [
@@ -761,7 +761,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-no.search_vendor_start_country-no-yes",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=$use_case&country=#data-country.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=$use_case&country=#data-country.location"
         }
       ],
       "inputContextNames": [
@@ -925,7 +925,7 @@
       "action_name": "search_vendor_start_country.search_vendor_start_country-no.search_vendor_start_country-no-no",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?country=#data-country.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?country=#data-country.location"
         }
       ],
       "inputContextNames": [

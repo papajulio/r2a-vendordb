@@ -378,7 +378,7 @@
       "action_name": "search_vendor.search_vendor-yes.search_vendor-yes-yes",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data.use_case&technology=#data.technology&country=$location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=#data.use_case&technology=#data.technology&country=$location"
         }
       ],
       "inputContextNames": [
@@ -513,7 +513,7 @@
       "action_name": "search_vendor.search_vendor-yes.search_vendor-yes-no",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data.use_case&technology=#data.technology"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=#data.use_case&technology=#data.technology"
         }
       ],
       "inputContextNames": [
@@ -730,7 +730,7 @@
       "action_name": "search_vendor.search_vendor-no.search_vendor-no-yes",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data.use_case&country=$location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=#data.use_case&country=$location"
         }
       ],
       "inputContextNames": [
@@ -879,7 +879,7 @@
       "action_name": "search_vendor.search_vendor-no.search_vendor-no-no",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data.use_case"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=#data.use_case"
         }
       ],
       "inputContextNames": [

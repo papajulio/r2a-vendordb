@@ -387,7 +387,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-yes.search_vendor_start_tech-yes-yes",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data-tech.use_case&technology=#data-tech.technology&country=$location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=#data-tech.use_case&technology=#data-tech.technology&country=$location"
         }
       ],
       "inputContextNames": [
@@ -522,7 +522,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-yes.search_vendor_start_tech-yes-no",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data-tech.use_case&technology=#data-tech.technology"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=#data-tech.use_case&technology=#data-tech.technology"
         }
       ],
       "inputContextNames": [
@@ -739,7 +739,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-no.search_vendor_start_tech-no-yes",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?technology=#data-tech.technology&country=$location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?technology=#data-tech.technology&country=$location"
         }
       ],
       "inputContextNames": [
@@ -888,7 +888,7 @@
       "action_name": "search_vendor_start_tech.search_vendor_start_tech-no.search_vendor_start_tech-no-no",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?technology=#data-tech.technology"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?technology=#data-tech.technology"
         }
       ],
       "inputContextNames": [

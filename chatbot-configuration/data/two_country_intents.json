@@ -260,7 +260,7 @@
       "action_name": "search_vendor_two_country.search_vendor_two_country-yes",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data-two-country.use_case&technology=#data-two-country.technology&country=$location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=#data-two-country.use_case&technology=#data-two-country.technology&country=$location"
         }
       ],
       "inputContextNames": [
@@ -395,7 +395,7 @@
       "action_name": "search_vendor_two_country.search_vendor_two_country-no",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=#data-two-country.use_case&technology=#data-two-country.technology"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=#data-two-country.use_case&technology=#data-two-country.technology"
         }
       ],
       "inputContextNames": [

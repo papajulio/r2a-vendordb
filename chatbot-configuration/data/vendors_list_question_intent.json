@@ -2,7 +2,7 @@
   "name": "vendors_list_question",
   "messages": [
     {
-        "text": "You can check a full list of vendors in here: https://papajulio.github.io/r2a-vendordb/ or you can ask me about your technology, country or use case so I can help you to refine your search."
+        "text": "You can check a full list of vendors in here: https://vendors.r2accelerator.org/ or you can ask me about your technology, country or use case so I can help you to refine your search."
     }
   ],
   "training_phrases": [
