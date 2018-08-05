@@ -257,7 +257,7 @@
       "action_name": "search_vendor_two_usecase.search_vendor_two_usecase-yes",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=$use_case&technology=#data-two-usecase.technology&country=#data-two-usecase.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=$use_case&technology=#data-two-usecase.technology&country=#data-two-usecase.location"
         }
       ],
       "inputContextNames": [
@@ -408,7 +408,7 @@
       "action_name": "search_vendor_two_usecase.search_vendor_two_usecase-no",
       "messages": [
         {
-          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?technology=#data-two-usecase.technology&country=#data-two-usecase.location"
+          "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?technology=#data-two-usecase.technology&country=#data-two-usecase.location"
         }
       ],
       "inputContextNames": [

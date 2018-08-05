@@ -2,7 +2,7 @@
   "name": "search_vendor_all_all",
   "messages": [
     {
-        "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://papajulio.github.io/r2a-vendordb/?use-case=$use_case&technology=$technology&country=$location"
+        "text": "Ok, great. Please visit this url to see vendors that may be of interest: https://vendors.r2accelerator.org/?use-case=$use_case&technology=$technology&country=$location"
     }
   ],
   "parameters": [
